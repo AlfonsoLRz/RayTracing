@@ -1,0 +1,5 @@
+﻿  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': redefinición de macro
+C:\Users\Alfonso\Desktop\Libraries\glfw\include\GLFW\glfw3.h(104): message : vea la definición anterior de 'APIENTRY'
+D:\Github\RayTracing\RayTracing\Source\main.cpp(18,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  RayTracing.vcxproj -> D:\Github\RayTracing\Debug\RayTracing.exe
