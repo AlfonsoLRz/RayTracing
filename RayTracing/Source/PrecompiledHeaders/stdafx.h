@@ -44,3 +44,6 @@
 #include <unordered_set>
 #include <vector>
 
+// [Ours]
+
+#include "Utilities/Adapter.h"

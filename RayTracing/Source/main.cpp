@@ -1,5 +1,5 @@
 #include "stdafx.h"
-//#include "Interface/Window.h"
+#include "Interface/Window.h"
 #include <windows.h>						// DWORD is undefined otherwise
 
 // Laptop support. Use NVIDIA graphic card instead of Intel
@@ -21,20 +21,20 @@ int main(int argc, char* argv[])
 
 	const std::string title = "LiDAR Simulator";
 	const uint16_t width = 1050, height = 650;
-	//const auto window = Window::getInstance();
+	const auto window = Window::getInstance();
 
-	//{
-	//	if (const bool success = window->load(title, width, height))
-	//	{
-	//		window->startRenderingCycle();
+	{
+		if (const bool success = window->load(title, width, height))
+		{
+			window->startRenderingCycle();
 
-	//		std::cout << "__ Finishing LiDAR Simulator __" << std::endl;
-	//	}
-	//	else
-	//	{
-	//		std::cout << "__ Failed to initialize GLFW __" << std::endl;
-	//	}
-	//}
+			std::cout << "__ Finishing LiDAR Simulator __" << std::endl;
+		}
+		else
+		{
+			std::cout << "__ Failed to initialize GLFW __" << std::endl;
+		}
+	}
 
 	system("pause");
 

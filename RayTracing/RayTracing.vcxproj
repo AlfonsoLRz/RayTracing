@@ -159,6 +159,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Graphics\Application\Renderer.cpp" />
+    <ClCompile Include="Source\Graphics\Core\FBO.cpp" />
+    <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp" />
+    <ClCompile Include="Source\Graphics\Core\VAO.cpp" />
+    <ClCompile Include="Source\Interface\GUI.cpp" />
+    <ClCompile Include="Source\Interface\InputManager.cpp" />
+    <ClCompile Include="Source\Interface\Window.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\PrecompiledHeaders\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -166,9 +173,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\Utilities\OpenGLUtilities.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Graphics\Application\Renderer.h" />
+    <ClInclude Include="Source\Graphics\Application\RenderingParameters.h" />
+    <ClInclude Include="Source\Graphics\Core\CGEnumerations.h" />
+    <ClInclude Include="Source\Graphics\Core\CGStructs.h" />
+    <ClInclude Include="Source\Graphics\Core\FBO.h" />
+    <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h" />
+    <ClInclude Include="Source\Graphics\Core\VAO.h" />
+    <ClInclude Include="Source\Interface\GUI.h" />
+    <ClInclude Include="Source\Interface\InputManager.h" />
+    <ClInclude Include="Source\Interface\Window.h" />
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h" />
+    <ClInclude Include="Source\Utilities\Adapter.h" />
+    <ClInclude Include="Source\Utilities\OpenGLUtilities.h" />
+    <ClInclude Include="Source\Utilities\Singleton.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

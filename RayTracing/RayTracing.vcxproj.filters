@@ -19,6 +19,36 @@
     <Filter Include="Archivos de encabezado\Precompiled Headers">
       <UniqueIdentifier>{5973a64d-db6d-4359-befb-b65d19cff899}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Interface">
+      <UniqueIdentifier>{d76cc8ce-5499-4e5a-a081-5fc8b13cdae6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Interface">
+      <UniqueIdentifier>{1d804765-a4c4-4848-9299-2fe8f28e4dda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics">
+      <UniqueIdentifier>{63eaa70d-5736-4ea1-ae42-309134337ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Application">
+      <UniqueIdentifier>{d03c9c89-db78-4f3c-8f4a-b8f63509ad6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core">
+      <UniqueIdentifier>{076d31fe-9b18-417f-aa86-6efda9fefa83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics">
+      <UniqueIdentifier>{1f8708e7-4912-444e-8078-6bc9f7587ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Application">
+      <UniqueIdentifier>{89718b4f-792d-4640-96fa-bb7aee180dc6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core">
+      <UniqueIdentifier>{dd2fe66e-e59b-4314-88c0-7fc58812b37f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Utilities">
+      <UniqueIdentifier>{e814f1f1-dcf3-4c52-b71f-067236a19681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Utilities">
+      <UniqueIdentifier>{9cbb7f80-3cfd-4f56-a414-e367edd6aeef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -27,10 +57,73 @@
     <ClCompile Include="Source\PrecompiledHeaders\stdafx.cpp">
       <Filter>Archivos de origen\Precompiled Headers</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Interface\GUI.cpp">
+      <Filter>Archivos de origen\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\InputManager.cpp">
+      <Filter>Archivos de origen\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Window.cpp">
+      <Filter>Archivos de origen\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Application\Renderer.cpp">
+      <Filter>Archivos de origen\Graphics\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\FBO.cpp">
+      <Filter>Archivos de origen\Graphics\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp">
+      <Filter>Archivos de origen\Graphics\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Utilities\OpenGLUtilities.cpp">
+      <Filter>Archivos de origen\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\VAO.cpp">
+      <Filter>Archivos de origen\Graphics\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
       <Filter>Archivos de encabezado\Precompiled Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\GUI.h">
+      <Filter>Archivos de encabezado\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\InputManager.h">
+      <Filter>Archivos de encabezado\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\Window.h">
+      <Filter>Archivos de encabezado\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Singleton.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\Renderer.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\RenderingParameters.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\FBO.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\Adapter.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\OpenGLUtilities.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\VAO.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\CGEnumerations.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\CGStructs.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
