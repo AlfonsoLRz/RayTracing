@@ -1,6 +1,7 @@
-// dear imgui: standalone example application for SDL2 + DirectX 11
-// If you are new to dear imgui, see examples/README.txt and documentation at the top of imgui.cpp.
-// (SDL is a cross-platform general purpose library for handling windows, inputs, OpenGL/Vulkan graphics context creation, etc.)
+// Dear ImGui: standalone example application for SDL2 + DirectX 11
+// (SDL is a cross-platform general purpose library for handling windows, inputs, OpenGL/Vulkan/Metal graphics context creation, etc.)
+// If you are new to Dear ImGui, read documentation from the docs/ folder + read the top of imgui.cpp.
+// Read online: https://github.com/ocornut/imgui/tree/master/docs
 
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
@@ -26,6 +27,8 @@ void CleanupRenderTarget();
 int main(int, char**)
 {
     // Setup SDL
+    // (Some versions of SDL before <2.0.10 appears to have performance/stalling issues on a minority of Windows systems,
+    // depending on whether SDL_INIT_GAMECONTROLLER is enabled or disabled.. updating to latest version of SDL is recommended!)
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER) != 0)
     {
         printf("Error: %s\n", SDL_GetError());
@@ -58,7 +61,7 @@ int main(int, char**)
     ImGui::StyleColorsDark();
     //ImGui::StyleColorsClassic();
 
-    // Setup Platform/Renderer bindings
+    // Setup Platform/Renderer backends
     ImGui_ImplSDL2_InitForD3D(window);
     ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dDeviceContext);
 
@@ -67,7 +70,7 @@ int main(int, char**)
     // - AddFontFromFileTTF() will return the ImFont* so you can store it if you need to select the font among multiple.
     // - If the file cannot be loaded, the function will return NULL. Please handle those errors in your application (e.g. use an assertion, or display an error and quit).
     // - The fonts will be rasterized at a given size (w/ oversampling) and stored into a texture when calling ImFontAtlas::Build()/GetTexDataAsXXXX(), which ImGui_ImplXXXX_NewFrame below will call.
-    // - Read 'misc/fonts/README.txt' for more instructions and details.
+    // - Read 'docs/FONTS.md' for more instructions and details.
     // - Remember that in C/C++ if you want to include a backslash \ in a string literal you need to write a double backslash \\ !
     //io.Fonts->AddFontDefault();
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
@@ -99,6 +102,13 @@ int main(int, char**)
                 done = true;
             if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_CLOSE && event.window.windowID == SDL_GetWindowID(window))
                 done = true;
+            if (event.type == SDL_WINDOWEVENT && event.window.event == SDL_WINDOWEVENT_RESIZED && event.window.windowID == SDL_GetWindowID(window))
+            {                
+                // Release all outstanding references to the swap chain's buffers before resizing.
+                CleanupRenderTarget();
+                g_pSwapChain->ResizeBuffers(0, 0, 0, DXGI_FORMAT_UNKNOWN, 0);
+                CreateRenderTarget();
+            }
         }
 
         // Start the Dear ImGui frame

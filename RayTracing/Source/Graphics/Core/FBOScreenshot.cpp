@@ -70,7 +70,7 @@ bool FBOScreenshot::bindFBO()
 	return true;
 }
 
-Image* FBOScreenshot::getImage() const
+Image* FBOScreenshot::getImage()
 {
 	if (!_success)
 	{

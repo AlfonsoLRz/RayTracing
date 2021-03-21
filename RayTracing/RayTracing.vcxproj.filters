@@ -49,6 +49,30 @@
     <Filter Include="Archivos de encabezado\Utilities">
       <UniqueIdentifier>{9cbb7f80-3cfd-4f56-a414-e367edd6aeef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Utilities\Fonts">
+      <UniqueIdentifier>{0d1e6d8f-1e76-4d79-afeb-d642b190fbf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Interface\Fonts">
+      <UniqueIdentifier>{2e3be4e9-e4ef-4bb3-87bd-6ba8a48396eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Libraries">
+      <UniqueIdentifier>{a1a318db-1d60-4636-8490-ad1e30fcb4aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Libraries\lodepng">
+      <UniqueIdentifier>{47eb04dd-48fe-46a1-a09b-d9ff2b7c55d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Libraries">
+      <UniqueIdentifier>{7d1eddb4-6333-4860-a0a4-8cd43d3f88d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Libraries\lodepng">
+      <UniqueIdentifier>{3f739048-c2c3-45bc-a21c-5bafcdaa4fcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Libraries\imgui">
+      <UniqueIdentifier>{100d1cce-bb71-4172-be11-96d0bf8c1477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Libraries\imgui">
+      <UniqueIdentifier>{28eb36c9-d298-4c96-a2f7-6ebe438027f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -75,11 +99,41 @@
     <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp">
       <Filter>Archivos de origen\Graphics\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Utilities\OpenGLUtilities.cpp">
-      <Filter>Archivos de origen\Utilities</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Core\VAO.cpp">
       <Filter>Archivos de origen\Graphics\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Image.cpp">
+      <Filter>Archivos de origen\Graphics\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Fonts\font_awesome.cpp">
+      <Filter>Archivos de origen\Interface\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Fonts\font_awesome_2.cpp">
+      <Filter>Archivos de origen\Interface\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\Fonts\lato.cpp">
+      <Filter>Archivos de origen\Interface\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\lodepng\lodepng.cpp">
+      <Filter>Archivos de origen\Libraries\lodepng</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\examples\imgui_impl_glfw.cpp">
+      <Filter>Archivos de origen\Libraries\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\examples\imgui_impl_opengl3.cpp">
+      <Filter>Archivos de origen\Libraries\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\imgui.cpp">
+      <Filter>Archivos de origen\Libraries\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\imgui_widgets.cpp">
+      <Filter>Archivos de origen\Libraries\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\imgui_tables.cpp">
+      <Filter>Archivos de origen\Libraries\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\imgui\imgui_draw.cpp">
+      <Filter>Archivos de origen\Libraries\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +167,6 @@
     <ClInclude Include="Source\Utilities\Adapter.h">
       <Filter>Archivos de encabezado\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Utilities\OpenGLUtilities.h">
-      <Filter>Archivos de encabezado\Utilities</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Graphics\Core\VAO.h">
       <Filter>Archivos de encabezado\Graphics\Core</Filter>
     </ClInclude>
@@ -124,6 +175,42 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\CGStructs.h">
       <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Image.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\FileManagement.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\Fonts\font_awesome.hpp">
+      <Filter>Archivos de encabezado\Utilities\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\Fonts\IconsFontAwesome5.h">
+      <Filter>Archivos de encabezado\Utilities\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\Fonts\lato.hpp">
+      <Filter>Archivos de encabezado\Utilities\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\lodepng\lodepng.h">
+      <Filter>Archivos de encabezado\Libraries\lodepng</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\imgui\imconfig.h">
+      <Filter>Archivos de encabezado\Libraries\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\imgui\imgui.h">
+      <Filter>Archivos de encabezado\Libraries\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\imgui\examples\imgui_impl_glfw.h">
+      <Filter>Archivos de encabezado\Libraries\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\imgui\examples\imgui_impl_opengl3.h">
+      <Filter>Archivos de encabezado\Libraries\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\imgui\imgui_internal.h">
+      <Filter>Archivos de encabezado\Libraries\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\imgui\imstb_truetype.h">
+      <Filter>Archivos de encabezado\Libraries\imgui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

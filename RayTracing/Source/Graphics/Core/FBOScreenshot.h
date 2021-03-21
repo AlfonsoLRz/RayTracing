@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Graphics/Core/FBO.h"
-#include "Graphics/Core/Texture.h"
+#include "Graphics/Core/Image.h"
 
 /**
 *	@file FBOScreenshot.h
@@ -54,7 +54,7 @@ public:
 	/**
 	*	@return Rendered screen as an image.
 	*/
-	Image* getImage() const;
+	Image* getImage();
 
 	/**
 	*	@brief Modifies the size specified in textures related to framebuffer. To be defined.

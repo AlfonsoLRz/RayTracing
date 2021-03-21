@@ -24,6 +24,7 @@ public:
 	bool							_lockCamera;							//!< Disable camera movement (but zoom)
 
 	// Screenshot
+	char							_screenshotFilenameBuffer[32];			//!< Path of screenshot
 	float							_screenshotMultiplier;					//!< Multiplier of current size of GLFW window
 	std::string						_screenshotName;						//!< Name of screenshot (folder is always the same)
 
@@ -38,8 +39,9 @@ public:
 
 		_lockCamera(false),
 
-		_screenshotMultiplier(3.0f),
-		_screenshotName("Screenshot.png")
+
+		_screenshotFilenameBuffer("Screenshot.png"),
+		_screenshotMultiplier(3.0f)
 	{
 	}
 };

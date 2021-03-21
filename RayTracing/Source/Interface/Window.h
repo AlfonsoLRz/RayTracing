@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Geometry/2D/Vector2.h"
 #include "Interface/InputManager.h"
 #include "Utilities/Singleton.h"
 

@@ -10,7 +10,7 @@ const std::string Renderer::SCENE_INDEX_FILENAME = "Settings/SceneIndex.txt";
 /// [Protected methods]
 
 Renderer::Renderer() :
-	_screenshotFBO(nullptr)
+	_currentScene(0), _screenshotFBO(nullptr), _state(std::unique_ptr<RenderingParameters>(new RenderingParameters()))
 {
 }
 
