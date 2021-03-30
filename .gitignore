@@ -35,3 +35,8 @@
 *.ipch
 *.db
 .vs/*
+
+# Assets
+RayTracing/Assets/Scene/*
+RayTracing/Assets/Models/*
+RayTracing/Assets/Textures/*

@@ -54,17 +54,16 @@ bool Window::load(const std::string& title, const uint16_t width, const uint16_t
 	std::cout << glGetString(GL_VERSION) << std::endl;
 	std::cout << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
-	//glfwSetWindowRefreshCallback(_window, InputManager::windowRefresh);
-	//glfwSetFramebufferSizeCallback(_window, InputManager::resizeEvent);
-	//glfwSetKeyCallback(_window, InputManager::keyEvent);
-	//glfwSetMouseButtonCallback(_window, InputManager::mouseButtonEvent);
-	//glfwSetCursorPosCallback(_window, InputManager::mouseCursorEvent);
-	//glfwSetScrollCallback(_window, InputManager::mouseScrollEvent);
+	glfwSetWindowRefreshCallback(_window, InputManager::windowRefresh);
+	glfwSetFramebufferSizeCallback(_window, InputManager::resizeEvent);
+	glfwSetKeyCallback(_window, InputManager::keyEvent);
+	glfwSetMouseButtonCallback(_window, InputManager::mouseButtonEvent);
+	glfwSetCursorPosCallback(_window, InputManager::mouseCursorEvent);
+	glfwSetScrollCallback(_window, InputManager::mouseScrollEvent);
 
-	// Preparamos el entorno OpenGL.
 	Renderer::getInstance()->prepareOpenGL(width, height);	
-	//GUI::getInstance()->initialize(_window, openGL4Version);
-
+	GUI::getInstance()->initialize(_window, openGL4Version);
+	
 	_windowState = SUCCESSFUL_LOAD;	
 
 	return true;
@@ -74,12 +73,10 @@ void Window::startRenderingCycle()
 {
 	if (_windowState != SUCCESSFUL_LOAD) return;
 
-	//InputManager* inputManager = InputManager::getInstance();
-
 	while (!glfwWindowShouldClose(_window)) {			// Application event cycle. We don't get out of here until window is closed by the user
 		glfwPollEvents();								// Obtains and organizes any event
 
-		//InputManager::getInstance()->windowRefresh(_window);
+		InputManager::getInstance()->windowRefresh(_window);
 	}
 
 	glfwDestroyWindow(_window);							// Free GLFW resources

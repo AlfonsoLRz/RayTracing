@@ -45,14 +45,30 @@ struct CGEnumerations
 	/// [Shaders]
 
 	// Shader implementations
-	enum RendShaderTypes : uint8_t
+	enum RenderingShaderTypes : uint8_t
 	{
 		REND_TO_QUAD_SHADER
 	};
 
-	enum CompShaderTypes : uint8_t
+	enum ComputeShaderTypes : uint8_t
 	{
-		BIT_MASK_RADIX_SORT
+		// BVH
+		BUILD_CLUSTER_BUFFER,
+		CLUSTER_MERGING,
+		COMPUTE_FACE_AABB,
+		COMPUTE_GROUP_AABB,
+		COMPUTE_MORTON_CODES,
+		DOWN_SWEEP_PREFIX_SCAN,
+		FIND_BEST_NEIGHBOR,
+		REALLOCATE_CLUSTERS,
+		REDUCE_PREFIX_SCAN,
+		RESET_LAST_POSITION_PREFIX_SCAN,
+
+		// Radix sort
+		BIT_MASK_RADIX_SORT,
+		END_LOOP_COMPUTATIONS,
+		REALLOCATE_RADIX_SORT,
+		RESET_BUFFER_INDEX
 	};
 
 	/**
@@ -63,7 +79,7 @@ struct CGEnumerations
 	/**
 	*	@return Number of rendering shaders.
 	*/
-	const static GLsizei numRenderingShaderTypes() { return BIT_MASK_RADIX_SORT + 1; }
+	const static GLsizei numRenderingShaderTypes() { return RESET_BUFFER_INDEX + 1; }
 
 	/// [Rendering parameters]
 

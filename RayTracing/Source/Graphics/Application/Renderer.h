@@ -1,7 +1,9 @@
 #pragma once
 
+#include "Graphics/Application/Scene.h"
 #include "Graphics/Application/RenderingParameters.h"
 #include "Graphics/Core/FBOScreenshot.h"
+#include "Graphics/Core/RayTracer.h"
 #include "Utilities/Singleton.h"
 
 /**
@@ -9,8 +11,6 @@
 *	@authors Alfonso López Ruiz (alr00048@red.ujaen.es)
 *	@date 01/02/2021
 */
-
-#define RESTART_PRIMITIVE_INDEX UINT_MAX
 
 /**
 *	@brief Manages the scenes and graphic application state.
@@ -25,6 +25,8 @@ protected:
 protected:
 	// [Rendering]
 	uint8_t										_currentScene;			//!< Active scene
+	RayTracer*									_rayTracer;				//!<
+	std::vector<std::unique_ptr<Scene>>			_scene;					//!< Array of scenes which can be represented. Components are only initialized when asked for
 	std::unique_ptr<FBOScreenshot>				_screenshotFBO;			//!< Framebuffer which allows us to capture the scene (and save it) at higher resolution
 	std::unique_ptr<RenderingParameters>		_state;					//!< Properties of rendering
 
@@ -33,6 +35,27 @@ protected:
 	*	@brief Default constructor with the only purpose of initializing properly the attributes.
 	*/
 	Renderer();
+
+	/**
+	*	@brief  
+	*/
+	void bindFramebuffer(const GLuint id);
+
+	/**
+	*	@brief  
+	*/
+	void clearFramebuffer();
+
+	/**
+	*	@brief Creates an scene taking into account the type from the arguments.
+	*	@param sceneType Index-name of scene type.
+	*/
+	Scene* createScene(const uint8_t sceneType);
+
+	/**
+	*	@brief Reads the index of the scene which needs to be loaded at first.
+	*/
+	uint8_t readSceneIndex();
 
 public:
 	/**
@@ -54,15 +77,20 @@ public:
 
 	// [Scene data]
 
-	///**
-	//*	@return Current camera that allows us to capture the scene.
-	//*/
-	//Camera* getActiveCamera()  const { return _scene[_currentScene]->getCameraManager()->getActiveCamera(); }
+	/**
+	*	@return Current camera that allows us to capture the scene.
+	*/
+	Camera* getActiveCamera() const { return _scene[_currentScene]->getCameraManager()->getActiveCamera(); }
 
 	/**
 	*	@return Color of background under the scene.
 	*/
 	vec3 getBackgroundColor()  const { return _state->_backgroundColor; }
+
+	/**
+	*	@return Currently active scene.
+	*/
+	Scene* getCurrentScene() { return _scene[_currentScene].get(); }
 
 	/**
 	*	@return Wrapping class for rendering parameters (unique instance per renderer).

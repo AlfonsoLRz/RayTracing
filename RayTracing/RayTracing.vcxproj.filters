@@ -73,6 +73,72 @@
     <Filter Include="Archivos de origen\Libraries\imgui">
       <UniqueIdentifier>{28eb36c9-d298-4c96-a2f7-6ebe438027f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\Shader">
+      <UniqueIdentifier>{3c36f131-361c-46bf-aa82-2ef5d88ddbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\Shader">
+      <UniqueIdentifier>{cb88332c-e1dd-494b-8975-f0f816a18414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Shaders">
+      <UniqueIdentifier>{c2d0fbe6-55af-42e9-8570-45268dd62c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de recursos\Shaders\Rendering">
+      <UniqueIdentifier>{3de977cb-ef89-4fea-9463-0b8560b50bf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Libraries\objloader">
+      <UniqueIdentifier>{78c0e641-3061-4066-9400-f168e9521686}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Libraries\objloader">
+      <UniqueIdentifier>{9638d53b-d753-4a1e-8466-a6f3dd6a005a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Geometry">
+      <UniqueIdentifier>{b8d8aa19-e8b3-4876-a0ef-b4d423911240}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Geometry\3D">
+      <UniqueIdentifier>{801eeeff-f7c9-4ac7-8afb-6bdad7f9b4fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Geometry">
+      <UniqueIdentifier>{16408953-be12-429e-bccd-a905e8dc6e41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Geometry\3D">
+      <UniqueIdentifier>{ffeaee46-8dd3-4bf6-ba48-3da13b996c0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\Models">
+      <UniqueIdentifier>{629ca43c-af4b-4417-8f0a-192d3b2b9e6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\Image">
+      <UniqueIdentifier>{8970c487-28ac-4ea8-84f6-20d1f080c64c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\FBO">
+      <UniqueIdentifier>{0b83f19c-c118-45d8-9cdc-70a6069712b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\ClassicOpenGL">
+      <UniqueIdentifier>{04aeed85-6c77-4004-bf2f-5c53a9772008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\FBO">
+      <UniqueIdentifier>{e7fe4d36-0925-4e67-b3a4-2aea78ed2312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\Models">
+      <UniqueIdentifier>{b0468d3f-45c7-4c4f-8f52-bead9d25a809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\Image">
+      <UniqueIdentifier>{ffaab1f3-f95f-48c7-be80-6b2937fc298d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\ClassicOpenGL">
+      <UniqueIdentifier>{6cde884e-a14f-4e95-8847-aa4500f83883}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\RayTracing">
+      <UniqueIdentifier>{13942eaa-c1fc-46e2-9cf1-ddba24a52406}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\RayTracing">
+      <UniqueIdentifier>{33d41e3d-a531-40b5-a4c0-f3a3481982ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera">
+      <UniqueIdentifier>{ff01bd75-9dbc-4f1a-a098-9b215ff10624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\ClassicOpenGL\Camera">
+      <UniqueIdentifier>{96b7d802-749c-480b-a9ab-d336424b4230}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -92,18 +158,6 @@
     </ClCompile>
     <ClCompile Include="Source\Graphics\Application\Renderer.cpp">
       <Filter>Archivos de origen\Graphics\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\FBO.cpp">
-      <Filter>Archivos de origen\Graphics\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp">
-      <Filter>Archivos de origen\Graphics\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\VAO.cpp">
-      <Filter>Archivos de origen\Graphics\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Image.cpp">
-      <Filter>Archivos de origen\Graphics\Core</Filter>
     </ClCompile>
     <ClCompile Include="Source\Interface\Fonts\font_awesome.cpp">
       <Filter>Archivos de origen\Interface\Fonts</Filter>
@@ -135,6 +189,84 @@
     <ClCompile Include="Libraries\imgui\imgui_draw.cpp">
       <Filter>Archivos de origen\Libraries\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\ComputeShader.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\RenderingShader.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\ShaderList.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\ShaderProgram.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\OpenGLUtilities.cpp">
+      <Filter>Archivos de origen\Graphics\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Application\MaterialList.cpp">
+      <Filter>Archivos de origen\Graphics\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Application\TextureList.cpp">
+      <Filter>Archivos de origen\Graphics\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Libraries\objloader\OBJ_Loader.cpp">
+      <Filter>Archivos de origen\Libraries\objloader</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Geometry\3D\AABB.cpp">
+      <Filter>Archivos de origen\Geometry\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\CADModel.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Model3D.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Group3D.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\FBO.cpp">
+      <Filter>Archivos de origen\Graphics\Core\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp">
+      <Filter>Archivos de origen\Graphics\Core\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\FloatImage.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\UnsignedImage.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Texture.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Material.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\RayTracer.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\VAO.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Application\CameraManager.cpp">
+      <Filter>Archivos de origen\Graphics\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Application\Scene.cpp">
+      <Filter>Archivos de origen\Graphics\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\OrthoProjection.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\PerspProjection.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Camera.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Application\GeometricScene.cpp">
+      <Filter>Archivos de origen\Graphics\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
@@ -158,25 +290,13 @@
     <ClInclude Include="Source\Graphics\Application\RenderingParameters.h">
       <Filter>Archivos de encabezado\Graphics\Application</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\FBO.h">
-      <Filter>Archivos de encabezado\Graphics\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h">
-      <Filter>Archivos de encabezado\Graphics\Core</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Utilities\Adapter.h">
       <Filter>Archivos de encabezado\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\VAO.h">
-      <Filter>Archivos de encabezado\Graphics\Core</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\CGEnumerations.h">
       <Filter>Archivos de encabezado\Graphics\Core</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\CGStructs.h">
-      <Filter>Archivos de encabezado\Graphics\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Image.h">
       <Filter>Archivos de encabezado\Graphics\Core</Filter>
     </ClInclude>
     <ClInclude Include="Source\Utilities\FileManagement.h">
@@ -212,5 +332,103 @@
     <ClInclude Include="Libraries\imgui\imstb_truetype.h">
       <Filter>Archivos de encabezado\Libraries\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\ComputeShader.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\RenderingShader.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\ShaderList.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\ShaderProgram.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\OpenGLUtilities.h">
+      <Filter>Archivos de encabezado\Graphics\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\MaterialList.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\TextureList.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\CGApplicationEnumerations.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Libraries\objloader\OBJ_Loader.h">
+      <Filter>Archivos de encabezado\Libraries\objloader</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Geometry\3D\AABB.h">
+      <Filter>Archivos de encabezado\Geometry\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Model3D.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Group3D.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\CADModel.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Image.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\FloatImage.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\UnsignedImage.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\FBO.h">
+      <Filter>Archivos de encabezado\Graphics\Core\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h">
+      <Filter>Archivos de encabezado\Graphics\Core\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Material.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Texture.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\RayTracer.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\VAO.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\CameraManager.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\Scene.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\BasicOperations.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Camera.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\CameraProjection.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\OrthoProjection.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\PerspProjection.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Application\GeometricScene.h">
+      <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\2D\renderQuad-frag.glsl">
+      <Filter>Archivos de recursos\Shaders\Rendering</Filter>
+    </None>
+    <None Include="Assets\Shaders\2D\renderQuad-vert.glsl">
+      <Filter>Archivos de recursos\Shaders\Rendering</Filter>
+    </None>
   </ItemGroup>
 </Project>

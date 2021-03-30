@@ -70,7 +70,7 @@ bool FBOScreenshot::bindFBO()
 	return true;
 }
 
-Image* FBOScreenshot::getImage()
+UnsignedImage* FBOScreenshot::getImage()
 {
 	if (!_success)
 	{
@@ -87,7 +87,7 @@ Image* FBOScreenshot::getImage()
 
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-	Image* image = new Image(pixels, _size.x, _size.y, 4);
+	UnsignedImage* image = new UnsignedImage(pixels, _size.x, _size.y, 4);
 	free(pixels);
 
 	return image;
@@ -134,7 +134,7 @@ bool FBOScreenshot::saveImage(const std::string& filename)
 	glReadPixels(0, 0, _size.x, _size.y, GL_RGBA, GL_UNSIGNED_BYTE, pixels->data());
 
 	// Correct image orientation
-	Image::flipImageVertically(*pixels, _size.x, _size.y, 4);
+	UnsignedImage::flipImageVertically(*pixels, _size.x, _size.y, 4);
 
 	// Launch image writing in a thread
 	std::thread writeImageThread(&FBOScreenshot::threadedWriteImage, this, pixels, filename, _size.x, _size.y);

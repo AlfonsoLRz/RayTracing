@@ -86,7 +86,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -105,7 +105,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -124,7 +124,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -143,7 +143,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -162,14 +162,20 @@
     <ClCompile Include="Libraries\imgui\examples\imgui_impl_glfw.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Libraries\imgui\examples\imgui_impl_opengl3.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Libraries\imgui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Libraries\imgui\imgui_draw.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
@@ -186,11 +192,35 @@
     <ClCompile Include="Libraries\lodepng\lodepng.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Libraries\objloader\OBJ_Loader.cpp" />
+    <ClCompile Include="Source\Geometry\3D\AABB.cpp" />
+    <ClCompile Include="Source\Graphics\Application\CameraManager.cpp" />
+    <ClCompile Include="Source\Graphics\Application\GeometricScene.cpp" />
+    <ClCompile Include="Source\Graphics\Application\MaterialList.cpp" />
     <ClCompile Include="Source\Graphics\Application\Renderer.cpp" />
+    <ClCompile Include="Source\Graphics\Application\Scene.cpp" />
+    <ClCompile Include="Source\Graphics\Application\TextureList.cpp" />
+    <ClCompile Include="Source\Graphics\Core\CADModel.cpp" />
+    <ClCompile Include="Source\Graphics\Core\Camera.cpp" />
+    <ClCompile Include="Source\Graphics\Core\ComputeShader.cpp" />
     <ClCompile Include="Source\Graphics\Core\FBO.cpp" />
     <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp" />
-    <ClCompile Include="Source\Graphics\Core\Image.cpp" />
+    <ClCompile Include="Source\Graphics\Core\FloatImage.cpp" />
+    <ClCompile Include="Source\Graphics\Core\Group3D.cpp" />
+    <ClCompile Include="Source\Graphics\Core\OrthoProjection.cpp" />
+    <ClCompile Include="Source\Graphics\Core\PerspProjection.cpp" />
+    <ClCompile Include="Source\Graphics\Core\UnsignedImage.cpp" />
+    <ClCompile Include="Source\Graphics\Core\Material.cpp" />
+    <ClCompile Include="Source\Graphics\Core\Model3D.cpp" />
+    <ClCompile Include="Source\Graphics\Core\OpenGLUtilities.cpp" />
+    <ClCompile Include="Source\Graphics\Core\RayTracer.cpp" />
+    <ClCompile Include="Source\Graphics\Core\RenderingShader.cpp" />
+    <ClCompile Include="Source\Graphics\Core\ShaderList.cpp" />
+    <ClCompile Include="Source\Graphics\Core\ShaderProgram.cpp" />
+    <ClCompile Include="Source\Graphics\Core\Texture.cpp" />
     <ClCompile Include="Source\Graphics\Core\VAO.cpp" />
     <ClCompile Include="Source\Interface\Fonts\font_awesome.cpp" />
     <ClCompile Include="Source\Interface\Fonts\font_awesome_2.cpp" />
@@ -214,13 +244,38 @@
     <ClInclude Include="Libraries\imgui\imgui_internal.h" />
     <ClInclude Include="Libraries\imgui\imstb_truetype.h" />
     <ClInclude Include="Libraries\lodepng\lodepng.h" />
+    <ClInclude Include="Libraries\objloader\OBJ_Loader.h" />
+    <ClInclude Include="Source\Geometry\3D\AABB.h" />
+    <ClInclude Include="Source\Graphics\Application\CameraManager.h" />
+    <ClInclude Include="Source\Graphics\Application\CGApplicationEnumerations.h" />
+    <ClInclude Include="Source\Graphics\Application\GeometricScene.h" />
+    <ClInclude Include="Source\Graphics\Application\MaterialList.h" />
     <ClInclude Include="Source\Graphics\Application\Renderer.h" />
     <ClInclude Include="Source\Graphics\Application\RenderingParameters.h" />
+    <ClInclude Include="Source\Graphics\Application\Scene.h" />
+    <ClInclude Include="Source\Graphics\Application\TextureList.h" />
+    <ClInclude Include="Source\Graphics\Core\CADModel.h" />
+    <ClInclude Include="Source\Graphics\Core\Camera.h" />
+    <ClInclude Include="Source\Graphics\Core\CameraProjection.h" />
     <ClInclude Include="Source\Graphics\Core\CGEnumerations.h" />
     <ClInclude Include="Source\Graphics\Core\CGStructs.h" />
+    <ClInclude Include="Source\Graphics\Core\ComputeShader.h" />
     <ClInclude Include="Source\Graphics\Core\FBO.h" />
     <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h" />
+    <ClInclude Include="Source\Graphics\Core\FloatImage.h" />
+    <ClInclude Include="Source\Graphics\Core\Group3D.h" />
     <ClInclude Include="Source\Graphics\Core\Image.h" />
+    <ClInclude Include="Source\Graphics\Core\OrthoProjection.h" />
+    <ClInclude Include="Source\Graphics\Core\PerspProjection.h" />
+    <ClInclude Include="Source\Graphics\Core\UnsignedImage.h" />
+    <ClInclude Include="Source\Graphics\Core\Material.h" />
+    <ClInclude Include="Source\Graphics\Core\Model3D.h" />
+    <ClInclude Include="Source\Graphics\Core\OpenGLUtilities.h" />
+    <ClInclude Include="Source\Graphics\Core\RayTracer.h" />
+    <ClInclude Include="Source\Graphics\Core\RenderingShader.h" />
+    <ClInclude Include="Source\Graphics\Core\ShaderList.h" />
+    <ClInclude Include="Source\Graphics\Core\ShaderProgram.h" />
+    <ClInclude Include="Source\Graphics\Core\Texture.h" />
     <ClInclude Include="Source\Graphics\Core\VAO.h" />
     <ClInclude Include="Source\Interface\Fonts\font_awesome.hpp" />
     <ClInclude Include="Source\Interface\Fonts\IconsFontAwesome5.h" />
@@ -230,8 +285,13 @@
     <ClInclude Include="Source\Interface\Window.h" />
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h" />
     <ClInclude Include="Source\Utilities\Adapter.h" />
+    <ClInclude Include="Source\Utilities\BasicOperations.h" />
     <ClInclude Include="Source\Utilities\FileManagement.h" />
     <ClInclude Include="Source\Utilities\Singleton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\2D\renderQuad-frag.glsl" />
+    <None Include="Assets\Shaders\2D\renderQuad-vert.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
