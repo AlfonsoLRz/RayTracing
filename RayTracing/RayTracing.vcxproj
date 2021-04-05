@@ -197,6 +197,7 @@
     </ClCompile>
     <ClCompile Include="Libraries\objloader\OBJ_Loader.cpp" />
     <ClCompile Include="Source\Geometry\3D\AABB.cpp" />
+    <ClCompile Include="Source\Geometry\3D\Ray3D.cpp" />
     <ClCompile Include="Source\Graphics\Application\CameraManager.cpp" />
     <ClCompile Include="Source\Graphics\Application\GeometricScene.cpp" />
     <ClCompile Include="Source\Graphics\Application\MaterialList.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="Libraries\lodepng\lodepng.h" />
     <ClInclude Include="Libraries\objloader\OBJ_Loader.h" />
     <ClInclude Include="Source\Geometry\3D\AABB.h" />
+    <ClInclude Include="Source\Geometry\3D\Ray3D.h" />
     <ClInclude Include="Source\Graphics\Application\CameraManager.h" />
     <ClInclude Include="Source\Graphics\Application\CGApplicationEnumerations.h" />
     <ClInclude Include="Source\Graphics\Application\GeometricScene.h" />

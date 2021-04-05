@@ -59,3 +59,11 @@ void RayTracer::drawDebugTexture()
 		}
 	}
 }
+
+vec3 RayTracer::getBackgroundColor(const Ray3D& ray)
+{
+	const vec3 rayDirection = glm::normalize(ray.getDirection());
+	const float t = 0.5f * (rayDirection.y + 1.0f);		// [-1, 1] -> [0, 1]
+
+	return (1.0f - t) * BACKGROUND_INTERP_COLOR_01 + t * BACKGROUND_INTERP_COLOR_02;
+}

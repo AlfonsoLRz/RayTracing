@@ -267,6 +267,9 @@
     <ClCompile Include="Source\Graphics\Application\GeometricScene.cpp">
       <Filter>Archivos de origen\Graphics\Application</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Geometry\3D\Ray3D.cpp">
+      <Filter>Archivos de origen\Geometry\3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
@@ -421,6 +424,9 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Application\GeometricScene.h">
       <Filter>Archivos de encabezado\Graphics\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Geometry\3D\Ray3D.h">
+      <Filter>Archivos de encabezado\Geometry\3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

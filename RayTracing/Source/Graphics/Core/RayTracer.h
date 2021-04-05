@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Geometry/3D/Ray3D.h"
 #include "Graphics/Core/ComputeShader.h"
 #include "Graphics/Core/FloatImage.h"
 #include "Graphics/Core/OpenGLUtilities.h"
@@ -22,6 +23,10 @@ class RayTracer : public Singleton<RayTracer>
 	friend class Singleton<RayTracer>;
 
 protected:
+	const vec3 BACKGROUND_INTERP_COLOR_01 = vec3(1.0f);
+	const vec3 BACKGROUND_INTERP_COLOR_02 = vec3(0.5f, 0.7f, 1.0f);
+
+protected:
 	// [Rendering]
 	FloatImage*		_rayTracingImage;	//!<
 	VAO*			_quadVAO;			//!< VAO where our new frames are rendered
@@ -33,9 +38,14 @@ protected:
 	RayTracer();
 
 	/**
-	*	 @brief 
+	*	@brief 
 	*/
 	void drawDebugTexture();
+
+	/**
+	*	@return Default color for image background. 
+	*/
+	vec3 getBackgroundColor(const Ray3D& ray);
 
 public:
 	/**
