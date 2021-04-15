@@ -62,7 +62,7 @@ void GUI::createMenu()
 
 void GUI::leaveSpace(const unsigned numSlots)
 {
-	for (int i = 0; i < numSlots; ++i)
+	for (unsigned i = 0; i < numSlots; ++i)
 	{
 		ImGui::Spacing();
 	}

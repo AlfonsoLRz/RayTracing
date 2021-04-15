@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Geometry/3D/Ray3D.h"
+#include "Graphics/Application/Scene.h"
 #include "Graphics/Core/ComputeShader.h"
 #include "Graphics/Core/FloatImage.h"
 #include "Graphics/Core/OpenGLUtilities.h"
@@ -28,7 +29,8 @@ protected:
 
 protected:
 	// [Rendering]
-	FloatImage*		_rayTracingImage;	//!<
+	FloatImage*		_rayTracingImage;	//!< 
+	Scene*			_scene;				//!<
 	VAO*			_quadVAO;			//!< VAO where our new frames are rendered
 
 protected:
@@ -57,6 +59,11 @@ public:
 	*	@brief Renders the new frame of an scene. 
 	*/
 	void renderFrame();
+
+	/**
+	*	@brief  
+	*/
+	void updateScene(Scene* scene);
 
 	/**
 	*	@brief  

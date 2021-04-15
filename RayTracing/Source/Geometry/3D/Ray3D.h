@@ -30,11 +30,11 @@ public:
 	/**
 	*	@return Origin of ray. 
 	*/
-	vec3 getOrigin() { return _origin; }
+	vec3 getOrigin() const { return _origin; }
 
 	/**
 	*	@return Direction of ray. 
 	*/
-	vec3 getDirection() { return _direction; }
+	vec3 getDirection() const { return _direction; }
 };
 

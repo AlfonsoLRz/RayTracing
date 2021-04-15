@@ -347,11 +347,12 @@ GLuint Group3D::sortFacesByMortonCode(const GLuint mortonCodes)
 	ComputeShader* resetPositionShader		= ShaderList::getInstance()->getComputeShader(CGEnumerations::RESET_LAST_POSITION_PREFIX_SCAN);
 	ComputeShader* reallocatePositionShader = ShaderList::getInstance()->getComputeShader(CGEnumerations::REALLOCATE_RADIX_SORT);
 
-	const unsigned numBits	= 30;	// 10 bits per coordinate (3D)
-	unsigned arraySize		= _staticGPUData->_numTriangles, currentBits = 0;
-	const int numGroups		= ComputeShader::getNumGroups(arraySize);
-	const int maxGroupSize	= ComputeShader::getMaxGroupSize();
-	GLuint* indices			= new GLuint[arraySize];
+	unsigned currentBits = 0;
+	const unsigned numBits		= 30;	// 10 bits per coordinate (3D)
+	const unsigned arraySize	= _staticGPUData->_numTriangles; 
+	const int numGroups			= ComputeShader::getNumGroups(arraySize);
+	const int maxGroupSize		= ComputeShader::getMaxGroupSize();
+	GLuint* indices				= new GLuint[arraySize];
 
 	// Binary tree parameters
 	const unsigned startThreads = std::ceil(arraySize / 2.0f);
@@ -360,7 +361,7 @@ GLuint Group3D::sortFacesByMortonCode(const GLuint mortonCodes)
 	unsigned numThreads			= 0, iteration;
 
 	// Fill indices array from zero to arraySize - 1
-	for (int i = 0; i < arraySize; ++i) { indices[i] = i; }
+	for (unsigned i = 0; i < arraySize; ++i) { indices[i] = i; }
 
 	GLuint indicesBufferID_1, indicesBufferID_2, pBitsBufferID, nBitsBufferID, positionBufferID;
 	indicesBufferID_1	= ComputeShader::setWriteBuffer(GLuint(), arraySize);

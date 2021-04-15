@@ -95,6 +95,7 @@ void Renderer::prepareOpenGL(const uint16_t width, const uint16_t height)
 	_scene[_currentScene] = std::unique_ptr<Scene>(createScene(_currentScene));
 	_scene[_currentScene]->load();
 	_rayTracer = RayTracer::getInstance();
+	_rayTracer->updateScene(_scene[_currentScene].get());
 
 	// [Framebuffers]
 

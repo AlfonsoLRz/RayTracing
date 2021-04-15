@@ -73,7 +73,7 @@ bool Model3D::readBinary(const std::string& filename, const std::vector<Model3D:
 		return false;
 	}
 
-	size_t numModelComps, numVertices, numTriangles, numIndices;
+	size_t numModelComps, numVertices, numTriangles;
 
 	fin.read((char*)&numModelComps, sizeof(size_t));
 	while (_modelComp.size() < numModelComps)

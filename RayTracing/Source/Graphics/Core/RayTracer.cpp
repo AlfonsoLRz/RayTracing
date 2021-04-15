@@ -27,6 +27,11 @@ void RayTracer::renderFrame()
 	quadVAO->drawObject(CGEnumerations::IBO_TRIANGLE_MESH, GL_TRIANGLES, 2 * 4);
 }
 
+void RayTracer::updateScene(Scene* scene)
+{
+	_scene = scene;
+}
+
 void RayTracer::updateSize(const uint16_t width, const uint16_t height)
 {
 	_rayTracingImage->updateSize(width, height);
@@ -35,7 +40,7 @@ void RayTracer::updateSize(const uint16_t width, const uint16_t height)
 
 // [Protected methods]
 
-RayTracer::RayTracer()
+RayTracer::RayTracer() : _scene(nullptr)
 {
 	const ivec2 canvasSize = Window::getInstance()->getSize();
 	
@@ -45,16 +50,31 @@ RayTracer::RayTracer()
 
 void RayTracer::drawDebugTexture()
 {
+	if (!_scene) return;
+
 	const unsigned width = _rayTracingImage->getWidth(), height = _rayTracingImage->getHeight();
 	float* image = _rayTracingImage->bits();
 
-	for (int x = 0; x < width; ++x)
+	// [Camera]
+	Camera* camera =_scene->getCameraManager()->getActiveCamera();
+	const vec3 origin = camera->getEye();
+	const float focalLength = 1.0f;
+	const float viewportHeight = 2.0f;
+	const float viewportWidth = viewportHeight * width / height;
+	const vec3 horizontal = vec3(viewportWidth, .0f, .0f), vertical = vec3(.0f, viewportHeight, .0f);
+	const vec3 lowerLeftCorner = origin - horizontal / 2.0f - vertical / 2.0f - vec3(.0f, .0f, focalLength);
+
+	for (unsigned x = 0; x < width; ++x)
 	{
-		for (int y = 0; y < height; ++y)
+		for (unsigned y = 0; y < height; ++y)
 		{
-			image[(y * width + x) * 4 + 0] = float(x) / (width - 1);
-			image[(y * width + x) * 4 + 1] = float(y) / (height - 1);
-			image[(y * width + x) * 4 + 2] = 0.25f;
+			const float u = float(x / (width - 1)), v = float(y / (height - 1));
+			Ray3D ray(origin, lowerLeftCorner + u * horizontal + v * vertical);
+			const vec3 color = getBackgroundColor(ray);
+
+			image[(y * width + x) * 4 + 0] = color.x;
+			image[(y * width + x) * 4 + 1] = color.y;
+			image[(y * width + x) * 4 + 2] = color.z;
 			image[(y * width + x) * 4 + 3] = 1.0f;
 		}
 	}
