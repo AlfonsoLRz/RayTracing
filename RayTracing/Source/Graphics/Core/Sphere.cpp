@@ -10,10 +10,31 @@ Sphere::Sphere(const vec3& center, float radius) : _center(center), _radius(radi
 bool Sphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) const
 {
 	const vec3 oc = ray.getOrigin() - _center;
-	const float a = glm::dot(ray.getDirection(), ray.getDirection());
-	const float b = 2.0f * glm::dot(oc, ray.getDirection());
-	const float c = glm::dot(oc, oc) - _radius * _radius;
-	const float discriminant = b * b - 4 * a * c;
+	const float a = glm::length2(ray.getDirection());
+	const float half_b = glm::dot(oc, ray.getDirection());
+	const float c = glm::length2(oc) - _radius * _radius;
+	const float discriminant = half_b * half_b - a * c;
 
-	return discriminant > 0;
+	if (discriminant < .0f)
+	{
+		return false;
+	}
+
+	const float sqrtd = sqrt(discriminant);
+	float root = (-half_b - sqrt(discriminant)) / a;
+
+	if (root < tMin || root > tMax)
+	{
+		root = (-half_b + sqrt(discriminant)) / a;
+		if (root < tMin || root > tMax)
+		{
+			return false;
+		}
+	}
+
+	hit._t = root;
+	hit._point = ray.at(root);
+	hit._normal = glm::normalize(hit._point - _center);
+
+	return true;
 }

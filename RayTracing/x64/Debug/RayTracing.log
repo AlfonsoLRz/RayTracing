@@ -1,5 +1,101 @@
-﻿  GUI.cpp
-D:\Github\RayTracing\RayTracing\Source\Interface\GUI.cpp(65,20): warning C4018: '<': no coinciden signed/unsigned
+﻿  stdafx.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  Generando código...
+  OBJ_Loader.cpp
+D:\Github\RayTracing\RayTracing\Libraries\objloader\OBJ_Loader.cpp(726,16): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+  AABB.cpp
+  Ray3D.cpp
+  CameraManager.cpp
+  GeometricScene.cpp
+  MaterialList.cpp
+  Renderer.cpp
+  Scene.cpp
+  TextureList.cpp
+  CADModel.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  Camera.cpp
+  ComputeShader.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\ComputeShader.cpp(21,141): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+  FBO.cpp
+  FBOScreenshot.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  FloatImage.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FloatImage.cpp(8,86): warning C4267: 'argumento': conversión de 'size_t' a 'const unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FloatImage.cpp(29,88): warning C4267: 'argumento': conversión de 'size_t' a 'const unsigned int'; posible pérdida de datos
+  Group3D.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(81,27): warning C4244: '=': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(82,24): warning C4244: '=': conversión de 'double' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(117,35): warning C4244: 'argumento': conversión de 'float' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(131,37): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(185,39): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(222,45): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(223,46): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(237,44): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(242,69): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(250,66): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(296,32): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(296,21): warning C4244: 'inicializando': conversión de 'double' a 'const int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(297,23): warning C4244: 'inicializando': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(304,25): warning C4018: '<': no coinciden signed/unsigned
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(310,25): warning C4244: '=': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(358,41): warning C4244: 'inicializando': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(358,30): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(359,33): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(359,22): warning C4244: 'inicializando': conversión de 'double' a 'const int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(395,20): warning C4018: '<': no coinciden signed/unsigned
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(403,35): warning C4244: 'argumento': conversión de 'float' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(417,37): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(418,38): warning C4018: '<': no coinciden signed/unsigned
+  Hittable.cpp
+  Material.cpp
+  Model3D.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Model3D.cpp(113,9): warning C4101: 'numIndices': variable local sin referencia
+  OpenGLUtilities.cpp
+  Generando código...
+  Compilando...
+  OrthoProjection.cpp
+  PerspProjection.cpp
+  RayTracer.cpp
+  RenderingShader.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\RenderingShader.cpp(16,138): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\RenderingShader.cpp(17,144): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\RenderingShader.cpp(18,144): warning C4267: 'argumento': conversión de 'size_t' a 'GLsizei'; posible pérdida de datos
+  ShaderList.cpp
+  ShaderProgram.cpp
+  Sphere.cpp
+  Texture.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,41): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,41): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,59): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,59): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,77): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,77): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,95): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(133,95): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+  UnsignedImage.cpp
+  VAO.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(95,68): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(95,68): warning C4267: 'inicializando': conversión de 'size_t' a 'const int'; posible pérdida de datos
+  font_awesome.cpp
+  font_awesome_2.cpp
+  lato.cpp
+  GUI.cpp
+  InputManager.cpp
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(259,39): warning C4244: 'argumento': conversión de 'double' a 'const float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(259,33): warning C4244: 'argumento': conversión de 'double' a 'const float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(272,23): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Window.cpp
   main.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': redefinición de macro
 C:\Users\AlfonsoLópezRuiz\Desktop\Libraries\glfw\include\GLFW\glfw3.h(104): message : vea la definición anterior de 'APIENTRY'
@@ -7,58 +103,4 @@ D:\Github\RayTracing\RayTracing\Source\main.cpp(18,12): warning C4244: 'argument
   Generando código...
      Creando biblioteca D:\Github\RayTracing\x64\Debug\RayTracing.lib y objeto D:\Github\RayTracing\x64\Debug\RayTracing.exp
 LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-FBOScreenshot.obj : error LNK2019: símbolo externo "unsigned int __cdecl lodepng::encode(class std::vector<unsigned char,class std::allocator<unsigned char> > &,class std::vector<unsigned char,class std::allocator<unsigned char> > const &,unsigned int,unsigned int,enum LodePNGColorType,unsigned int)" (?encode@lodepng@@YAIAEAV?$vector@EV?$allocator@E@std@@@std@@AEBV23@IIW4LodePNGColorType@@I@Z) sin resolver al que se hace referencia en la función "bool __cdecl FileManagement::saveImage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::vector<unsigned char,class std::allocator<unsigned char> > *,unsigned int,unsigned int)" (?saveImage@FileManagement@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@EV?$allocator@E@std@@@3@II@Z)
-FBOScreenshot.obj : error LNK2019: símbolo externo "unsigned int __cdecl lodepng::save_file(class std::vector<unsigned char,class std::allocator<unsigned char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?save_file@lodepng@@YAIAEBV?$vector@EV?$allocator@E@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z) sin resolver al que se hace referencia en la función "bool __cdecl FileManagement::saveImage(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::vector<unsigned char,class std::allocator<unsigned char> > *,unsigned int,unsigned int)" (?saveImage@FileManagement@@YA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAV?$vector@EV?$allocator@E@std@@@3@II@Z)
-Image.obj : error LNK2019: símbolo externo "unsigned int __cdecl lodepng::decode(class std::vector<unsigned char,class std::allocator<unsigned char> > &,unsigned int &,unsigned int &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,enum LodePNGColorType,unsigned int)" (?decode@lodepng@@YAIAEAV?$vector@EV?$allocator@E@std@@@std@@AEAI1AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4LodePNGColorType@@I@Z) sin resolver al que se hace referencia en la función "public: __cdecl Image::Image(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (??0Image@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
-GUI.obj : error LNK2019: símbolo externo "struct ImGuiContext * __cdecl ImGui::CreateContext(struct ImFontAtlas *)" (?CreateContext@ImGui@@YAPEAUImGuiContext@@PEAUImFontAtlas@@@Z) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::initialize(struct GLFWwindow *,int)" (?initialize@GUI@@QEAAXPEAUGLFWwindow@@H@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::DestroyContext(struct ImGuiContext *)" (?DestroyContext@ImGui@@YAXPEAUImGuiContext@@@Z) sin resolver al que se hace referencia en la función "public: virtual __cdecl GUI::~GUI(void)" (??1GUI@@UEAA@XZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::DebugCheckVersionAndDataLayout(char const *,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64,unsigned __int64)" (?DebugCheckVersionAndDataLayout@ImGui@@YA_NPEBD_K11111@Z) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::initialize(struct GLFWwindow *,int)" (?initialize@GUI@@QEAAXPEAUGLFWwindow@@H@Z)
-GUI.obj : error LNK2019: símbolo externo "struct ImGuiIO & __cdecl ImGui::GetIO(void)" (?GetIO@ImGui@@YAAEAUImGuiIO@@XZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::NewFrame(void)" (?NewFrame@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::render(void)" (?render@GUI@@QEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::Render(void)" (?Render@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::render(void)" (?render@GUI@@QEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "struct ImDrawData * __cdecl ImGui::GetDrawData(void)" (?GetDrawData@ImGui@@YAPEAUImDrawData@@XZ) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::render(void)" (?render@GUI@@QEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::StyleColorsDark(struct ImGuiStyle *)" (?StyleColorsDark@ImGui@@YAXPEAUImGuiStyle@@@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::loadImGUIStyle(void)" (?loadImGUIStyle@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::Begin(char const *,bool *,int)" (?Begin@ImGui@@YA_NPEBDPEA_NH@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showAboutUsWindow(void)" (?showAboutUsWindow@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::End(void)" (?End@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showAboutUsWindow(void)" (?showAboutUsWindow@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::PushStyleColor(int,struct ImVec4 const &)" (?PushStyleColor@ImGui@@YAXHAEBUImVec4@@@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::PopStyleColor(int)" (?PopStyleColor@ImGui@@YAXH@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "float __cdecl ImGui::GetFontSize(void)" (?GetFontSize@ImGui@@YAMXZ) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::PushTextWrapPos(float)" (?PushTextWrapPos@ImGui@@YAXM@Z) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::PopTextWrapPos(void)" (?PopTextWrapPos@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::Separator(void)" (?Separator@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showControls(void)" (?showControls@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::SameLine(float,float)" (?SameLine@ImGui@@YAXMM@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::Spacing(void)" (?Spacing@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::leaveSpace(unsigned int)" (?leaveSpace@GUI@@KAXI@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::SetCursorPosX(float)" (?SetCursorPosX@ImGui@@YAXM@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::PushID(int)" (?PushID@ImGui@@YAXH@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::PopID(void)" (?PopID@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::TextUnformatted(char const *,char const *)" (?TextUnformatted@ImGui@@YAXPEBD0@Z) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::Text(char const *,...)" (?Text@ImGui@@YAXPEBDZZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::TextDisabled(char const *,...)" (?TextDisabled@ImGui@@YAXPEBDZZ) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::Button(char const *,struct ImVec2 const &)" (?Button@ImGui@@YA_NPEBDAEBUImVec2@@@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::SliderFloat(char const *,float *,float,float,char const *,float)" (?SliderFloat@ImGui@@YA_NPEBDPEAMMM0M@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::InputText(char const *,char *,unsigned __int64,int,int (__cdecl*)(struct ImGuiInputTextCallbackData *),void *)" (?InputText@ImGui@@YA_NPEBDPEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showScreenshotSettings(void)" (?showScreenshotSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::ColorEdit3(char const *,float * const,int)" (?ColorEdit3@ImGui@@YA_NPEBDQEAMH@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showRenderingSettings(void)" (?showRenderingSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::BeginMainMenuBar(void)" (?BeginMainMenuBar@ImGui@@YA_NXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::EndMainMenuBar(void)" (?EndMainMenuBar@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::BeginMenu(char const *,bool)" (?BeginMenu@ImGui@@YA_NPEBD_N@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::EndMenu(void)" (?EndMenu@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::MenuItem(char const *,char const *,bool *,bool)" (?MenuItem@ImGui@@YA_NPEBD0PEA_N_N@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::createMenu(void)" (?createMenu@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::BeginTooltip(void)" (?BeginTooltip@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::EndTooltip(void)" (?EndTooltip@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::Columns(int,char const *,bool)" (?Columns@ImGui@@YAXHPEBD_N@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showControls(void)" (?showControls@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::NextColumn(void)" (?NextColumn@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showControls(void)" (?showControls@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::BeginTabBar(char const *,int)" (?BeginTabBar@ImGui@@YA_NPEBDH@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showRenderingSettings(void)" (?showRenderingSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::EndTabBar(void)" (?EndTabBar@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showRenderingSettings(void)" (?showRenderingSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::BeginTabItem(char const *,bool *,int)" (?BeginTabItem@ImGui@@YA_NPEBDPEA_NH@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showRenderingSettings(void)" (?showRenderingSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::EndTabItem(void)" (?EndTabItem@ImGui@@YAXXZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::showRenderingSettings(void)" (?showRenderingSettings@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui::IsItemHovered(int)" (?IsItemHovered@ImGui@@YA_NH@Z) sin resolver al que se hace referencia en la función "protected: static void __cdecl GUI::renderHelpMarker(char const *)" (?renderHelpMarker@GUI@@KAXPEBD@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui::ColorConvertHSVtoRGB(float,float,float,float &,float &,float &)" (?ColorConvertHSVtoRGB@ImGui@@YAXMMMAEAM00@Z) sin resolver al que se hace referencia en la función "public: static struct ImColor __cdecl ImColor::HSV(float,float,float,float)" (?HSV@ImColor@@SA?AU1@MMMM@Z)
-GUI.obj : error LNK2019: símbolo externo "public: __cdecl ImFontConfig::ImFontConfig(void)" (??0ImFontConfig@@QEAA@XZ) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::loadFonts(void)" (?loadFonts@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "public: struct ImFont * __cdecl ImFontAtlas::AddFontFromFileTTF(char const *,float,struct ImFontConfig const *,unsigned short const *)" (?AddFontFromFileTTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::loadFonts(void)" (?loadFonts@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "public: struct ImFont * __cdecl ImFontAtlas::AddFontFromMemoryCompressedBase85TTF(char const *,float,struct ImFontConfig const *,unsigned short const *)" (?AddFontFromMemoryCompressedBase85TTF@ImFontAtlas@@QEAAPEAUImFont@@PEBDMPEBUImFontConfig@@PEBG@Z) sin resolver al que se hace referencia en la función "protected: void __cdecl GUI::loadFonts(void)" (?loadFonts@GUI@@IEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui_ImplGlfw_InitForOpenGL(struct GLFWwindow *,bool)" (?ImGui_ImplGlfw_InitForOpenGL@@YA_NPEAUGLFWwindow@@_N@Z) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::initialize(struct GLFWwindow *,int)" (?initialize@GUI@@QEAAXPEAUGLFWwindow@@H@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui_ImplGlfw_NewFrame(void)" (?ImGui_ImplGlfw_NewFrame@@YAXXZ) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::render(void)" (?render@GUI@@QEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "bool __cdecl ImGui_ImplOpenGL3_Init(char const *)" (?ImGui_ImplOpenGL3_Init@@YA_NPEBD@Z) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::initialize(struct GLFWwindow *,int)" (?initialize@GUI@@QEAAXPEAUGLFWwindow@@H@Z)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui_ImplOpenGL3_NewFrame(void)" (?ImGui_ImplOpenGL3_NewFrame@@YAXXZ) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::render(void)" (?render@GUI@@QEAAXXZ)
-GUI.obj : error LNK2019: símbolo externo "void __cdecl ImGui_ImplOpenGL3_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL3_RenderDrawData@@YAXPEAUImDrawData@@@Z) sin resolver al que se hace referencia en la función "public: void __cdecl GUI::render(void)" (?render@GUI@@QEAAXXZ)
-D:\Github\RayTracing\x64\Debug\RayTracing.exe : fatal error LNK1120: 54 externos sin resolver
+  RayTracing.vcxproj -> D:\Github\RayTracing\x64\Debug\RayTracing.exe

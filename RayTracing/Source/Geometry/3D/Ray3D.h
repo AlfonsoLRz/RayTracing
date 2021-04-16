@@ -23,7 +23,7 @@ public:
 	/**
 	*	@brief Point at parametric value t for ray equation.
 	*/
-	vec3 at(const float t);
+	vec3 at(const float t) const;
 
 	// ------- Getters ---------
 

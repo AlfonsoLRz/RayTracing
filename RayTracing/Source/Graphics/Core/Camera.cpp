@@ -10,8 +10,8 @@
 std::vector<std::shared_ptr<CameraProjection>> Camera::CAMERA_PROJECTION { std::shared_ptr<CameraProjection>(new PerspProjection()), 
 																		   std::shared_ptr<CameraProjection>(new OrthoProjection()) };
 
-const vec3 Camera::EYE					= vec3(0.0f, 3.0f, 10.0f);
-const vec3 Camera::LOOK_AT				= vec3(0.0f, 3.0f, 0.0f);
+const vec3 Camera::EYE					= vec3(0.0f, 0.0f, 0.0f);
+const vec3 Camera::LOOK_AT				= vec3(0.0f, 0.0f, -2.0f);
 const vec3 Camera::UP					= vec3(0.0f, 1.0f, 0.0f);
 
 const float Camera::ZNEAR				= 0.1f;
@@ -26,6 +26,8 @@ const vec2 Camera::CANONICAL_VOL_CORNER = vec2(-5.0f, -5.0f);
 
 Camera::Camera(const uint16_t width, const uint16_t height): _backupCamera(nullptr)
 {
+	_cameraType = PERSPECTIVE_PROJ;
+	
 	_eye	= EYE;
 	_lookAt = LOOK_AT;
 	_up		= UP;
@@ -40,8 +42,6 @@ Camera::Camera(const uint16_t width, const uint16_t height): _backupCamera(nullp
 
 	_fovX	= FOV_X;
 	_fovY	= this->computeFovY();
-
-	_cameraType = PERSPECTIVE_PROJ;
 
 	this->computeAxes(_n, _u, _v);
 	
@@ -80,6 +80,7 @@ void Camera::reset()
 void Camera::saveCamera()
 {
 	delete _backupCamera;
+	_backupCamera = nullptr;
 
 	_backupCamera = new Camera(*this);
 }

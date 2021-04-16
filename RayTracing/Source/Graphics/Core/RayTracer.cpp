@@ -2,6 +2,7 @@
 #include "RayTracer.h"
 
 #include "Graphics/Core/ShaderList.h"
+#include "Graphics/Core/Sphere.h"
 #include "Interface/Window.h"
 
 // [Public methods]
@@ -54,6 +55,7 @@ void RayTracer::drawDebugTexture()
 
 	const unsigned width = _rayTracingImage->getWidth(), height = _rayTracingImage->getHeight();
 	float* image = _rayTracingImage->bits();
+	Sphere sphere(vec3(.0, .0f, -1.0f), .5f);
 
 	// [Camera]
 	Camera* camera =_scene->getCameraManager()->getActiveCamera();
@@ -68,9 +70,15 @@ void RayTracer::drawDebugTexture()
 	{
 		for (unsigned y = 0; y < height; ++y)
 		{
-			const float u = float(x / (width - 1)), v = float(y / (height - 1));
-			Ray3D ray(origin, lowerLeftCorner + u * horizontal + v * vertical);
-			const vec3 color = getBackgroundColor(ray);
+			float u = x / float(width - 1), v = y / float(height - 1);
+			Ray3D ray(origin, lowerLeftCorner + u * horizontal + v * vertical - origin);
+			vec3 color = getBackgroundColor(ray);
+
+			Hittable::HitRecord record;
+			if (sphere.hit(ray, .0f, FLT_MAX, record))
+			{
+				color = (record._normal + vec3(1.0f)) / 2.0f;
+			}
 
 			image[(y * width + x) * 4 + 0] = color.x;
 			image[(y * width + x) * 4 + 1] = color.y;
