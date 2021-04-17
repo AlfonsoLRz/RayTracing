@@ -440,6 +440,9 @@
     <ClInclude Include="Source\Graphics\Core\Sphere.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Utilities\RandomUtilities.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\2D\renderQuad-frag.glsl">

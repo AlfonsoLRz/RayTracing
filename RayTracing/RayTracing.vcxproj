@@ -293,6 +293,7 @@
     <ClInclude Include="Source\Utilities\Adapter.h" />
     <ClInclude Include="Source\Utilities\BasicOperations.h" />
     <ClInclude Include="Source\Utilities\FileManagement.h" />
+    <ClInclude Include="Source\Utilities\RandomUtilities.h" />
     <ClInclude Include="Source\Utilities\Singleton.h" />
   </ItemGroup>
   <ItemGroup>

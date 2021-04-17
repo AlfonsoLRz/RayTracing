@@ -16,9 +16,15 @@ class Hittable
 public:
 	struct HitRecord
 	{
+		bool	_frontFace;
 		vec3	_normal;
 		vec3	_point;
 		float	_t;
+
+		/**
+		*	@brief  
+		*/
+		void setFaceNormal(const Ray3D& ray, const vec3& outwardNormal);
 	};
 
 public:

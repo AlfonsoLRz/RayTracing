@@ -5,6 +5,7 @@
 #include "Graphics/Application/RenderingParameters.h"
 #include "Graphics/Core/Camera.h"
 #include "Graphics/Core/Group3D.h"
+#include "Graphics/Core/Hittable.h"
 #include "Graphics/Core/Model3D.h"
 #include "Graphics/Core/ShaderProgram.h"
 #include "Interface/Window.h"
@@ -24,6 +25,9 @@ protected:
 	// [General scene]
 	std::unique_ptr<CameraManager>		_cameraManager;					//!< Contains the cameras of this scene
 	Group3D*							_sceneGroup;					//!< Model wrapper
+
+	// [Hittable list]
+	std::vector<std::shared_ptr<Hittable>> _hittableObjects;			//!< 
 
 protected:
 	// --------------- Load ----------------
@@ -60,11 +64,6 @@ public:
 	CameraManager* getCameraManager()  const { return _cameraManager.get(); }
 
 	/**
-	*	@return Group where the scene models are gathered.
-	*/
-	virtual Group3D* getRenderingGroup() { return _sceneGroup; }
-
-	/**
 	*	@brief Loads the elements from the scene: lights, cameras, models, etc.
 	*/
 	virtual void load();
@@ -82,5 +81,22 @@ public:
 	*	@param rendParams Rendering parameters to be taken into account.
 	*/
 	virtual void render(const mat4& mModel, RenderingParameters* rendParams);
+
+	// [Object Management]
+
+	/**
+	*	@brief  
+	*/
+	void addObject(std::shared_ptr<Hittable> object) { _hittableObjects.push_back(object); }
+
+	/**
+	*	@brief 
+	*/
+	void clearObjects() { _hittableObjects.clear(); }
+
+	/**
+	*	@brief  
+	*/
+	virtual bool hit(const Ray3D& ray, float tMin, float tMax, Hittable::HitRecord& record);
 };
 

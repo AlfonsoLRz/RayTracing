@@ -33,6 +33,25 @@ void Scene::render(const mat4& mModel, RenderingParameters* rendParams)
 	Camera* activeCamera = _cameraManager->getActiveCamera();
 }
 
+bool Scene::hit(const Ray3D& ray, float tMin, float tMax, Hittable::HitRecord& record)
+{
+	Hittable::HitRecord tempRecord;
+	bool hitAnything = false;
+	float closest = tMax;
+
+	for (std::shared_ptr<Hittable> object: _hittableObjects)
+	{
+		if (object->hit(ray, tMin, closest, tempRecord))
+		{
+			hitAnything = true;
+			closest = tempRecord._t;
+			record = tempRecord;
+		}
+	}
+
+	return hitAnything;
+}
+
 // [Protected methods]
 
 void Scene::loadCameras()

@@ -34,7 +34,9 @@ bool Sphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) con
 
 	hit._t = root;
 	hit._point = ray.at(root);
-	hit._normal = glm::normalize(hit._point - _center);
+	
+	vec3 outwardNormal = glm::normalize(hit._point - _center);
+	hit.setFaceNormal(ray, outwardNormal);
 
 	return true;
 }

@@ -55,13 +55,12 @@ void RayTracer::drawDebugTexture()
 
 	const unsigned width = _rayTracingImage->getWidth(), height = _rayTracingImage->getHeight();
 	float* image = _rayTracingImage->bits();
-	Sphere sphere(vec3(.0, .0f, -1.0f), .5f);
 
 	// [Camera]
 	Camera* camera =_scene->getCameraManager()->getActiveCamera();
 	const vec3 origin = camera->getEye();
 	const float focalLength = 1.0f;
-	const float viewportHeight = 2.0f;
+	const float viewportHeight = 4.0f;
 	const float viewportWidth = viewportHeight * width / height;
 	const vec3 horizontal = vec3(viewportWidth, .0f, .0f), vertical = vec3(.0f, viewportHeight, .0f);
 	const vec3 lowerLeftCorner = origin - horizontal / 2.0f - vertical / 2.0f - vec3(.0f, .0f, focalLength);
@@ -75,7 +74,7 @@ void RayTracer::drawDebugTexture()
 			vec3 color = getBackgroundColor(ray);
 
 			Hittable::HitRecord record;
-			if (sphere.hit(ray, .0f, FLT_MAX, record))
+			if (_scene->hit(ray, .0f, FLT_MAX, record))
 			{
 				color = (record._normal + vec3(1.0f)) / 2.0f;
 			}
