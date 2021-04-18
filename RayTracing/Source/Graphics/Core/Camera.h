@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Graphics/Core/CameraProjection.h"
+#include "Geometry/3D/Ray3D.h"
 #include "Graphics/Core/CGEnumerations.h"
 
 /**
@@ -14,58 +14,30 @@
 */
 class Camera
 {
-public:
-	// Projetion types
-	enum CameraTypes : uint8_t
-	{
-		PERSPECTIVE_PROJ, ORTHO_PROJ
-	};
-
-	/**
-	*	@return Number of different types of cameras.
-	*/
-	const static GLsizei numCameraTypes() { return ORTHO_PROJ + 1; }
-
-protected:
-	// [Strategy pattern]
-	static std::vector<std::shared_ptr<CameraProjection>> CAMERA_PROJECTION;				//!< One instance per projection applicator type
-
 protected:
 	// [Fixed values: by default initialization]
 	const static vec3	EYE, LOOK_AT, UP;
 	const static float	ZNEAR, ZFAR;
 	const static float	FOV_X;
-	const static vec2	CANONICAL_VOL_CORNER;
 
 protected:
 	// [Generic parameters]
-	vec3			_eye, _lookAt, _up;					//!< Look at call parameters
-	float			_zNear, _zFar;						//!< Boundaries in the camera z axis
 	float			_aspect;							//!< Ratio between width and height of field of view
-	uint16_t		_width, _height;					//!< Width and height of: a) screen in persp, b) camera frontal plane (canonical view volume) in orthographic
+	vec3			_eye, _lookAt, _up;					//!< Look at call parameters
+	float			_focalLength;						//!<
+	vec3			_lowerLeftCorner;					//!<
 	vec3			_n, _u, _v;							//!< Camera axes to apply movements
-	mat4			_viewMatrix,						//!< World point => Camera system
-					_projectionMatrix,					//!< Camera system => Normalized system
-					_viewProjectionMatrix;				//!< World point => Normalized system
+	vec3			_vertical, _horizontal;				//!<
+	float			_viewportWidth, _viewportHeight;	//!<
+	float			_zNear, _zFar;						//!< Boundaries in the camera z axis
 
 	Camera*			_backupCamera;						//!< Copy of the initial camera so the user can reset it anytime
 
-	// [Strategy pattern]
-	CameraTypes		_cameraType;						//!< Type of projection this camera is using
-
 	// [Perspective parameters]
 	float			_fovY,								//!< Field of view (radians) in y axis
-					_fovX;								//!< Field of view (radians) in the x axis, just as the user chooses it. Saved only for interface purposes
-
-	// [Orthographic parameters]
-	vec2			_bottomLeftCorner;					//!< Lower value at x and y axis for the canonical view volume		
+					_fovX;								//!< Field of view (radians) in the x axis, just as the user chooses it. Saved only for interface purposes	
 
 protected:
-	/**
-	*	@brief Calculates the aspect of the camera view.
-	*/
-	float computeAspect();
-
 	/**
 	*	@brief Calculates the axes from the camera coordinate system.
 	*	@param n z axis.
@@ -75,30 +47,14 @@ protected:
 	void computeAxes(vec3& n, vec3& u, vec3& v);
 
 	/**
-	*	@brief Calculates the bottom left corner of the orthographic canonical view volume.
-	*	@return Minimum point of the canonical view volume. The maximum point can be calculated as this point multiplied by -1 (symmetry).
-	*/
-	vec2 computeBottomLeftCorner();
-
-	/**
 	*	@brief Calculates the aperture angle in the y axis.
 	*/
 	float computeFovY();
 
 	/**
-	*	@brief Calculates the projection and viewProjection matrices again.
+	*	@brief Computes the lower left corner of our camera plane. 
 	*/
-	void computeProjectionMatrices();
-
-	/**
-	*	@brief Calculates the view and viewProjection matrices again.
-	*/
-	void computeViewMatrices();
-
-	/**
-	*	@brief Calculates and returns the view matrix (independent of the chosen projection: persp or ortho).
-	*/
-	glm::mat4 computeViewMatrix();
+	void computeLowerLeftCorner();
 
 	/**
 	*	@brief Copies the camera attributes from the specified camera to this one.
@@ -139,11 +95,6 @@ public:
 	float getAspect() const { return _aspect; }
 
 	/**
-	*	@return Lowest corner of a canonical view volume in x and y.
-	*/
-	vec2 getBottomLeftCorner() const { return _bottomLeftCorner; }
-
-	/**
 	*	@return Camera position.
 	*/
 	vec3 getEye() const { return _eye; }
@@ -154,35 +105,15 @@ public:
 	float getFovY() const { return _fovY; }
 
 	/**
-	*	@return Height of screen (persp) or height of canonical view volume (ortho).
-	*/
-	uint16_t getHeight() const { return _height; }
-
-	/**
 	*	@return Position where the camera looks at.
 	*/
 	vec3 getLookAt() const { return _lookAt; }
 
 	/**
-	*	@return Projection matrix to transform any view point into a normalized point.
+	*	@brief World ray that traverses the focal plane through normalized values u and v. 
 	*/
-	mat4 getProjectionMatrix() { return _projectionMatrix; }
-
-	/**
-	*	@return View matrix to transform any world point into the camera coordinate system.
-	*/
-	mat4 getViewMatrix() const { return _viewMatrix; }
-
-	/**
-	*	@return Composition of view and projection matrix. 
-	*/
-	mat4 getViewProjMatrix() const { return _viewProjectionMatrix; }
-
-	/**
-	*	@return Width of screen (persp) or width of canonical view volume (ortho).
-	*/
-	uint16_t getWidth() const { return _width; }
-
+	Ray3D getRay(float u, float v);
+	
 	/**
 	*	@return Maximum z on the camera system coordinate until the scene is discarded.
 	*/
@@ -202,17 +133,6 @@ public:
 	*	@brief Saves the current configuration so it can be the starting point of future resets.
 	*/
 	void saveCamera();
-
-	/**
-	*	@brief Modifies the bottom left corner point of canonical view volume.
-	*	@param bottomLeft Coordinates of bottom left corner in world.
-	*/
-	void setBottomLeftCorner(const vec2& bottomLeft);
-
-	/**
-	*	@brief Modifies the projection of the camera into the given value.
-	*/
-	void setCameraType(const CameraTypes cameraType);
 
 	/**
 	*	@brief Modifies the aperture angle of the camera on the x axis.

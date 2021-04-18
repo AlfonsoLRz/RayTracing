@@ -255,12 +255,6 @@
     <ClCompile Include="Source\Graphics\Application\Scene.cpp">
       <Filter>Archivos de origen\Graphics\Application</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\OrthoProjection.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\PerspProjection.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Camera</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Core\Camera.cpp">
       <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Camera</Filter>
     </ClCompile>
@@ -417,15 +411,6 @@
       <Filter>Archivos de encabezado\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\Camera.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\CameraProjection.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\OrthoProjection.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\PerspProjection.h">
       <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Camera</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Application\GeometricScene.h">

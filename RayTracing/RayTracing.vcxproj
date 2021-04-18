@@ -212,8 +212,6 @@
     <ClCompile Include="Source\Graphics\Core\FloatImage.cpp" />
     <ClCompile Include="Source\Graphics\Core\Group3D.cpp" />
     <ClCompile Include="Source\Graphics\Core\Hittable.cpp" />
-    <ClCompile Include="Source\Graphics\Core\OrthoProjection.cpp" />
-    <ClCompile Include="Source\Graphics\Core\PerspProjection.cpp" />
     <ClCompile Include="Source\Graphics\Core\Sphere.cpp" />
     <ClCompile Include="Source\Graphics\Core\UnsignedImage.cpp" />
     <ClCompile Include="Source\Graphics\Core\Material.cpp" />
@@ -260,7 +258,6 @@
     <ClInclude Include="Source\Graphics\Application\TextureList.h" />
     <ClInclude Include="Source\Graphics\Core\CADModel.h" />
     <ClInclude Include="Source\Graphics\Core\Camera.h" />
-    <ClInclude Include="Source\Graphics\Core\CameraProjection.h" />
     <ClInclude Include="Source\Graphics\Core\CGEnumerations.h" />
     <ClInclude Include="Source\Graphics\Core\CGStructs.h" />
     <ClInclude Include="Source\Graphics\Core\ComputeShader.h" />
@@ -270,8 +267,6 @@
     <ClInclude Include="Source\Graphics\Core\Group3D.h" />
     <ClInclude Include="Source\Graphics\Core\Hittable.h" />
     <ClInclude Include="Source\Graphics\Core\Image.h" />
-    <ClInclude Include="Source\Graphics\Core\OrthoProjection.h" />
-    <ClInclude Include="Source\Graphics\Core\PerspProjection.h" />
     <ClInclude Include="Source\Graphics\Core\Sphere.h" />
     <ClInclude Include="Source\Graphics\Core\UnsignedImage.h" />
     <ClInclude Include="Source\Graphics\Core\Material.h" />

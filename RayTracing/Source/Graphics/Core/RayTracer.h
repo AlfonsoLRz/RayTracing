@@ -15,6 +15,8 @@
 */
 
 #define DEBUG_MODE
+#define MAX_DEPTH 40
+#define NUM_SAMPLES 50
 
 /**
 *	@brief Additional framebuffer to perform operations.
@@ -48,6 +50,11 @@ protected:
 	*	@return Default color for image background. 
 	*/
 	vec3 getBackgroundColor(const Ray3D& ray);
+
+	/**
+	*	@brief  
+	*/
+	vec3 getRayColor(const Ray3D& ray, Scene* scene, int depth);
 
 public:
 	/**

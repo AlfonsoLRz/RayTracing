@@ -21,6 +21,16 @@ namespace RandomUtilities
 	*	@return New random value retrieved from a random uniform distribution.
 	*/
 	double getUniformRandom();
+
+	/**
+	*	@return New random value retrieved from a random uniform distribution. Note that this value is not in [0, 1].
+	*/
+	double getUniformRandom(float min, float max);
+
+	/**
+	*	@return Random point in unit sphere. 
+	*/
+	vec3 getUniformRandomInUnitSphere();
 }
 
 inline double RandomUtilities::getUniformRandom()
@@ -29,4 +39,21 @@ inline double RandomUtilities::getUniformRandom()
 	static RandomNumberGenerator generator;
 
 	return distribution(generator);
+}
+
+double RandomUtilities::getUniformRandom(float min, float max)
+{
+	return min + (max - min) * getUniformRandom();
+}
+
+vec3 RandomUtilities::getUniformRandomInUnitSphere()
+{
+	vec3 point;
+	while (true)
+	{
+		point = vec3(getUniformRandom(-1.0f, 1.0f), getUniformRandom(-1.0f, 1.0f), getUniformRandom(-1.0f, 1.0f));
+		if (glm::length2(point) >= 1) continue;
+
+		return point;
+	}
 }

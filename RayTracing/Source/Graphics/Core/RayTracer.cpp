@@ -4,6 +4,7 @@
 #include "Graphics/Core/ShaderList.h"
 #include "Graphics/Core/Sphere.h"
 #include "Interface/Window.h"
+#include "Utilities/RandomUtilities.h"
 
 // [Public methods]
 
@@ -55,33 +56,29 @@ void RayTracer::drawDebugTexture()
 
 	const unsigned width = _rayTracingImage->getWidth(), height = _rayTracingImage->getHeight();
 	float* image = _rayTracingImage->bits();
+	Ray3D ray (vec3(.0f), vec3(.0f));
 
 	// [Camera]
 	Camera* camera =_scene->getCameraManager()->getActiveCamera();
-	const vec3 origin = camera->getEye();
-	const float focalLength = 1.0f;
-	const float viewportHeight = 4.0f;
-	const float viewportWidth = viewportHeight * width / height;
-	const vec3 horizontal = vec3(viewportWidth, .0f, .0f), vertical = vec3(.0f, viewportHeight, .0f);
-	const vec3 lowerLeftCorner = origin - horizontal / 2.0f - vertical / 2.0f - vec3(.0f, .0f, focalLength);
 
 	for (unsigned x = 0; x < width; ++x)
 	{
 		for (unsigned y = 0; y < height; ++y)
 		{
-			float u = x / float(width - 1), v = y / float(height - 1);
-			Ray3D ray(origin, lowerLeftCorner + u * horizontal + v * vertical - origin);
-			vec3 color = getBackgroundColor(ray);
+			vec3 color(.0f);
 
-			Hittable::HitRecord record;
-			if (_scene->hit(ray, .0f, FLT_MAX, record))
+			for (int sampleIdx = 0; sampleIdx < NUM_SAMPLES; ++sampleIdx)
 			{
-				color = (record._normal + vec3(1.0f)) / 2.0f;
+				float u = (x + RandomUtilities::getUniformRandom()) / float(width - 1), v = (y + RandomUtilities::getUniformRandom()) / float(height - 1);
+				ray = camera->getRay(u, v);
+				color += getRayColor(ray, _scene, MAX_DEPTH);
 			}
 
-			image[(y * width + x) * 4 + 0] = color.x;
-			image[(y * width + x) * 4 + 1] = color.y;
-			image[(y * width + x) * 4 + 2] = color.z;
+			color /= NUM_SAMPLES;
+
+			image[(y * width + x) * 4 + 0] = sqrt(color.x);
+			image[(y * width + x) * 4 + 1] = sqrt(color.y);
+			image[(y * width + x) * 4 + 2] = sqrt(color.z);
 			image[(y * width + x) * 4 + 3] = 1.0f;
 		}
 	}
@@ -93,4 +90,19 @@ vec3 RayTracer::getBackgroundColor(const Ray3D& ray)
 	const float t = 0.5f * (rayDirection.y + 1.0f);		// [-1, 1] -> [0, 1]
 
 	return (1.0f - t) * BACKGROUND_INTERP_COLOR_01 + t * BACKGROUND_INTERP_COLOR_02;
+}
+
+vec3 RayTracer::getRayColor(const Ray3D& ray, Scene* scene, int depth)
+{
+	Hittable::HitRecord record;
+
+	if (depth <= 0) return vec3(.0f);
+
+	if (_scene->hit(ray, .001f, FLT_MAX, record))
+	{
+		vec3 target = record._point + record._normal + glm::normalize(RandomUtilities::getUniformRandomInUnitSphere());
+		return .5f * this->getRayColor(Ray3D(record._point, target - record._point), scene, depth - 1);
+	}
+
+	return getBackgroundColor(ray);
 }
