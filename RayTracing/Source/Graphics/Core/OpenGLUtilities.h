@@ -23,6 +23,3 @@ public:
 	*/
 	static VAO* getQuadVAO();
 };
-
-
-

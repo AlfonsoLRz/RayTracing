@@ -16,10 +16,17 @@
 */
 class Material
 {
+	friend class MaterialType;
+	friend class LambertianMaterial;
+
 protected:
 	const static float SHININESS;
 
 protected:
+	// [Ray Tracing]
+	vec3		_albedo;
+
+	// [Old Features]
 	Texture*	_texture[Texture::NUM_TEXTURE_TYPES];						//!< Texture pointer for each type. Noone of them should exclude others
 	float		_shininess;													//!< Phong exponent for specular reflection	
 
@@ -34,7 +41,7 @@ public:
 	/**
 	*	@brief Default constructor.
 	*/
-	Material();
+	Material(const vec3& albedo = vec3(.0f));
 
 	/**
 	*	@brief Copy constructor.

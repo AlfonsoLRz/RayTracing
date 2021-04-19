@@ -32,6 +32,11 @@ namespace BasicOperations
 	*	@brief Checks if two vectors are equal or similar with a maximum difference of epsilon.
 	*/
 	bool equal(const vec3 v1, const vec3 v2);
+	
+	/**
+	*	@return
+	*/
+	bool isZero(const vec3& direction);
 
 	/**
 	*	@return 1 or -1 depending on the value sign.
@@ -58,6 +63,11 @@ inline bool BasicOperations::equal(const float f1, const float f2)
 inline bool BasicOperations::equal(const vec3 v1, const vec3 v2)
 {
 	return BasicOperations::equal(v1.x, v2.x) && BasicOperations::equal(v1.y, v2.y) && BasicOperations::equal(v1.z, v2.z);
+}
+
+inline bool BasicOperations::isZero(const vec3& direction)
+{
+	return direction.x < glm::epsilon<float>() && direction.y < glm::epsilon<float>() && direction.z < glm::epsilon<float>();
 }
 
 template<typename T>

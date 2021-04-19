@@ -3,12 +3,12 @@
 
 // [Static members initialization]
 
-const float Material::SHININESS		= 2.0f;
+const float Material::SHININESS	= 2.0f;
 
 /// [Public methods]
 
-Material::Material()
-	: _shininess(SHININESS)
+Material::Material(const vec3& albedo)
+	: _albedo(albedo), _shininess(SHININESS)
 {
 	for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
 	{

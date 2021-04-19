@@ -4,6 +4,7 @@
 #include "Graphics/Application/RenderingParameters.h"
 #include "Graphics/Core/FBOScreenshot.h"
 #include "Graphics/Core/RayTracer.h"
+#include "Utilities/RandomUtilities.h"
 #include "Utilities/Singleton.h"
 
 /**

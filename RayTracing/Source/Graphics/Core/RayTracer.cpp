@@ -100,7 +100,7 @@ vec3 RayTracer::getRayColor(const Ray3D& ray, Scene* scene, int depth)
 
 	if (_scene->hit(ray, .001f, FLT_MAX, record))
 	{
-		vec3 target = record._point + record._normal + glm::normalize(RandomUtilities::getUniformRandomInUnitSphere());
+		vec3 target = record._point + record._normal + RandomUtilities::getUniformRandomInHemisphere(record._normal);
 		return .5f * this->getRayColor(Ray3D(record._point, target - record._point), scene, depth - 1);
 	}
 
