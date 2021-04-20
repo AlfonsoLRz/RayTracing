@@ -279,6 +279,9 @@
     <ClCompile Include="Source\Graphics\Core\Material.cpp">
       <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\MetalMaterial.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
@@ -441,6 +444,9 @@
       <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\LambertianMaterial.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\MetalMaterial.h">
       <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
     </ClInclude>
   </ItemGroup>

@@ -8,6 +8,8 @@
 *	@date 15/04/2021
 */
 
+class Material;
+
 /**
 *	@brief---
 */
@@ -16,10 +18,11 @@ class Hittable
 public:
 	struct HitRecord
 	{
-		bool	_frontFace;
-		vec3	_normal;
-		vec3	_point;
-		float	_t;
+		bool						_frontFace;		//!<
+		std::shared_ptr<Material>	_material;		//!<
+		vec3						_normal;		//!<
+		vec3						_point;			//!<
+		float						_t;				//!<
 
 		/**
 		*	@brief  

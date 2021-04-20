@@ -100,8 +100,15 @@ vec3 RayTracer::getRayColor(const Ray3D& ray, Scene* scene, int depth)
 
 	if (_scene->hit(ray, .001f, FLT_MAX, record))
 	{
-		vec3 target = record._point + record._normal + RandomUtilities::getUniformRandomInHemisphere(record._normal);
-		return .5f * this->getRayColor(Ray3D(record._point, target - record._point), scene, depth - 1);
+		Ray3D scattered (vec3(.0f), vec3(.0f));
+		vec3 attenuation;
+
+		if (record._material->getApplicator()->scatter(record._material.get(), ray, record, attenuation, scattered))
+		{
+			return attenuation * this->getRayColor(scattered, scene, depth - 1);
+		}
+		
+		return vec3(.0f);
 	}
 
 	return getBackgroundColor(ray);

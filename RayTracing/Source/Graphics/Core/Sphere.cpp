@@ -3,7 +3,7 @@
 
 // [Public methods]
 
-Sphere::Sphere(const vec3& center, float radius) : _center(center), _radius(radius)
+Sphere::Sphere(const vec3& center, float radius, std::shared_ptr<Material> material) : _center(center), _material(material), _radius(radius)
 {
 }
 
@@ -34,6 +34,7 @@ bool Sphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) con
 
 	hit._t = root;
 	hit._point = ray.at(root);
+	hit._material = _material;
 	
 	vec3 outwardNormal = glm::normalize(hit._point - _center);
 	hit.setFaceNormal(ray, outwardNormal);

@@ -20,6 +20,9 @@ class Material;
 class MaterialType
 {
 public:
+	enum MaterialTypes { LAMBERTIAN, METAL, NUM_MATERIAL_TYPES };
+
+public:
 	/**
 	*	@brief
 	*/

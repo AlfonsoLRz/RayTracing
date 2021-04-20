@@ -9,7 +9,7 @@
 */
 
 /**
-*	@brief Set of textures which defines the appearance of an object.
+*	@brief 
 */
 class LambertianMaterial: public MaterialType
 {

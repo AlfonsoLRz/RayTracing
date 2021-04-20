@@ -14,14 +14,15 @@
 class Sphere: public Hittable
 {
 protected:
-	vec3	_center;
-	float	_radius;
+	vec3						_center;		//!<
+	std::shared_ptr<Material>	_material;		//!<
+	float						_radius;		//!<
 
 public:
 	/**
 	*	@brief Constructor. 
 	*/
-	Sphere(const vec3& center, float radius);
+	Sphere(const vec3& center, float radius, std::shared_ptr<Material> material);
 	
 	/**
 	*	@brief

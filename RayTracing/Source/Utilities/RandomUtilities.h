@@ -40,7 +40,7 @@ namespace RandomUtilities
 
 inline float RandomUtilities::getUniformRandom()
 {
-	static thread_local RandomNumberGenerator generator;
+	static RandomNumberGenerator generator;
 	static DoubleUniformDistribution distribution(.0f, 1.0f);
 
 	return distribution(generator);

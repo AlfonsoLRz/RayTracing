@@ -1,14 +1,18 @@
 #include "stdafx.h"
 #include "Material.h"
 
+#include "Graphics/Core/LambertianMaterial.h"
+#include "Graphics/Core/MaterialType.h"
+#include "Graphics/Core/MetalMaterial.h"
+
 // [Static members initialization]
 
-const float Material::SHININESS	= 2.0f;
+const MaterialTypeVector Material::MATERIAL_APPLICATOR = Material::buildMaterialApplicators();
 
 /// [Public methods]
 
 Material::Material(const vec3& albedo)
-	: _albedo(albedo), _shininess(SHININESS)
+	: _albedo(albedo), _shininess(1.0f), _materialType(MaterialType::LAMBERTIAN)
 {
 	for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
 	{
@@ -76,8 +80,21 @@ void Material::setTexture(const Texture::TextureTypes textureType, Texture* text
 
 /// [Protected methods]
 
+MaterialTypeVector Material::buildMaterialApplicators()
+{
+	MaterialTypeVector materialApplicators(MaterialType::NUM_MATERIAL_TYPES);
+
+	materialApplicators[MaterialType::LAMBERTIAN].reset(new LambertianMaterial());
+	materialApplicators[MaterialType::METAL].reset(new MetalMaterial());
+
+	return materialApplicators;
+}
+
 void Material::copyAttributes(const Material& material)
 {
+	this->_albedo = material._albedo;
+	this->_materialType = material._materialType;
+	
 	memcpy(&_texture, &material._texture, sizeof(material._texture));
 	this->_shininess = material._shininess;
 }
