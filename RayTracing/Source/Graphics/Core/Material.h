@@ -20,6 +20,7 @@ typedef std::vector<std::unique_ptr<MaterialType>> MaterialTypeVector;
 class Material
 {
 	friend class MaterialType;
+	friend class DielectricMaterial;
 	friend class LambertianMaterial;
 	friend class MetalMaterial;
 
@@ -30,6 +31,8 @@ protected:
 	// [Ray Tracing]
 	vec3		_albedo;
 	unsigned	_materialType;
+	float		_reflectionFuzz;											//!< Reflection noise disturbance
+	float		_refractionIndex;											//!< Refraction index
 
 	// [Old Features]
 	Texture*	_texture[Texture::NUM_TEXTURE_TYPES];						//!< Texture pointer for each type. Noone of them should exclude others
@@ -81,20 +84,30 @@ public:
 	/**
 	*	@brief  
 	*/
-	void setMaterialType(MaterialType::MaterialTypes type) { _materialType = type; }
+	Material* setMaterialType(MaterialType::MaterialTypes type);
+
+	/**
+	*	@brief  
+	*/
+	Material* setReflectionFuzz(const float fuzz);
+
+	/**
+	*	@brief  
+	*/
+	Material* setRefractionIndex(const float refractionIndex);
 	
 	/**
 	*	@brief Modifies the Phong exponent of material.
 	*	@param shininess New shininess exponent.
 	*/
-	void setShininess(const float shininess);
+	Material* setShininess(const float shininess);
 
 	/**
 	*	@brief Modifies the texture pointer for a certain type.
 	*	@param textureType Texture slot.
 	*	@param texture New texture.
 	*/
-	void setTexture(const Texture::TextureTypes textureType, Texture* texture);
+	Material* setTexture(const Texture::TextureTypes textureType, Texture* texture);
 
 	// ----- Getters ------
 

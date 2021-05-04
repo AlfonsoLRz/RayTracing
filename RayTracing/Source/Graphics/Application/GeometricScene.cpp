@@ -14,10 +14,10 @@ void GeometricScene::loadModels()
 	sphereCenter->setMaterialType(MaterialType::LAMBERTIAN);
 
 	Material* sphereLeft = new Material(vec3(.8f));
-	sphereLeft->setMaterialType(MaterialType::METAL);
+	sphereLeft->setMaterialType(MaterialType::DIELECTRIC)->setReflectionFuzz(.3f);
 
 	Material* sphereRight = new Material(vec3(.8f, .6f, .2f));
-	sphereRight->setMaterialType(MaterialType::METAL);
+	sphereRight->setMaterialType(MaterialType::METAL)->setReflectionFuzz(1.0f);
 
 	this->addObject(std::make_shared<Sphere>(vec3(.0f, -100.5f, -1.0f), 100.0f, std::shared_ptr<Material>(ground)));
 	this->addObject(std::make_shared<Sphere>(vec3(.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereCenter)));

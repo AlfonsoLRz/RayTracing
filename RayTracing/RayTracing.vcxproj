@@ -211,6 +211,7 @@
     <ClCompile Include="Source\Graphics\Core\CADModel.cpp" />
     <ClCompile Include="Source\Graphics\Core\Camera.cpp" />
     <ClCompile Include="Source\Graphics\Core\ComputeShader.cpp" />
+    <ClCompile Include="Source\Graphics\Core\DielectricMaterial.cpp" />
     <ClCompile Include="Source\Graphics\Core\FBO.cpp" />
     <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp" />
     <ClCompile Include="Source\Graphics\Core\FloatImage.cpp" />
@@ -267,6 +268,7 @@
     <ClInclude Include="Source\Graphics\Core\CGEnumerations.h" />
     <ClInclude Include="Source\Graphics\Core\CGStructs.h" />
     <ClInclude Include="Source\Graphics\Core\ComputeShader.h" />
+    <ClInclude Include="Source\Graphics\Core\DielectricMaterial.h" />
     <ClInclude Include="Source\Graphics\Core\FBO.h" />
     <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h" />
     <ClInclude Include="Source\Graphics\Core\FloatImage.h" />
