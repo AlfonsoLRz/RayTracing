@@ -3,8 +3,8 @@
 
 // [Public methods]
 
-Ray3D::Ray3D(const vec3& origin, const vec3& direction) :
-	_origin(origin), _direction(direction)
+Ray3D::Ray3D(const vec3& origin, const vec3& direction, float timestamp) :
+	_origin(origin), _direction(direction), _time(timestamp)
 {
 }
 

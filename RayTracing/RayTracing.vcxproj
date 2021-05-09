@@ -219,6 +219,7 @@
     <ClCompile Include="Source\Graphics\Core\Hittable.cpp" />
     <ClCompile Include="Source\Graphics\Core\LambertianMaterial.cpp" />
     <ClCompile Include="Source\Graphics\Core\MetalMaterial.cpp" />
+    <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp" />
     <ClCompile Include="Source\Graphics\Core\Sphere.cpp" />
     <ClCompile Include="Source\Graphics\Core\UnsignedImage.cpp" />
     <ClCompile Include="Source\Graphics\Core\Material.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="Source\Graphics\Core\LambertianMaterial.h" />
     <ClInclude Include="Source\Graphics\Core\MaterialType.h" />
     <ClInclude Include="Source\Graphics\Core\MetalMaterial.h" />
+    <ClInclude Include="Source\Graphics\Core\MovingSphere.h" />
     <ClInclude Include="Source\Graphics\Core\Sphere.h" />
     <ClInclude Include="Source\Graphics\Core\UnsignedImage.h" />
     <ClInclude Include="Source\Graphics\Core\Material.h" />

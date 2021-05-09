@@ -14,7 +14,7 @@ bool LambertianMaterial::scatter(Material* material, const Ray3D& ray, const Hit
 		scatterDirection = record._normal;
 	}
 
-	scattered = Ray3D(record._point, scatterDirection);
+	scattered = Ray3D(record._point, scatterDirection, ray.getTimestamp());
 	attenuation = material->_albedo;
 
 	return true;

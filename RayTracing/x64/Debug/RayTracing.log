@@ -1,2 +1,71 @@
-﻿  RayTracer.cpp
+﻿  Ray3D.cpp
+  CameraManager.cpp
+  GeometricScene.cpp
+  MaterialList.cpp
+  Renderer.cpp
+  Scene.cpp
+  CADModel.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  Camera.cpp
+  DielectricMaterial.cpp
+  FBO.cpp
+  FBOScreenshot.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  Group3D.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(81,27): warning C4244: '=': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(82,24): warning C4244: '=': conversión de 'double' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(117,35): warning C4244: 'argumento': conversión de 'float' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(131,37): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(185,39): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(222,45): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(223,46): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(237,44): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(242,69): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(250,66): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(296,32): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(296,21): warning C4244: 'inicializando': conversión de 'double' a 'const int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(297,23): warning C4244: 'inicializando': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(304,25): warning C4018: '<': no coinciden signed/unsigned
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(310,25): warning C4244: '=': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(358,41): warning C4244: 'inicializando': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(358,30): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(359,33): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(359,22): warning C4244: 'inicializando': conversión de 'double' a 'const int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(395,20): warning C4018: '<': no coinciden signed/unsigned
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(403,35): warning C4244: 'argumento': conversión de 'float' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(417,37): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(418,38): warning C4018: '<': no coinciden signed/unsigned
+  Hittable.cpp
+  LambertianMaterial.cpp
+  MetalMaterial.cpp
+  MovingSphere.cpp
+  Sphere.cpp
+  Material.cpp
+  Model3D.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Model3D.cpp(113,9): warning C4101: 'numIndices': variable local sin referencia
+  OpenGLUtilities.cpp
+  Generando código...
+  Compilando...
+  RayTracer.cpp
+  VAO.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(95,68): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(95,68): warning C4267: 'inicializando': conversión de 'size_t' a 'const int'; posible pérdida de datos
+  GUI.cpp
+  InputManager.cpp
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(259,39): warning C4244: 'argumento': conversión de 'double' a 'const float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(259,33): warning C4244: 'argumento': conversión de 'double' a 'const float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(272,23): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Window.cpp
+  Generando código...
+     Creando biblioteca D:\Github\RayTracing\x64\Debug\RayTracing.lib y objeto D:\Github\RayTracing\x64\Debug\RayTracing.exp
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Debug\RayTracing.exe

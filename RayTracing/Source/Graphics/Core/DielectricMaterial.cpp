@@ -26,7 +26,7 @@ bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hit
 		direction = glm::refract(unitDirection, record._normal, refractionRatio);
 	}
 
-	scattered = Ray3D(record._point, direction);
+	scattered = Ray3D(record._point, direction, ray.getTimestamp());
 
 	return true;
 }

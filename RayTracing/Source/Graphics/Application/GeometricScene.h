@@ -2,6 +2,8 @@
 
 #include "Graphics/Application/Scene.h"
 
+#define PROCEDURAL_SCENE true
+
 /**
 *	@file GeometricScene.h
 *	@authors Alfonso López Ruiz (alr00048@red.ujaen.es)
@@ -14,6 +16,16 @@
 class GeometricScene: public Scene
 {
 protected:
+	/**
+	*	@brief 
+	*/
+	void generateProceduralScene();
+
+	/**
+	*	@brief Defines cameras to visualize the scene.
+	*/
+	virtual void loadCameras();
+	
 	/**
 	*	@brief 
 	*/

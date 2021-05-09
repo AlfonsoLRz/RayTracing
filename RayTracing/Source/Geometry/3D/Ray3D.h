@@ -12,13 +12,14 @@
 class Ray3D
 {
 protected:
-	vec3 _origin, _direction;			//!< Variables for ray equation
+	vec3	_origin, _direction;		//!< Variables for ray equation
+	float	_time;						//!< Timestamp when ray was launched
 
 public:
 	/**
 	*	@brief Default constructor for a ray. 
 	*/
-	Ray3D(const vec3& origin, const vec3& direction);
+	Ray3D(const vec3& origin, const vec3& direction, float timestamp = .0f);
 
 	/**
 	*	@brief Point at parametric value t for ray equation.
@@ -36,5 +37,10 @@ public:
 	*	@return Direction of ray. 
 	*/
 	vec3 getDirection() const { return _direction; }
+
+	/**
+	*	@return Timestamp at when the ray was launched. 
+	*/
+	float getTimestamp() const { return _time; }
 };
 

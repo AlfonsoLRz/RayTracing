@@ -18,15 +18,18 @@ protected:
 	// [Fixed values: by default initialization]
 	const static vec3	EYE, LOOK_AT, UP;
 	const static float	ZNEAR, ZFAR;
-	const static float	FOV_X;
+	const static float	FOV_Y;
 
 protected:
 	// [Generic parameters]
 	float			_aspect;							//!< Ratio between width and height of field of view
 	vec3			_eye, _lookAt, _up;					//!< Look at call parameters
 	float			_focalLength;						//!<
+	float			_focusDistance;						//!<
+	float			_lensRadius;						//!< 
 	vec3			_lowerLeftCorner;					//!<
 	vec3			_n, _u, _v;							//!< Camera axes to apply movements
+	vec2			_timeFrame;							//!< Interval of time to simulate the shutter is open
 	vec3			_vertical, _horizontal;				//!<
 	float			_viewportWidth, _viewportHeight;	//!<
 	float			_zNear, _zFar;						//!< Boundaries in the camera z axis
@@ -34,8 +37,7 @@ protected:
 	Camera*			_backupCamera;						//!< Copy of the initial camera so the user can reset it anytime
 
 	// [Perspective parameters]
-	float			_fovY,								//!< Field of view (radians) in y axis
-					_fovX;								//!< Field of view (radians) in the x axis, just as the user chooses it. Saved only for interface purposes	
+	float			_fovY;								//!< Field of view (radians) in y axis
 
 protected:
 	/**
@@ -45,11 +47,6 @@ protected:
 	*	@param v y axis.
 	*/
 	void computeAxes(vec3& n, vec3& u, vec3& v);
-
-	/**
-	*	@brief Calculates the aperture angle in the y axis.
-	*/
-	float computeFovY();
 
 	/**
 	*	@brief Computes the lower left corner of our camera plane. 
@@ -86,6 +83,11 @@ public:
 	*	@param camera Camera to be cloned.
 	*/
 	Camera& operator=(const Camera& camera);
+
+	/**
+	*	@brief Builds camera-related parameters. 
+	*/
+	Camera* buildDescription();
 	
 	/// [Interface-adapted methods]
 
@@ -127,60 +129,63 @@ public:
 	/**
 	*	@brief Restores the values from the last saved camera.
 	*/
-	void reset();
+	Camera* reset();
 
 	/**
 	*	@brief Saves the current configuration so it can be the starting point of future resets.
 	*/
-	void saveCamera();
+	Camera* saveCamera();
 
 	/**
-	*	@brief Modifies the aperture angle of the camera on the x axis.
-	*	@param fovX Aperture angle on the x axis.
+	*	@brief 
+	*	@param aperture
 	*/
-	void setFovX(const float fovX);
+	Camera* setAperture(const float aperture);
 
 	/**
 	*	@brief Modifies the aperture angle of the camera on the y axis.
-	*	@param fovX Aperture angle on the x axis.
 	*/
-	void setFovY(const float fovY);
+	Camera* setFocusDistance(const float focusDistance);
+
+	/**
+	*	@brief Modifies the aperture angle of the camera on the y axis.
+	*/
+	Camera* setFovY(const float fovY);
 
 	/**
 	*	@brief Modifies the position where the camera looks at.
-	*	@param position New position where the camera looks at.
 	*/
-	void setLookAt(const vec3& position);
+	Camera* setLookAt(const vec3& position);
 
 	/**
 	*	@brief Modifies the position where the camera is placed.
-	*	@param position New position where the camera is placed.
 	*/
-	void setPosition(const vec3& position);
+	Camera* setPosition(const vec3& position);
 
 	/**
 	*	@brief Modifies the aspect of the view volume in x and y axes.
-	*	@param width Width of screen (persp) or width of canonical view volume (ortho).
-	*	@param height Height of screen (persp) or height of canonical view volume (ortho).
 	*/
-	void setRaspect(const uint16_t width, const uint16_t height);
+	Camera* setRaspect(const uint16_t width, const uint16_t height);
+
+	/**
+	*	@brief Modifies the time frame for generating rays. 
+	*/
+	Camera* setTimeFrame(const vec2 timeFrame);
 
 	/**
 	*	@brief Modifies the up vector.
 	*/
-	void setUp(const vec3& up);
+	Camera* setUp(const vec3& up);
 
 	/**
 	*	@brief Modifies the maximum z where the camera discards the scene.
-	*	@param zfar New value on the camera z axis.
 	*/
-	void setZFar(const float zfar);
+	Camera* setZFar(const float zfar);
 
 	/**
 	*	@brief Modifies the minimum z where the camera takes into account the scene.
-	*	@param znear New value on the camera z axis.
 	*/
-	void setZNear(const float znear);
+	Camera* setZNear(const float znear);
 
 	/// [Movements]
 

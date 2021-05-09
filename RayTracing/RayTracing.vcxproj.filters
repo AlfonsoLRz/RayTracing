@@ -285,6 +285,9 @@
     <ClCompile Include="Source\Graphics\Core\DielectricMaterial.cpp">
       <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
@@ -454,6 +457,9 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\DielectricMaterial.h">
       <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\MovingSphere.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

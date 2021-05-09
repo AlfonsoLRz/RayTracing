@@ -2,17 +2,18 @@
 #include "Camera.h"
 
 #include "Utilities/BasicOperations.h"
+#include "Utilities/RandomUtilities.h"
 
 // [ Static parameters initialization]
 
-const vec3 Camera::EYE					= vec3(0.0f, 0.0f, 0.0f);
-const vec3 Camera::LOOK_AT				= vec3(0.0f, 0.0f, -2.0f);
+const vec3 Camera::EYE					= vec3(-2.0f, 2.0f, 1.0f);
+const vec3 Camera::LOOK_AT				= vec3(0.0f, 0.0f, -1.0f);
 const vec3 Camera::UP					= vec3(0.0f, 1.0f, 0.0f);
 
 const float Camera::ZNEAR				= 0.1f;
 const float Camera::ZFAR				= 80.0f;
 
-const float Camera::FOV_X				= 80.0f * glm::pi<float>() / 180.0f;
+const float Camera::FOV_Y				= 20.0f;
 
 
 /// [Public methods]
@@ -26,16 +27,13 @@ Camera::Camera(const uint16_t width, const uint16_t height): _backupCamera(nullp
 	_zNear			= ZNEAR;
 	_zFar			= ZFAR;
 
+	_fovY			= glm::radians(FOV_Y);
 	_aspect			= float(width) / height;
-	_focalLength	= 1.0f;
-	_viewportHeight	= 2.0f;
-	_viewportWidth	= _viewportHeight * _aspect;
+	_focusDistance	= .0f;
+	_lensRadius		= .0f;
+	_timeFrame		= vec2(.0f);
 
-	_fovX			= FOV_X;
-	_fovY			= this->computeFovY();
-
-	this->computeAxes(_n, _u, _v);
-	this->computeLowerLeftCorner();
+	this->buildDescription();
 	this->saveCamera();
 }
 
@@ -59,70 +57,117 @@ Camera& Camera::operator=(const Camera& camera)
 	return *this;
 }
 
+Camera* Camera::buildDescription()
+{
+	float h = tan(_fovY / 2.0f);
+
+	_focalLength = 1.0f;
+	_viewportHeight = 2.0f * h;
+	_viewportWidth = _viewportHeight * _aspect;
+
+	this->computeAxes(_n, _u, _v);
+	this->computeLowerLeftCorner();
+
+	return this;
+}
+
 Ray3D Camera::getRay(float u, float v)
 {
-	return Ray3D(_eye, _lowerLeftCorner + u * _horizontal + v * _vertical - _eye);
+	vec3 randomDistance = _lensRadius * RandomUtilities::getUniformRandomInUnitDisk();
+	vec3 offset = randomDistance.x * _u + randomDistance.y * _v;
+	
+	return Ray3D(_eye + offset, _lowerLeftCorner + u * _horizontal + v * _vertical - _eye - offset, RandomUtilities::getUniformRandom(_timeFrame.x, _timeFrame.y));
 }
 
-void Camera::reset()
+Camera* Camera::reset()
 {
 	this->copyCameraAttributes(_backupCamera);
+
+	return this;
 }
 
-void Camera::saveCamera()
+Camera* Camera::saveCamera()
 {
 	delete _backupCamera;
 	_backupCamera = nullptr;
 	_backupCamera = new Camera(*this);
+
+	return this;
 }
 
-void Camera::setFovX(const float fovX)
+Camera* Camera::setAperture(const float aperture)
 {
-	_fovX = fovX;
-	_fovY = this->computeFovY();
+	_lensRadius = aperture / 2.0f;
+
+	return this;
 }
 
-void Camera::setFovY(const float fovY)
+Camera* Camera::setFocusDistance(const float focusDistance)
 {
-	_fovY = fovY;
+	_focusDistance = focusDistance;
+
+	return this;
 }
 
-void Camera::setLookAt(const vec3& position)
+Camera* Camera::setFovY(const float fovY)
+{
+	_fovY = glm::radians(fovY);
+	
+	return this;
+}
+
+Camera* Camera::setLookAt(const vec3& position)
 {
 	_lookAt = position;
-
 	this->computeAxes(_n, _u, _v);
+
+	return this;
 }
 
-void Camera::setPosition(const vec3& position)
+Camera* Camera::setPosition(const vec3& position)
 {
 	_eye = position;
-
 	this->computeAxes(_n, _u, _v);
+
+	return this;
 }
 
-void Camera::setRaspect(const uint16_t width, const uint16_t height)
+Camera* Camera::setRaspect(const uint16_t width, const uint16_t height)
 {
 	_aspect = float(width) / height;
 	_viewportWidth = _viewportHeight * _aspect;
 	this->computeLowerLeftCorner();
+
+	return this;
 }
 
-void Camera::setUp(const vec3& up)
+Camera* Camera::setTimeFrame(const vec2 timeFrame)
+{
+	_timeFrame = timeFrame;
+
+	return this;
+}
+
+Camera* Camera::setUp(const vec3& up)
 {
 	_up = up;
-
 	this->computeAxes(_n, _u, _v);
+
+	return this;
 }
 
-void Camera::setZFar(const float zfar)
+Camera* Camera::setZFar(const float zfar)
 {
 	_zFar = zfar;
+
+	return this;
 }
 
-void Camera::setZNear(const float znear)
+Camera* Camera::setZNear(const float znear)
 {
 	_zNear = znear;
+
+	return this;
 }
 
 // [Movements] 
@@ -225,7 +270,7 @@ void Camera::computeAxes(vec3& n, vec3& u, vec3& v)
 {
 	n = glm::normalize(_eye - _lookAt);							// z axis
 	
-	if (BasicOperations::equal(n,-_up))		// x axis: UP x n is 0 as both vectors are parallel. Since up and n are normalized we can check if they are equal (with epsilon checkup)
+	if (BasicOperations::equal(n,-_up))							// x axis: UP x n is 0 as both vectors are parallel. Since up and n are normalized we can check if they are equal (with epsilon checkup)
 	{
 		u = glm::normalize(glm::cross(vec3(0.0f, 0.0f, -1.0f), n));
 	}
@@ -237,19 +282,14 @@ void Camera::computeAxes(vec3& n, vec3& u, vec3& v)
 	{
 		u = glm::normalize(glm::cross(_up, n));
 	}
-	v = glm::normalize(glm::cross(n, u));					// y axis
-}
-
-float Camera::computeFovY()
-{
-	return 2.0f * glm::atan(glm::tan(_fovX / 2.0f) / _aspect);
+	v = glm::normalize(glm::cross(n, u));						// y axis
 }
 
 void Camera::computeLowerLeftCorner()
 {
-	_horizontal = vec3(_viewportWidth, .0f, .0f);
-	_vertical = vec3(.0f, _viewportHeight, .0f);
-	_lowerLeftCorner = _eye - _horizontal / 2.0f - _vertical / 2.0f - vec3(.0f, .0f, _focalLength);
+	_horizontal = _focusDistance * _viewportWidth * _u;
+	_vertical = _focusDistance * _viewportHeight * _v;
+	_lowerLeftCorner = _eye - _horizontal / 2.0f - _vertical / 2.0f - _focusDistance * _n;
 }
 
 void Camera::copyCameraAttributes(const Camera* camera)
@@ -274,7 +314,6 @@ void Camera::copyCameraAttributes(const Camera* camera)
 	this->_u				= camera->_u;
 	this->_v				= camera->_v;
 
-	this->_fovX				= camera->_fovX;
 	this->_fovY				= camera->_fovY;
 
 	if (camera->_backupCamera)
