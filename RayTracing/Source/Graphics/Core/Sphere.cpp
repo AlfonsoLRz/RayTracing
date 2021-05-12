@@ -7,6 +7,12 @@ Sphere::Sphere(const vec3& center, float radius, std::shared_ptr<Material> mater
 {
 }
 
+bool Sphere::getBoundingBox(float time0, float time1, AABB& aabb) const
+{
+	aabb = AABB(_center - vec3(_radius), _center + vec3(_radius));	
+	return true;
+}
+
 bool Sphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) const
 {
 	const vec3 oc = ray.getOrigin() - _center;

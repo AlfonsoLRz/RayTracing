@@ -23,6 +23,11 @@ public:
 	*	@brief Constructor. 
 	*/
 	Sphere(const vec3& center, float radius, std::shared_ptr<Material> material);
+
+	/**
+	*	@brief
+	*/
+	virtual bool getBoundingBox(float time0, float time1, AABB& aabb) const;
 	
 	/**
 	*	@brief

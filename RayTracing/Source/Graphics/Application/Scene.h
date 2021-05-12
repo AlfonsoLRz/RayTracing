@@ -95,6 +95,11 @@ public:
 	void clearObjects() { _hittableObjects.clear(); }
 
 	/**
+	*	@brief
+	*/
+	virtual bool getBoundingBox(float time0, float time1, AABB& aabb);
+
+	/**
 	*	@brief  
 	*/
 	virtual bool hit(const Ray3D& ray, float tMin, float tMax, Hittable::HitRecord& record);

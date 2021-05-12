@@ -8,6 +8,14 @@ MovingSphere::MovingSphere(const vec3& center01, const vec3& center02, float tim
 {
 }
 
+bool MovingSphere::getBoundingBox(float time0, float time1, AABB& aabb) const
+{
+	aabb = AABB(getCenter(time0) - vec3(_radius), getCenter(time0) + vec3(_radius));
+	aabb.update(AABB(getCenter(time1) - vec3(_radius), getCenter(time1) + vec3(_radius)));
+	
+	return true;
+}
+
 bool MovingSphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) const
 {
 	const vec3 center = getCenter(ray.getTimestamp());

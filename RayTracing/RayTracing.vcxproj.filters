@@ -145,6 +145,12 @@
     <Filter Include="Archivos de origen\Graphics\Core\ClassicOpenGL\Material">
       <UniqueIdentifier>{62e65101-7c76-4787-8ec7-5602b9a21ae0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Data Structures">
+      <UniqueIdentifier>{37206b20-0eeb-4071-9a5b-4f7a776bb4f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Data Structures">
+      <UniqueIdentifier>{d11d350b-ce76-48c9-81ed-c77687fee9c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -287,6 +293,9 @@
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DataStructures\BVH.cpp">
+      <Filter>Archivos de origen\Data Structures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -460,6 +469,9 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\MovingSphere.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DataStructures\BVH.h">
+      <Filter>Archivos de encabezado\Data Structures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

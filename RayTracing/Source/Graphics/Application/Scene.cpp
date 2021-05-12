@@ -33,6 +33,21 @@ void Scene::render(const mat4& mModel, RenderingParameters* rendParams)
 	Camera* activeCamera = _cameraManager->getActiveCamera();
 }
 
+bool Scene::getBoundingBox(float time0, float time1, AABB& aabb)
+{
+	if (_hittableObjects.empty()) return false;
+
+	AABB tempAABB;
+
+	for (std::shared_ptr<Hittable> object : _hittableObjects)
+	{
+		if (!object->getBoundingBox(time0, time1, tempAABB)) return false;
+		aabb.update(tempAABB);
+	}
+
+	return true;
+}
+
 bool Scene::hit(const Ray3D& ray, float tMin, float tMax, Hittable::HitRecord& record)
 {
 	Hittable::HitRecord tempRecord;

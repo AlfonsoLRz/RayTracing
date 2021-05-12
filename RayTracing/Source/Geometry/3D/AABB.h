@@ -6,6 +6,8 @@
 *	@date 08/05/2019
 */
 
+#include "Geometry/3D/Ray3D.h"
+
 /**
 *	@brief Axis-aligned bounding box.
 */
@@ -44,6 +46,11 @@ public:
 	*	@return Vector from center to maximum point. Maximum point - center.
 	*/
 	vec3 extent() const { return _max - center(); }
+
+	/**
+	*	@return True if the given ray collides with the AABB. 
+	*/
+	bool hit(const Ray3D& ray, float tMin, float tMax) const;
 
 	/**
 	*	@return Maximum point.

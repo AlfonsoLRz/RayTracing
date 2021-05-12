@@ -32,5 +32,10 @@ public:
 	/**
 	*	@brief
 	*/
+	virtual bool getBoundingBox(float time0, float time1, AABB& aabb) const;
+
+	/**
+	*	@brief
+	*/
 	virtual bool hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) const;
 };

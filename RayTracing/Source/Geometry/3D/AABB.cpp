@@ -25,6 +25,30 @@ AABB& AABB::operator=(const AABB& aabb)
 	return *this;
 }
 
+bool AABB::hit(const Ray3D& ray, float tMin, float tMax) const
+{
+	for (int a = 0; a < 3; ++a)
+	{
+		float invD = 1.0f / ray.getDirection()[a];
+		float t0 = (_min[a] - ray.getOrigin()[a]) * invD;
+		float t1 = (_max[a] - ray.getOrigin()[a]) * invD;
+
+		if (invD < .0f)
+		{
+			std::swap(t0, t1);
+		}
+
+		tMin = t0 > tMin ? t0 : tMin;
+		tMax = t1 < tMax ? t1 : tMax;
+		if (tMax <= tMin)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
 std::vector<AABB> AABB::split(const unsigned edgeDivisions) const
 {
 	std::vector<AABB> aabb;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Geometry/3D/AABB.h"
 #include "Geometry/3D/Ray3D.h"
 
 /**
@@ -31,6 +32,11 @@ public:
 	};
 
 public:
+	/**
+	*	@brief
+	*/
+	virtual bool getBoundingBox(float time0, float time1, AABB& aabb) const = 0;
+	
 	/**
 	*	@brief  
 	*/

@@ -2,7 +2,7 @@
 
 #include "Graphics/Application/Scene.h"
 
-#define PROCEDURAL_SCENE true
+#define PROCEDURAL_SCENE false
 
 /**
 *	@file GeometricScene.h
