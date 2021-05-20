@@ -43,6 +43,11 @@ namespace RandomUtilities
 	vec3 getUniformRandomInHemisphere(const vec3& normal);
 
 	/**
+	*	@return Random single integer value.
+	*/
+	int getUniformRandomInt(int min, int max);
+	
+	/**
 	*	@return Random point in unit disk.
 	*/
 	vec3 getUniformRandomInUnitDisk();
@@ -80,6 +85,11 @@ inline vec3 RandomUtilities::getUniformRandomInHemisphere(const vec3& normal)
 	vec3 unitSphere = getUniformRandomInUnitSphere();
 
 	return unitSphere * -1.0f * ((glm::dot(unitSphere, normal) > .0f) * 2.0f - 1.0f);
+}
+
+inline int RandomUtilities::getUniformRandomInt(int min, int max)
+{
+	return static_cast<int>(getUniformRandom(min, max));
 }
 
 inline vec3 RandomUtilities::getUniformRandomInUnitDisk()

@@ -43,6 +43,27 @@ protected:
 	{
 		AABB						_aabb;				//!<
 		std::shared_ptr<Hittable>	_left, _right;		//!< Pointers to children nodes
+
+	public:
+		/**
+		*	@brief
+		*/
+		static bool boxCompare(const std::shared_ptr<Hittable> h1, const std::shared_ptr<Hittable> h2, int axis);
+
+		/**
+		*	@brief
+		*/
+		static bool boxCompare_x(const std::shared_ptr<Hittable> h1, const std::shared_ptr<Hittable> h2);
+
+		/**
+		*	@brief
+		*/
+		static bool boxCompare_y(const std::shared_ptr<Hittable> h1, const std::shared_ptr<Hittable> h2);
+
+		/**
+		*	@brief
+		*/
+		static bool boxCompare_z(const std::shared_ptr<Hittable> h1, const std::shared_ptr<Hittable> h2);
 	
 	public:
 		/**
