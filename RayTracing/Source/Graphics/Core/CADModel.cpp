@@ -85,56 +85,57 @@ void CADModel::computeMeshData(ModelComponent* modelComp)
 
 Material* CADModel::createMaterial(ModelComponent* modelComp)
 {
-	static const std::string nullMaterialName = "None";
+	//static const std::string nullMaterialName = "None";
 
-	Material* material = MaterialList::getInstance()->getMaterial(CGApplicationEnumerations::MATERIAL_CAD_WHITE);
-	Model3D::ModelComponentDescription* modelDescription = &modelComp->_modelDescription;
-	std::string name = std::string(modelDescription->_materialName);
-	std::string mapKd = std::string(modelDescription->_mapKd);
-	std::string mapKs = std::string(modelDescription->_mapKs);
+	//Material* material = MaterialList::getInstance()->getMaterial(CGApplicationEnumerations::MATERIAL_CAD_WHITE);
+	//Model3D::ModelComponentDescription* modelDescription = &modelComp->_modelDescription;
+	//std::string name = std::string(modelDescription->_materialName);
+	//std::string mapKd = std::string(modelDescription->_mapKd);
+	//std::string mapKs = std::string(modelDescription->_mapKs);
 
-	if (!name.empty() && name != nullMaterialName)
-	{
-		auto itMaterial = _cadMaterials.find(name);
+	//if (!name.empty() && name != nullMaterialName)
+	//{
+	//	auto itMaterial = _cadMaterials.find(name);
 
-		if (itMaterial == _cadMaterials.end())
-		{
-			material = new Material();
-			Texture* kad, * ks;
+	//	if (itMaterial == _cadMaterials.end())
+	//	{
+	//		material = new Material();
+	//		Texture* kad, * ks;
 
-			if (!mapKd.empty())
-			{
-				kad = new Texture(_textureFolder + mapKd);
-			}
-			else
-			{
-				kad = new Texture(vec4(modelDescription->_kd, 1.0f));
-			}
+	//		if (!mapKd.empty())
+	//		{
+	//			kad = new Texture(_textureFolder + mapKd);
+	//		}
+	//		else
+	//		{
+	//			kad = new Texture(vec4(modelDescription->_kd, 1.0f));
+	//		}
 
-			if (!mapKs.empty())
-			{
-				ks = new Texture(_textureFolder + mapKs);
-			}
-			else
-			{
-				ks = new Texture(vec4(modelDescription->_ks, 1.0f));
-				material->setShininess(modelDescription->_ns);
-			}
+	//		if (!mapKs.empty())
+	//		{
+	//			ks = new Texture(_textureFolder + mapKs);
+	//		}
+	//		else
+	//		{
+	//			ks = new Texture(vec4(modelDescription->_ks, 1.0f));
+	//			material->setShininess(modelDescription->_ns);
+	//		}
 
-			material->setTexture(Texture::KAD_TEXTURE, kad);
-			material->setTexture(Texture::KS_TEXTURE, ks);
+	//		material->setTexture(Texture::KAD_TEXTURE, kad);
+	//		material->setTexture(Texture::KS_TEXTURE, ks);
 
-			_cadMaterials[name] = std::unique_ptr<Material>(material);
-			_cadTextures[name + "-kad"] = std::unique_ptr<Texture>(kad);
-			_cadTextures[name + "-ks"] = std::unique_ptr<Texture>(ks);
-		}
-		else
-		{
-			material = itMaterial->second.get();
-		}
-	}
+	//		_cadMaterials[name] = std::unique_ptr<Material>(material);
+	//		_cadTextures[name + "-kad"] = std::unique_ptr<Texture>(kad);
+	//		_cadTextures[name + "-ks"] = std::unique_ptr<Texture>(ks);
+	//	}
+	//	else
+	//	{
+	//		material = itMaterial->second.get();
+	//	}
+	//}
 
-	return material;
+	//return material;
+	return nullptr;
 }
 
 void CADModel::createModelComponent(objl::Mesh* mesh, ModelComponent* modelComp)

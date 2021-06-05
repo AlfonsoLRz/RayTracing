@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Graphics/Core/MaterialType.h"
+#include "Graphics/Core/Texture.h"
 
 /**
 *	@file LambertianMaterial.h

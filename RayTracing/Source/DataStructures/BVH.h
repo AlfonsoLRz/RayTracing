@@ -14,6 +14,7 @@
 */
 class BVH
 {
+protected:
 	class BVHNode;
 
 protected:

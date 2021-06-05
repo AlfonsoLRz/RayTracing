@@ -13,26 +13,26 @@ MaterialList::MaterialList()
 
 void MaterialList::createMaterial(const CGApplicationEnumerations::MaterialNames material)
 {
-	Material* pMaterial = new Material();
+	//Material* pMaterial = new Material();
 
-	for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
-	{
-		if (_materialSpecs[material]._texture[i] != -1)
-		{
-			pMaterial->setTexture(static_cast<Texture::TextureTypes>(i), TextureList::getInstance()->getTexture(static_cast<CGApplicationEnumerations::TextureNames>(_materialSpecs[material]._texture[i])));
-		}
-	}
+	//for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
+	//{
+	//	if (_materialSpecs[material]._texture[i] != -1)
+	//	{
+	//		pMaterial->setTexture(static_cast<Texture::TextureTypes>(i), TextureList::getInstance()->getTexture(static_cast<CGApplicationEnumerations::TextureNames>(_materialSpecs[material]._texture[i])));
+	//	}
+	//}
 
-	pMaterial->setShininess(_materialSpecs[material]._shininess);
+	//pMaterial->setShininess(_materialSpecs[material]._shininess);
 
-	_material[material].reset(pMaterial);
+	//_material[material].reset(pMaterial);
 }
 
 void MaterialList::defineMaterials()
 {
-	_materialSpecs[CGApplicationEnumerations::MATERIAL_CAD_WHITE]._texture[Texture::KAD_TEXTURE] = CGApplicationEnumerations::TEXTURE_WHITE;
-	_materialSpecs[CGApplicationEnumerations::MATERIAL_CAD_WHITE]._texture[Texture::KS_TEXTURE] = CGApplicationEnumerations::TEXTURE_BLACK;
-	_materialSpecs[CGApplicationEnumerations::MATERIAL_CAD_WHITE]._shininess = 100.0f;
+	//_materialSpecs[CGApplicationEnumerations::MATERIAL_CAD_WHITE]._texture[Texture::KAD_TEXTURE] = CGApplicationEnumerations::TEXTURE_WHITE;
+	//_materialSpecs[CGApplicationEnumerations::MATERIAL_CAD_WHITE]._texture[Texture::KS_TEXTURE] = CGApplicationEnumerations::TEXTURE_BLACK;
+	//_materialSpecs[CGApplicationEnumerations::MATERIAL_CAD_WHITE]._shininess = 100.0f;
 }
 
 /// [Public methods]

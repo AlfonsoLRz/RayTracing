@@ -13,12 +13,16 @@ const MaterialTypeVector Material::MATERIAL_APPLICATOR = Material::buildMaterial
 /// [Public methods]
 
 Material::Material(const vec3& albedo)
-	: _albedo(albedo), _shininess(1.0f), _materialType(MaterialType::LAMBERTIAN), _reflectionFuzz(.0f), _refractionIndex(1.5f)
+	: _shininess(1.0f), _materialType(MaterialType::LAMBERTIAN),
+	  _reflectionFuzz(.0f), _refractionIndex(1.5f)
 {
-	for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
-	{
-		_texture[i] = nullptr;
-	}
+	_albedoTexture.reset(new SolidColor(albedo));
+}
+
+Material::Material(std::shared_ptr<Texture> albedo) :
+	_albedoTexture(albedo), _shininess(1.0f), _materialType(MaterialType::LAMBERTIAN),
+	_reflectionFuzz(.0f), _refractionIndex(1.5f)
+{
 }
 
 Material::Material(const Material& material)
@@ -31,42 +35,6 @@ Material& Material::operator=(const Material& material)
 	this->copyAttributes(material);
 
 	return *this;
-}
-
-void Material::applyMaterial(RenderingShader* shader)
-{
-	if (_texture[Texture::KAD_TEXTURE])
-	{
-		_texture[Texture::KAD_TEXTURE]->applyTexture(shader, Texture::KAD_TEXTURE);
-	}
-
-	if (_texture[Texture::KS_TEXTURE])
-	{
-		shader->setUniform("shininess", _shininess);
-
-		_texture[Texture::KS_TEXTURE]->applyTexture(shader, Texture::KS_TEXTURE);
-	}
-
-	if (_texture[Texture::SEMI_TRANSPARENT_TEXTURE])
-	{
-		shader->setSubroutineUniform(GL_FRAGMENT_SHADER, "semiTransparentUniform", "semiTransparentTexture");
-
-		_texture[Texture::SEMI_TRANSPARENT_TEXTURE]->applyTexture(shader, Texture::SEMI_TRANSPARENT_TEXTURE);
-	}
-	else
-	{
-		shader->setSubroutineUniform(GL_FRAGMENT_SHADER, "semiTransparentUniform", "noSemiTransparentTexture");
-	}
-
-	shader->applyActiveSubroutines();
-}
-
-void Material::applyTexture(ShaderProgram* shader, const Texture::TextureTypes textureType)
-{
-	if (_texture[textureType])
-	{
-		_texture[textureType]->applyTexture(shader, textureType);
-	}
 }
 
 Material* Material::setMaterialType(MaterialType::MaterialTypes type)
@@ -97,13 +65,6 @@ Material* Material::setShininess(const float shininess)
 	return this;
 }
 
-Material* Material::setTexture(const Texture::TextureTypes textureType, Texture* texture)
-{
-	_texture[textureType] = texture;
-
-	return this;
-}
-
 /// [Protected methods]
 
 MaterialTypeVector Material::buildMaterialApplicators()
@@ -122,6 +83,6 @@ void Material::copyAttributes(const Material& material)
 	this->_albedo = material._albedo;
 	this->_materialType = material._materialType;
 	
-	memcpy(&_texture, &material._texture, sizeof(material._texture));
+	//memcpy(&_texture, &material._texture, sizeof(material._texture));
 	this->_shininess = material._shininess;
 }

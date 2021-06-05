@@ -24,6 +24,7 @@ public:
 		vec3						_normal;		//!<
 		vec3						_point;			//!<
 		float						_t;				//!<
+		vec2						_uv;			//!< Texture coordinates
 
 		/**
 		*	@brief  

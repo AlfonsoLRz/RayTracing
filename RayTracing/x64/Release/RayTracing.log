@@ -1,16 +1,13 @@
-﻿  BVH.cpp
-D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.h(42,15): warning C4240: se ha utilizado una extensión no estándar: se ha definido el acceso a 'BVH::BVHNode' como 'protected'; antes estaba definido como 'private'
-D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.h(17): message : vea la declaración de 'BVH::BVHNode'
+﻿  GeometricScene.cpp
 D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(10,89): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
-D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(57,37): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
-D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(80,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
-D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(80,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Renderer.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
      Creando biblioteca D:\Github\RayTracing\x64\Release\RayTracing.lib y objeto D:\Github\RayTracing\x64\Release\RayTracing.exp
   Generando código
-  0 of 5058 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  148 of 4950 functions ( 3.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    107 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Release\RayTracing.exe

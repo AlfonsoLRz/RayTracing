@@ -4,7 +4,7 @@
 FloatImage::FloatImage(const uint16_t width, const uint16_t height, const uint8_t depth) : Image(width, height, depth), _texture(nullptr), _ssboID(0)
 {
 	_image = std::vector<float>(width * height * depth);
-	_texture = new Texture(_image.data(), width, height, true, GL_CLAMP, GL_CLAMP, GL_NEAREST, GL_NEAREST);
+	_texture = new OpenGLTexture(_image.data(), width, height, true, GL_CLAMP, GL_CLAMP, GL_NEAREST, GL_NEAREST);
 	_ssboID = ComputeShader::setReadBuffer(_image.data(), _image.size(), GL_DYNAMIC_DRAW);
 }
 

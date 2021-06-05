@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Graphics/Core/Image.h"
-#include "Graphics/Core/Texture.h"
+#include "Graphics/Core/OpenGLTexture.h"
 
 /**
 *	@file UnsignedImage.h
@@ -15,8 +15,8 @@
 class FloatImage: public Image<float>
 {
 protected:
-	GLuint		_ssboID;		//!<
-	Texture*	_texture;		//!<
+	GLuint			_ssboID;		//!<
+	OpenGLTexture*	_texture;		//!<
 
 protected:
 
@@ -49,6 +49,6 @@ public:
 	/**
 	*	@return Texture with pixel values of float image. 
 	*/
-	Texture* getTexture() { return _texture; }
+	OpenGLTexture* getTexture() { return _texture; }
 };
 

@@ -110,7 +110,6 @@ bool Model3D::writeToBinary(const std::string& filename)
 		return false;
 	}
 
-	size_t numIndices;
 	const size_t numModelComps = _modelComp.size();
 	fout.write((char*)&numModelComps, sizeof(size_t));
 

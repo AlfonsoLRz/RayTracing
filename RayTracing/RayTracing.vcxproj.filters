@@ -139,17 +139,23 @@
     <Filter Include="Archivos de origen\Graphics\Core\ClassicOpenGL\Camera">
       <UniqueIdentifier>{96b7d802-749c-480b-a9ab-d336424b4230}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material">
-      <UniqueIdentifier>{0c4e17c8-bf64-4441-b9ab-95cd60b19e62}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Archivos de origen\Graphics\Core\ClassicOpenGL\Material">
-      <UniqueIdentifier>{62e65101-7c76-4787-8ec7-5602b9a21ae0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Archivos de encabezado\Data Structures">
       <UniqueIdentifier>{37206b20-0eeb-4071-9a5b-4f7a776bb4f0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Archivos de origen\Data Structures">
       <UniqueIdentifier>{d11d350b-ce76-48c9-81ed-c77687fee9c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\RayTracing\Material">
+      <UniqueIdentifier>{0c4e17c8-bf64-4441-b9ab-95cd60b19e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\RayTracing\Material">
+      <UniqueIdentifier>{62e65101-7c76-4787-8ec7-5602b9a21ae0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\RayTracing\Texture">
+      <UniqueIdentifier>{16b3f76a-db5e-4fa4-8dbd-ae59327c1197}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\RayTracing\Texture">
+      <UniqueIdentifier>{f4bf8cfb-91e1-430b-abe5-f202c5ea4510}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -243,14 +249,8 @@
     <ClCompile Include="Source\Graphics\Core\FBOScreenshot.cpp">
       <Filter>Archivos de origen\Graphics\Core\FBO</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\FloatImage.cpp">
-      <Filter>Archivos de origen\Graphics\Core\Image</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Core\UnsignedImage.cpp">
       <Filter>Archivos de origen\Graphics\Core\Image</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Texture.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\RayTracer.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
@@ -280,22 +280,34 @@
       <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\LambertianMaterial.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Material.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\MetalMaterial.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\DielectricMaterial.cpp">
-      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
     </ClCompile>
     <ClCompile Include="Source\DataStructures\BVH.cpp">
       <Filter>Archivos de origen\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\FloatImage.cpp">
+      <Filter>Archivos de origen\Graphics\Core\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Texture.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Material.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\OpenGLTexture.cpp">
+      <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\ImageTexture.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Texture</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -404,9 +416,6 @@
     <ClInclude Include="Source\Graphics\Core\Image.h">
       <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\FloatImage.h">
-      <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Graphics\Core\UnsignedImage.h">
       <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
     </ClInclude>
@@ -415,9 +424,6 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\FBOScreenshot.h">
       <Filter>Archivos de encabezado\Graphics\Core\FBO</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Texture.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\RayTracer.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
@@ -452,26 +458,38 @@
     <ClInclude Include="Source\Utilities\RandomUtilities.h">
       <Filter>Archivos de encabezado\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Material.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Graphics\Core\MaterialType.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\LambertianMaterial.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\MetalMaterial.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\DielectricMaterial.h">
-      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL\Material</Filter>
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\MovingSphere.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
     </ClInclude>
     <ClInclude Include="Source\DataStructures\BVH.h">
       <Filter>Archivos de encabezado\Data Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\FloatImage.h">
+      <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Texture.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Material.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\OpenGLTexture.h">
+      <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\ImageTexture.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

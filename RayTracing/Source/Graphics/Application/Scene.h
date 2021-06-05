@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DataStructures/BVH.h"
 #include "Graphics/Application/CameraManager.h"
 #include "Graphics/Application/MaterialList.h"
 #include "Graphics/Application/RenderingParameters.h"
@@ -27,6 +28,7 @@ protected:
 	Group3D*							_sceneGroup;					//!< Model wrapper
 
 	// [Hittable list]
+	std::unique_ptr<BVH> _bvh;											//!<
 	std::vector<std::shared_ptr<Hittable>> _hittableObjects;			//!< 
 
 protected:

@@ -18,6 +18,12 @@ protected:
 	std::shared_ptr<Material>	_material;		//!<
 	float						_radius;		//!<
 
+protected:
+	/**
+	*	@brief Textures coordinates of a point based on theta and phi. 
+	*/
+	static vec2 getUV(const vec3& point);
+
 public:
 	/**
 	*	@brief Constructor. 

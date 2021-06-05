@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "GeometricScene.h"
 
+#include "Graphics/Core/ImageTexture.h"
 #include "Graphics/Core/MovingSphere.h"
 #include "Graphics/Core/Sphere.h"
 
@@ -10,7 +11,7 @@ void GeometricScene::generateProceduralScene()
 {
 	float matProbs[] = { .8f, .95f, 1.0f };
 	
-	Material* ground = (new Material(vec3(.5f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	Material* ground = (new Material(std::make_shared<CheckerTexture>(vec3(1.0f), vec3(.0f))))->setMaterialType(MaterialType::LAMBERTIAN);
 	this->addObject(std::make_shared<Sphere>(vec3(.0f, -1000.0f, .0f), 1000.0f, std::shared_ptr<Material>(ground)));
 
 	Material* sphere1 = (new Material(vec3(.0f)))->setMaterialType(MaterialType::DIELECTRIC)->setRefractionIndex(1.5f);
@@ -19,7 +20,7 @@ void GeometricScene::generateProceduralScene()
 	Material* sphere2 = (new Material(vec3(.4f, .2f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
 	this->addObject(std::make_shared<Sphere>(vec3(-4.0f, 1.0f, .0f), 1.0f, std::shared_ptr<Material>(sphere2)));
 
-	Material* sphere3 = (new Material(vec3(.7f, .6f, .5f)))->setMaterialType(MaterialType::METAL)->setReflectionFuzz(.0f);
+	Material* sphere3 = (new Material(std::make_shared<ImageTexture>(ImageTexture("Assets/Images/Checker/GGGJ.png"))))->setMaterialType(MaterialType::METAL)->setReflectionFuzz(.0f);
 	this->addObject(std::make_shared<Sphere>(vec3(4.0f, 1.0f, .0f), 1.0f, std::shared_ptr<Material>(sphere3)));
 
 	for (int a = -11; a < 11; ++a)

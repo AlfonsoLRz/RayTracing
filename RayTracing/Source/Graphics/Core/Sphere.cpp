@@ -44,6 +44,17 @@ bool Sphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) con
 	
 	vec3 outwardNormal = (hit._point - _center) / _radius;
 	hit.setFaceNormal(ray, outwardNormal);
+	hit._uv = getUV(outwardNormal);
 
 	return true;
+}
+
+// [Protected methods]
+
+vec2 Sphere::getUV(const vec3& point)
+{
+	float theta = std::acos(-point.y);
+	float phi = std::atan2(-point.z, point.x) + glm::pi<float>();
+
+	return vec2(phi / (2.0f * glm::pi<float>()), theta / glm::pi<float>());
 }

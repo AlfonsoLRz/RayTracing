@@ -21,6 +21,9 @@ void Scene::load()
 	this->loadCameras();
 	this->loadLights();
 	this->loadModels();
+
+	// Instance BVH from loaded models
+	_bvh = std::make_unique<BVH>(BVH(_hittableObjects, .0f, 1.0f));
 }
 
 void Scene::modifySize(const uint16_t width, const uint16_t height)
@@ -51,18 +54,7 @@ bool Scene::getBoundingBox(float time0, float time1, AABB& aabb)
 bool Scene::hit(const Ray3D& ray, float tMin, float tMax, Hittable::HitRecord& record)
 {
 	Hittable::HitRecord tempRecord;
-	bool hitAnything = false;
-	float closest = tMax;
-
-	for (std::shared_ptr<Hittable> object: _hittableObjects)
-	{
-		if (object->hit(ray, tMin, closest, tempRecord))
-		{
-			hitAnything = true;
-			closest = tempRecord._t;
-			record = tempRecord;
-		}
-	}
+	bool hitAnything = _bvh->hit(ray, tMin, tMax, record);
 
 	return hitAnything;
 }

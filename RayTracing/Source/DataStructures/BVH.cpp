@@ -7,7 +7,7 @@
 
 BVH::BVH(std::vector<std::shared_ptr<Hittable>>& objects, float time0, float time1)
 {
-	_root = std::make_unique<BVHNode>(BVHNode(objects, 0, objects.size() - 1, time0, time1));
+	_root = std::make_unique<BVHNode>(BVHNode(objects, 0, objects.size(), time0, time1));
 }
 
 bool BVH::getBoundingBox(float time0, float time1, AABB& aabb)
@@ -53,8 +53,8 @@ BVH::BVHNode::BVHNode(std::vector<std::shared_ptr<Hittable>>& objects, unsigned 
 	}
 	else
 	{
-		std::sort(objectsCopy.begin() + start, objectsCopy.end() + end, comparator);
-		int mid = (start + objectSpan) / 2;
+		std::sort(objectsCopy.begin() + start, objectsCopy.begin() + end, comparator);
+		int mid = start + objectSpan / 2;
 
 		_left = std::make_shared<BVHNode>(BVHNode(objectsCopy, start, mid, time0, time1));
 		_right = std::make_shared<BVHNode>(BVHNode(objectsCopy, mid, end, time0, time1));
@@ -83,7 +83,7 @@ bool BVH::BVHNode::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hi
 	}
 
 	bool hitLeft = _left->hit(ray, tMin, tMax, hit);
-	bool hitRight = _right->hit(ray, tMin, tMax, hit);
+	bool hitRight = _right->hit(ray, tMin, hitLeft ? hit._t : tMax, hit);
 
 	return hitLeft || hitRight;
 }

@@ -16,7 +16,7 @@ RayTracer::~RayTracer()
 void RayTracer::renderFrame()
 {
 	VAO* quadVAO = OpenGLPrimitives::getQuadVAO();
-	Texture* image = _rayTracingImage->getTexture();
+	OpenGLTexture* image = _rayTracingImage->getTexture();
 
 	this->drawDebugTexture();
 	_rayTracingImage->updateRenderingBuffers();

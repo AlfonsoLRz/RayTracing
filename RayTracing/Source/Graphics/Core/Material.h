@@ -25,18 +25,18 @@ class Material
 	friend class MetalMaterial;
 
 protected:
-	const static MaterialTypeVector MATERIAL_APPLICATOR;					//!< 
+	const static MaterialTypeVector MATERIAL_APPLICATOR;		//!< 
 
 protected:
 	// [Ray Tracing]
-	vec3		_albedo;
-	unsigned	_materialType;
-	float		_reflectionFuzz;											//!< Reflection noise disturbance
-	float		_refractionIndex;											//!< Refraction index
+	vec3						_albedo;						//!< 
+	std::shared_ptr<Texture>	_albedoTexture;					//!< 
+	unsigned					_materialType;					//!< 
+	float						_reflectionFuzz;				//!< Reflection noise disturbance
+	float						_refractionIndex;				//!< Refraction index
 
 	// [Old Features]
-	Texture*	_texture[Texture::NUM_TEXTURE_TYPES];						//!< Texture pointer for each type. Noone of them should exclude others
-	float		_shininess;													//!< Phong exponent for specular reflection	
+	float						_shininess;						//!< Phong exponent for specular reflection	
 
 protected:
 	/**
@@ -57,6 +57,11 @@ public:
 	Material(const vec3& albedo = vec3(.0f));
 
 	/**
+	*	@brief Default constructor.
+	*/
+	Material(std::shared_ptr<Texture> albedo);
+
+	/**
 	*	@brief Copy constructor.
 	*	@param material Parameters source.
 	*/
@@ -67,17 +72,6 @@ public:
 	*	@param material Parameters source.
 	*/
 	Material& operator=(const Material& material);
-
-	/**
-	*	@brief Specifies the values of uniform variables from the shader.
-	*	@param shader Destiny of values to be specified.
-	*/
-	void applyMaterial(RenderingShader* shader);
-
-	/**
-	*	@brief Applies individual textures. 
-	*/
-	void applyTexture(ShaderProgram* shader, const Texture::TextureTypes textureType);
 
 	// ----- Setters ------
 	
@@ -102,13 +96,6 @@ public:
 	*/
 	Material* setShininess(const float shininess);
 
-	/**
-	*	@brief Modifies the texture pointer for a certain type.
-	*	@param textureType Texture slot.
-	*	@param texture New texture.
-	*/
-	Material* setTexture(const Texture::TextureTypes textureType, Texture* texture);
-
 	// ----- Getters ------
 
 	/**
@@ -119,7 +106,7 @@ public:
 public:
 	struct MaterialSpecs
 	{
-		int16_t _texture[Texture::NUM_TEXTURE_TYPES];
+		//int16_t _texture[Texture::NUM_TEXTURE_TYPES];
 		float _shininess;
 
 		/**
@@ -127,10 +114,10 @@ public:
 		*/
 		MaterialSpecs()
 		{
-			for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
-			{
-				_texture[i] = -1;
-			}
+			//for (int i = 0; i < Texture::NUM_TEXTURE_TYPES; ++i)
+			//{
+			//	_texture[i] = -1;
+			//}
 
 			_shininess = 1.0f;
 		}
