@@ -2,7 +2,8 @@
 
 #include "Graphics/Application/Scene.h"
 
-#define PROCEDURAL_SCENE true
+#define PROCEDURAL_SCENE false
+#define EMISSION_SCENE true
 
 /**
 *	@file GeometricScene.h
@@ -16,6 +17,11 @@
 class GeometricScene: public Scene
 {
 protected:
+	/**
+	*	@brief
+	*/
+	void generateEmissionScene();
+	
 	/**
 	*	@brief 
 	*/

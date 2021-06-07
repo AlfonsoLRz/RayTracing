@@ -32,6 +32,9 @@ public:
 		void setFaceNormal(const Ray3D& ray, const vec3& outwardNormal);
 	};
 
+protected:
+	std::shared_ptr<Material>	_material;		//!<
+
 public:
 	/**
 	*	@brief

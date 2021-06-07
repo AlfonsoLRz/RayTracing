@@ -21,6 +21,7 @@ class Material
 {
 	friend class MaterialType;
 	friend class DielectricMaterial;
+	friend class DiffuseLightMaterial;
 	friend class LambertianMaterial;
 	friend class MetalMaterial;
 
@@ -28,9 +29,9 @@ protected:
 	const static MaterialTypeVector MATERIAL_APPLICATOR;		//!< 
 
 protected:
-	// [Ray Tracing]
-	vec3						_albedo;						//!< 
-	std::shared_ptr<Texture>	_albedoTexture;					//!< 
+	// [Ray Tracing] 
+	std::shared_ptr<Texture>	_albedoTexture;					//!<
+	std::shared_ptr<Texture>	_emissionTexture;				//!<
 	unsigned					_materialType;					//!< 
 	float						_reflectionFuzz;				//!< Reflection noise disturbance
 	float						_refractionIndex;				//!< Refraction index

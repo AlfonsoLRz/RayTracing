@@ -157,6 +157,12 @@
     <Filter Include="Archivos de origen\Graphics\Core\RayTracing\Texture">
       <UniqueIdentifier>{f4bf8cfb-91e1-430b-abe5-f202c5ea4510}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\RayTracing\Models">
+      <UniqueIdentifier>{bce401ce-0a3f-4b24-8bd6-f914da043c82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\RayTracing\Models">
+      <UniqueIdentifier>{0b2b5eb8-a9a0-4682-b7df-3f289f69d298}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -273,12 +279,6 @@
     <ClCompile Include="Source\Geometry\3D\Ray3D.cpp">
       <Filter>Archivos de origen\Geometry\3D</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Hittable.cpp">
-      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Sphere.cpp">
-      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Core\LambertianMaterial.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
     </ClCompile>
@@ -288,26 +288,41 @@
     <ClCompile Include="Source\Graphics\Core\DielectricMaterial.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp">
-      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
-    </ClCompile>
     <ClCompile Include="Source\DataStructures\BVH.cpp">
       <Filter>Archivos de origen\Data Structures</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\FloatImage.cpp">
       <Filter>Archivos de origen\Graphics\Core\Image</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Texture.cpp">
-      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Material.cpp">
-      <Filter>Archivos de origen\Graphics\Core\RayTracing</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Core\OpenGLTexture.cpp">
       <Filter>Archivos de origen\Graphics\Core\ClassicOpenGL</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphics\Core\ImageTexture.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\DiffuseLightMaterial.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Material.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Texture.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\MaterialType.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Hittable.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Rectangle.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Sphere.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -449,12 +464,6 @@
     <ClInclude Include="Source\Geometry\3D\Ray3D.h">
       <Filter>Archivos de encabezado\Geometry\3D</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Hittable.h">
-      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Sphere.h">
-      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Utilities\RandomUtilities.h">
       <Filter>Archivos de encabezado\Utilities</Filter>
     </ClInclude>
@@ -470,26 +479,38 @@
     <ClInclude Include="Source\Graphics\Core\DielectricMaterial.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\MovingSphere.h">
-      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
-    </ClInclude>
     <ClInclude Include="Source\DataStructures\BVH.h">
       <Filter>Archivos de encabezado\Data Structures</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\FloatImage.h">
       <Filter>Archivos de encabezado\Graphics\Core\Image</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Texture.h">
-      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Graphics\Core\Material.h">
-      <Filter>Archivos de encabezado\Graphics\Core\RayTracing</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Graphics\Core\OpenGLTexture.h">
       <Filter>Archivos de encabezado\Graphics\Core\ClassicOpenGL</Filter>
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\ImageTexture.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\DiffuseLightMaterial.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\MovingSphere.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Rectangle.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Sphere.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Hittable.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Texture.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\Material.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

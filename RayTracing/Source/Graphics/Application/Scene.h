@@ -24,12 +24,12 @@ class Scene
 {
 protected:
 	// [General scene]
-	std::unique_ptr<CameraManager>		_cameraManager;					//!< Contains the cameras of this scene
-	Group3D*							_sceneGroup;					//!< Model wrapper
+	std::unique_ptr<CameraManager>			_cameraManager;					//!< Contains the cameras of this scene
+	Group3D*								_sceneGroup;					//!< Model wrapper
 
 	// [Hittable list]
-	std::unique_ptr<BVH> _bvh;											//!<
-	std::vector<std::shared_ptr<Hittable>> _hittableObjects;			//!< 
+	std::unique_ptr<BVH>					_bvh;							//!<
+	std::vector<std::shared_ptr<Hittable>>	_hittableObjects;				//!< 
 
 protected:
 	// --------------- Load ----------------

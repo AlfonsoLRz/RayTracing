@@ -20,9 +20,14 @@ class Material;
 class MaterialType
 {
 public:
-	enum MaterialTypes { LAMBERTIAN, METAL, DIELECTRIC, NUM_MATERIAL_TYPES };
+	enum MaterialTypes { LAMBERTIAN, METAL, DIELECTRIC, DIFFUSE_LIGHT, NUM_MATERIAL_TYPES };
 
 public:
+	/**
+	*	@brief Emission for emissive materials. 
+	*/
+	virtual vec3 emit(Material* material, const vec2& uv, const vec3& point) const;
+	
 	/**
 	*	@brief
 	*/

@@ -2,6 +2,7 @@
 #include "Material.h"
 
 #include "Graphics/Core/DielectricMaterial.h"
+#include "Graphics/Core/DiffuseLightMaterial.h"
 #include "Graphics/Core/LambertianMaterial.h"
 #include "Graphics/Core/MaterialType.h"
 #include "Graphics/Core/MetalMaterial.h"
@@ -74,13 +75,14 @@ MaterialTypeVector Material::buildMaterialApplicators()
 	materialApplicators[MaterialType::LAMBERTIAN].reset(new LambertianMaterial());
 	materialApplicators[MaterialType::METAL].reset(new MetalMaterial());
 	materialApplicators[MaterialType::DIELECTRIC].reset(new DielectricMaterial());
+	materialApplicators[MaterialType::DIFFUSE_LIGHT].reset(new DiffuseLightMaterial());
 
 	return materialApplicators;
 }
 
 void Material::copyAttributes(const Material& material)
 {
-	this->_albedo = material._albedo;
+	this->_albedoTexture = material._albedoTexture;
 	this->_materialType = material._materialType;
 	
 	//memcpy(&_texture, &material._texture, sizeof(material._texture));

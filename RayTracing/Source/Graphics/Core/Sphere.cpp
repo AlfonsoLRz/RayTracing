@@ -3,8 +3,9 @@
 
 // [Public methods]
 
-Sphere::Sphere(const vec3& center, float radius, std::shared_ptr<Material> material) : _center(center), _material(material), _radius(radius)
+Sphere::Sphere(const vec3& center, float radius, std::shared_ptr<Material> material) : _center(center), _radius(radius)
 {
+	this->_material = material;
 }
 
 bool Sphere::getBoundingBox(float time0, float time1, AABB& aabb) const

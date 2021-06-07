@@ -15,7 +15,6 @@ class Sphere: public Hittable
 {
 protected:
 	vec3						_center;		//!<
-	std::shared_ptr<Material>	_material;		//!<
 	float						_radius;		//!<
 
 protected:

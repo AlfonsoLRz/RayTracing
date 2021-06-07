@@ -26,8 +26,9 @@ class RayTracer : public Singleton<RayTracer>
 	friend class Singleton<RayTracer>;
 
 protected:
-	const vec3 BACKGROUND_INTERP_COLOR_01 = vec3(1.0f);
-	const vec3 BACKGROUND_INTERP_COLOR_02 = vec3(0.5f, 0.7f, 1.0f);
+	const vec3 BACKGROUND_COLOR				= vec3(.0f);
+	const vec3 BACKGROUND_INTERP_COLOR_01	= vec3(1.0f);
+	const vec3 BACKGROUND_INTERP_COLOR_02	= vec3(0.5f, 0.7f, 1.0f);
 
 protected:
 	// [Rendering]
@@ -54,7 +55,7 @@ protected:
 	/**
 	*	@brief  
 	*/
-	vec3 getRayColor(const Ray3D& ray, Scene* scene, int depth);
+	vec3 getRayColor(const Ray3D& ray, const vec3& background, Scene* scene, int depth);
 
 public:
 	/**

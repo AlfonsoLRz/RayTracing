@@ -71,7 +71,7 @@ void RayTracer::drawDebugTexture()
 			{
 				float u = (x + RandomUtilities::getUniformRandom()) / float(width - 1), v = (y + RandomUtilities::getUniformRandom()) / float(height - 1);
 				ray = camera->getRay(u, v);
-				color += getRayColor(ray, _scene, MAX_DEPTH);
+				color += getRayColor(ray, BACKGROUND_COLOR, _scene, MAX_DEPTH);
 			}
 
 			color /= NUM_SAMPLES;
@@ -92,24 +92,25 @@ vec3 RayTracer::getBackgroundColor(const Ray3D& ray)
 	return (1.0f - t) * BACKGROUND_INTERP_COLOR_01 + t * BACKGROUND_INTERP_COLOR_02;
 }
 
-vec3 RayTracer::getRayColor(const Ray3D& ray, Scene* scene, int depth)
+vec3 RayTracer::getRayColor(const Ray3D& ray, const vec3& background, Scene* scene, int depth)
 {
 	Hittable::HitRecord record;
 
 	if (depth <= 0) return vec3(.0f);
 
-	if (_scene->hit(ray, .001f, FLT_MAX, record))
+	if (!_scene->hit(ray, .001f, FLT_MAX, record))
 	{
-		Ray3D scattered (vec3(.0f), vec3(.0f));
-		vec3 attenuation;
-
-		if (record._material->getApplicator()->scatter(record._material.get(), ray, record, attenuation, scattered))
-		{
-			return attenuation * this->getRayColor(scattered, scene, depth - 1);
-		}
-		
-		return vec3(.0f);
+		return background;
 	}
 
-	return getBackgroundColor(ray);
+	Ray3D scattered(vec3(.0f), vec3(.0f));
+	vec3 attenuation;
+	vec3 emitted = record._material->getApplicator()->emit(record._material.get(), record._uv, record._point);
+
+	if (!record._material->getApplicator()->scatter(record._material.get(), ray, record, attenuation, scattered))
+	{
+		return emitted;
+	}
+
+	return emitted + attenuation * this->getRayColor(scattered, background, scene, depth - 1);
 }
