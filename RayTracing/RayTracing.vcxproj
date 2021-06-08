@@ -224,6 +224,7 @@
     <ClCompile Include="Source\Graphics\Core\MaterialType.cpp" />
     <ClCompile Include="Source\Graphics\Core\MetalMaterial.cpp" />
     <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp" />
+    <ClCompile Include="Source\Graphics\Core\NoiseTexture.cpp" />
     <ClCompile Include="Source\Graphics\Core\OpenGLTexture.cpp" />
     <ClCompile Include="Source\Graphics\Core\Rectangle.cpp" />
     <ClCompile Include="Source\Graphics\Core\Sphere.cpp" />
@@ -250,6 +251,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\Utilities\Perlin.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Libraries\imgui\examples\imgui_impl_glfw.h" />
@@ -289,6 +291,7 @@
     <ClInclude Include="Source\Graphics\Core\MaterialType.h" />
     <ClInclude Include="Source\Graphics\Core\MetalMaterial.h" />
     <ClInclude Include="Source\Graphics\Core\MovingSphere.h" />
+    <ClInclude Include="Source\Graphics\Core\NoiseTexture.h" />
     <ClInclude Include="Source\Graphics\Core\OpenGLTexture.h" />
     <ClInclude Include="Source\Graphics\Core\Rectangle.h" />
     <ClInclude Include="Source\Graphics\Core\Sphere.h" />
@@ -312,6 +315,7 @@
     <ClInclude Include="Source\Utilities\Adapter.h" />
     <ClInclude Include="Source\Utilities\BasicOperations.h" />
     <ClInclude Include="Source\Utilities\FileManagement.h" />
+    <ClInclude Include="Source\Utilities\Perlin.h" />
     <ClInclude Include="Source\Utilities\RandomUtilities.h" />
     <ClInclude Include="Source\Utilities\Singleton.h" />
   </ItemGroup>

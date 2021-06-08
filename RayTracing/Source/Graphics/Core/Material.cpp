@@ -38,6 +38,13 @@ Material& Material::operator=(const Material& material)
 	return *this;
 }
 
+Material* Material::setEmissionTexture(const vec3& color)
+{
+	_emissionTexture.reset(new SolidColor(color));
+	
+	return this;
+}
+
 Material* Material::setMaterialType(MaterialType::MaterialTypes type)
 {
 	_materialType = type;

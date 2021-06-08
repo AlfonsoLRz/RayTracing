@@ -4,6 +4,7 @@
 #include "Graphics/Core/DiffuseLightMaterial.h"
 #include "Graphics/Core/ImageTexture.h"
 #include "Graphics/Core/MovingSphere.h"
+#include "Graphics/Core/NoiseTexture.h"
 #include "Graphics/Core/Rectangle.h"
 #include "Graphics/Core/Sphere.h"
 
@@ -11,11 +12,13 @@
 
 void GeometricScene::generateEmissionScene()
 {
-	Material* sphere = (new Material(vec3(.4f, .2f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	Material* sphere = (new Material(std::make_shared<NoiseTexture>(NoiseTexture())))->setMaterialType(MaterialType::LAMBERTIAN);
 	this->addObject(std::make_shared<Sphere>(vec3(.0f, -1000.0f, .0f), 1000.0f, std::shared_ptr<Material>(sphere)));
-	this->addObject(std::make_shared<Sphere>(vec3(.0f, 2.0f, .0f), 2.0f, std::shared_ptr<Material>(sphere)));
 
-	Material* diffuseLight = (new Material(vec3(.4f, .2f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	Material* sphere01 = (new Material(vec3(.4f, .2f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	this->addObject(std::make_shared<Sphere>(vec3(.0f, 2.0f, .0f), 2.0f, std::shared_ptr<Material>(sphere01)));
+
+	Material* diffuseLight = (new Material(vec3(.0f)))->setEmissionTexture(vec3(.8f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
 	this->addObject(std::make_shared<RectangleXY>(3.0f, 5.0f, 1.0f, 3.0f, -2.0f, std::shared_ptr<Material>(diffuseLight)));
 }
 
@@ -81,7 +84,7 @@ void GeometricScene::loadCameras()
 	const vec3 eye = vec3(13.0f, 2.0f, 3.0f), lookAt = vec3(.0f, .0f, 0.0f);
 	ivec2 canvasSize = Window::getInstance()->getSize();
 	Camera* camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)
-		->setAperture(.1f)->setFocusDistance(10.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
+					  ->setAperture(.1f)->setFocusDistance(10.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
 
 	_cameraManager->insertCamera(camera);
 	
@@ -89,7 +92,7 @@ void GeometricScene::loadCameras()
 	const vec3 eye = vec3(3.0f, 3.0f, 2.0f), lookAt = vec3(.0f, .0f, -1.0f);
 	ivec2 canvasSize = Window::getInstance()->getSize();
 	Camera* camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)
-					->setAperture(1.0f)->setFocusDistance(glm::length(eye - lookAt))->buildDescription();
+					  ->setAperture(1.0f)->setFocusDistance(glm::length(eye - lookAt))->buildDescription();
 
 	_cameraManager->insertCamera(camera);
 #endif

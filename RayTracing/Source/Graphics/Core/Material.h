@@ -75,6 +75,11 @@ public:
 	Material& operator=(const Material& material);
 
 	// ----- Setters ------
+
+	/**
+	*	@brief  
+	*/
+	Material* setEmissionTexture(const vec3& color);
 	
 	/**
 	*	@brief  

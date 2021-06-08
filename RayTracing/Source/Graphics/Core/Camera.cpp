@@ -29,8 +29,8 @@ Camera::Camera(const uint16_t width, const uint16_t height): _backupCamera(nullp
 
 	_fovY			= glm::radians(FOV_Y);
 	_aspect			= float(width) / height;
-	_focusDistance	= .0f;
-	_lensRadius		= .0f;
+	_focusDistance	= 1.0f;
+	_lensRadius		= 0.0f;
 	_timeFrame		= vec2(.0f);
 
 	this->buildDescription();

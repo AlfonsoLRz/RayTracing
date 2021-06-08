@@ -1,8 +1,8 @@
-﻿  Rectangle.cpp
+﻿  Perlin.cpp
      Creando biblioteca D:\Github\RayTracing\x64\Release\RayTracing.lib y objeto D:\Github\RayTracing\x64\Release\RayTracing.exp
   Generando código
-  1 of 4854 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  4 of 4927 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    50 functions had inline decision re-evaluated but remain unchanged
+    67 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Release\RayTracing.exe
