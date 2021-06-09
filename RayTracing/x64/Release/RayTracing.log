@@ -1,8 +1,212 @@
-﻿  Perlin.cpp
+﻿  BVH.cpp
+D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(10,85): warning C4267: 'argumento': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(57,35): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(80,28): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\DataStructures\BVH.cpp(80,22): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  GeometricScene.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\GeometricScene.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\GeometricScene.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  MaterialList.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\MaterialList.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\MaterialList.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Renderer.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\Renderer.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\Renderer.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Scene.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\Scene.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\Scene.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  TextureList.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\TextureList.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Application\TextureList.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  CADModel.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\CADModel.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\CADModel.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  Camera.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Camera.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Camera.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  DielectricMaterial.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\DielectricMaterial.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\DielectricMaterial.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  DiffuseLightMaterial.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\DiffuseLightMaterial.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\DiffuseLightMaterial.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  FBO.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FBO.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FBO.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  FBOScreenshot.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FBOScreenshot.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FBOScreenshot.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  FloatImage.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FloatImage.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FloatImage.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FloatImage.cpp(8,86): warning C4267: 'argumento': conversión de 'size_t' a 'const unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\FloatImage.cpp(29,88): warning C4267: 'argumento': conversión de 'size_t' a 'const unsigned int'; posible pérdida de datos
+  Group3D.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(81,27): warning C4244: '=': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(82,24): warning C4244: '=': conversión de 'double' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(117,35): warning C4244: 'argumento': conversión de 'float' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(131,37): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(185,39): warning C4267: 'inicializando': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(222,45): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(223,46): warning C4267: '+=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(237,44): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(242,69): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(250,66): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(296,32): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(296,21): warning C4244: 'inicializando': conversión de 'double' a 'const int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(297,23): warning C4244: 'inicializando': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(304,25): warning C4018: '<': no coinciden signed/unsigned
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(310,25): warning C4244: '=': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(358,41): warning C4244: 'inicializando': conversión de 'float' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(358,30): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(359,33): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(359,22): warning C4244: 'inicializando': conversión de 'double' a 'const int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(395,20): warning C4018: '<': no coinciden signed/unsigned
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(403,35): warning C4244: 'argumento': conversión de 'float' a '_Ty'; posible pérdida de datos
+          with
+          [
+              _Ty=std::seed_seq::result_type
+          ]
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(417,37): warning C4267: '=': conversión de 'size_t' a 'unsigned int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Group3D.cpp(418,38): warning C4018: '<': no coinciden signed/unsigned
+  Hittable.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Hittable.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Hittable.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  ImageTexture.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\ImageTexture.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\ImageTexture.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  LambertianMaterial.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\LambertianMaterial.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\LambertianMaterial.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Material.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Material.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Material.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  MaterialType.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\MaterialType.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\MaterialType.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  MetalMaterial.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\MetalMaterial.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\MetalMaterial.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Compilando...
+  Model3D.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Model3D.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Model3D.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\FileManagement.h(63,26): warning C4101: 'exception': variable local sin referencia
+  MovingSphere.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\MovingSphere.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\MovingSphere.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  NoiseTexture.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\NoiseTexture.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\NoiseTexture.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  OpenGLTexture.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,41): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,41): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,59): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,59): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,77): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,77): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): warning C4244: 'inicializando': conversión de 'float' a 'const unsigned char'; posible pérdida de datos
+  OpenGLUtilities.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLUtilities.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLUtilities.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  RayTracer.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\RayTracer.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\RayTracer.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Rectangle.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Rectangle.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Rectangle.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  Sphere.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Sphere.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Sphere.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  Texture.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Texture.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+  VAO.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(95,68): warning C4267: 'inicializando': conversión de 'size_t' a 'int'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\VAO.cpp(95,68): warning C4267: 'inicializando': conversión de 'size_t' a 'const int'; posible pérdida de datos
+  GUI.cpp
+D:\Github\RayTracing\RayTracing\Source\Interface\GUI.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Interface\GUI.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  InputManager.cpp
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(259,39): warning C4244: 'argumento': conversión de 'double' a 'const float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(259,33): warning C4244: 'argumento': conversión de 'double' a 'const float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Interface\InputManager.cpp(272,23): warning C4244: 'argumento': conversión de 'double' a 'float'; posible pérdida de datos
+  Window.cpp
+D:\Github\RayTracing\RayTracing\Source\Interface\Window.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Interface\Window.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  Perlin.cpp
+D:\Github\RayTracing\RayTracing\Source\Utilities\Perlin.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\Perlin.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\Github\RayTracing\RayTracing\Source\Utilities\RandomUtilities.h(92,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
      Creando biblioteca D:\Github\RayTracing\x64\Release\RayTracing.lib y objeto D:\Github\RayTracing\x64\Release\RayTracing.exp
   Generando código
-  4 of 4927 functions (<0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    67 functions had inline decision re-evaluated but remain unchanged
+  Compiler switch has changed, fall back to full compilation.
+  All 4927 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Generación de código finalizada
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Release\RayTracing.exe
