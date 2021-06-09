@@ -16,7 +16,7 @@ protected:
 
 protected:
 	std::vector<int>	_permutation[3];		//!<
-	std::vector<float>	_random;				//!<
+	std::vector<vec3>	_random;				//!<
 
 protected:
 	/**
@@ -28,6 +28,11 @@ protected:
 	*	@brief  
 	*/
 	static void permute(std::vector<int>& permutation, int size);
+
+	/**
+	*	@brief  
+	*/
+	static float trilinearInterpolation(vec3 c[2][2][2], float u, float v, float w);
 
 public:
 	/**

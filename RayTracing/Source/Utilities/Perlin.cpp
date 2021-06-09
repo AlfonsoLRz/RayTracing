@@ -14,7 +14,7 @@ Perlin::Perlin()
 	_random.resize(NUM_POINTS);
 	for (int randomIdx = 0; randomIdx < NUM_POINTS; ++randomIdx)
 	{
-		_random[randomIdx] = RandomUtilities::getUniformRandom();
+		_random[randomIdx] = vec3(RandomUtilities::getUniformRandom(-1.0f, 1.0f), RandomUtilities::getUniformRandom(-1.0f, 1.0f), RandomUtilities::getUniformRandom(-1.0f, 1.0f));
 	}
 
 	this->generatePermutation(0);
@@ -28,11 +28,28 @@ Perlin::~Perlin()
 
 float Perlin::getNoise(const vec3& position)
 {
-	int i = static_cast<int>(4.0f * position.x) & 255;
-	int j = static_cast<int>(4.0f * position.y) & 255;
-	int k = static_cast<int>(4.0f * position.z) & 255;
+	vec3 c[2][2][2];
 	
-	return _random[_permutation[0][i] ^ _permutation[1][j] ^ _permutation[2][k]];
+	float u = position.x - std::floor(position.x);
+	float v = position.y - std::floor(position.y);
+	float w = position.z - std::floor(position.z);
+	
+	int i = static_cast<int>(std::floor(position.x));
+	int j = static_cast<int>(std::floor(position.y));
+	int k = static_cast<int>(std::floor(position.z));
+
+	for (int di = 0; di < 2; ++di)
+	{
+		for (int dj = 0; dj < 2; ++dj)
+		{
+			for (int dk = 0; dk < 2; ++dk)
+			{
+				c[di][dj][dk] = _random[_permutation[0][(i + di) & 255] ^ _permutation[1][(j + dj) & 255] ^ _permutation[2][(k + dk) & 255]];
+			}
+		}
+	}
+
+	return trilinearInterpolation(c, u, v, w);
 }
 
 // [Protected methods]
@@ -52,4 +69,27 @@ void Perlin::permute(std::vector<int>& permutation, int size)
 		int target = RandomUtilities::getUniformRandomInt(0, idx);
 		std::swap(permutation[idx], permutation[target]);
 	}
+}
+
+float Perlin::trilinearInterpolation(vec3 c[2][2][2], float u, float v, float w)
+{
+	float accumulation = .0f;
+
+	float hermiteu = u * u * (3.0f - 2.0f * u);
+	float hermitev = v * v * (3.0f - 2.0f * v);
+	float hermitew = w * w * (3.0f - 2.0f * w);
+
+	for (int i = 0; i < 2; ++i)
+	{
+		for (int j = 0; j < 2; ++j)
+		{
+			for (int k = 0; k < 2; ++k)
+			{
+				vec3 weightv(u - i, v - j, w - k);
+				accumulation += (i * hermiteu + (1 - i) * (1 - hermiteu)) * (j * hermitev + (1 - j) * (1 - hermitev)) * (k * hermitew + (1 - k) * (1 - hermitew)) * dot(c[i][j][k], weightv);
+			}
+		}
+	}
+
+	return accumulation;
 }

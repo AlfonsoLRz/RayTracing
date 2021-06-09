@@ -12,11 +12,11 @@
 
 void GeometricScene::generateEmissionScene()
 {
-	Material* sphere = (new Material(std::make_shared<NoiseTexture>(NoiseTexture())))->setMaterialType(MaterialType::LAMBERTIAN);
+	Material* sphere = (new Material(std::make_shared<NoiseTexture>(NoiseTexture(5.0f))))->setMaterialType(MaterialType::LAMBERTIAN);
 	this->addObject(std::make_shared<Sphere>(vec3(.0f, -1000.0f, .0f), 1000.0f, std::shared_ptr<Material>(sphere)));
 
 	Material* sphere01 = (new Material(vec3(.4f, .2f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
-	this->addObject(std::make_shared<Sphere>(vec3(.0f, 2.0f, .0f), 2.0f, std::shared_ptr<Material>(sphere01)));
+	this->addObject(std::make_shared<Sphere>(vec3(.0f, 2.0f, .0f), 2.0f, std::shared_ptr<Material>(sphere)));
 
 	Material* diffuseLight = (new Material(vec3(.0f)))->setEmissionTexture(vec3(.8f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
 	this->addObject(std::make_shared<RectangleXY>(3.0f, 5.0f, 1.0f, 3.0f, -2.0f, std::shared_ptr<Material>(diffuseLight)));
