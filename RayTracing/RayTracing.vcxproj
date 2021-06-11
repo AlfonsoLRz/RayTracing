@@ -209,6 +209,7 @@
     <ClCompile Include="Source\Graphics\Application\Renderer.cpp" />
     <ClCompile Include="Source\Graphics\Application\Scene.cpp" />
     <ClCompile Include="Source\Graphics\Application\TextureList.cpp" />
+    <ClCompile Include="Source\Graphics\Core\Box.cpp" />
     <ClCompile Include="Source\Graphics\Core\CADModel.cpp" />
     <ClCompile Include="Source\Graphics\Core\Camera.cpp" />
     <ClCompile Include="Source\Graphics\Core\ComputeShader.cpp" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Source\Graphics\Core\FloatImage.cpp" />
     <ClCompile Include="Source\Graphics\Core\Group3D.cpp" />
     <ClCompile Include="Source\Graphics\Core\Hittable.cpp" />
+    <ClCompile Include="Source\Graphics\Core\HittableList.cpp" />
     <ClCompile Include="Source\Graphics\Core\ImageTexture.cpp" />
     <ClCompile Include="Source\Graphics\Core\LambertianMaterial.cpp" />
     <ClCompile Include="Source\Graphics\Core\MaterialType.cpp" />
@@ -273,6 +275,7 @@
     <ClInclude Include="Source\Graphics\Application\RenderingParameters.h" />
     <ClInclude Include="Source\Graphics\Application\Scene.h" />
     <ClInclude Include="Source\Graphics\Application\TextureList.h" />
+    <ClInclude Include="Source\Graphics\Core\Box.h" />
     <ClInclude Include="Source\Graphics\Core\CADModel.h" />
     <ClInclude Include="Source\Graphics\Core\Camera.h" />
     <ClInclude Include="Source\Graphics\Core\CGEnumerations.h" />
@@ -285,6 +288,7 @@
     <ClInclude Include="Source\Graphics\Core\FloatImage.h" />
     <ClInclude Include="Source\Graphics\Core\Group3D.h" />
     <ClInclude Include="Source\Graphics\Core\Hittable.h" />
+    <ClInclude Include="Source\Graphics\Core\HittableList.h" />
     <ClInclude Include="Source\Graphics\Core\Image.h" />
     <ClInclude Include="Source\Graphics\Core\ImageTexture.h" />
     <ClInclude Include="Source\Graphics\Core\LambertianMaterial.h" />

@@ -16,7 +16,7 @@
 
 #define DEBUG_MODE
 #define MAX_DEPTH 50
-#define NUM_SAMPLES 50
+#define NUM_SAMPLES 200
 
 /**
 *	@brief Additional framebuffer to perform operations.

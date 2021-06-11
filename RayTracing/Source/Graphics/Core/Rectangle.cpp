@@ -4,9 +4,8 @@
 // [Rectangle XZ]
 
 RectangleXY::RectangleXY(float x0, float x1, float y0, float y1, float z, std::shared_ptr<Material> material) :
-	_x0(x0), _x1(x1), _y0(y0), _y1(y1), _z(z)
+	_x0(x0), _x1(x1), _y0(y0), _y1(y1), _z(z), Hittable(material)
 {
-	this->_material = material;
 }
 
 bool RectangleXY::getBoundingBox(float time0, float time1, AABB& aabb) const
@@ -39,9 +38,8 @@ bool RectangleXY::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 // [Rectangle XZ]
 
 RectangleXZ::RectangleXZ(float x0, float x1, float z0, float z1, float y, std::shared_ptr<Material> material) :
-	_x0(x0), _x1(x1), _z0(z0), _z1(z1), _y(y)
+	_x0(x0), _x1(x1), _z0(z0), _z1(z1), _y(y), Hittable(material)
 {
-	this->_material = material;
 }
 
 bool RectangleXZ::getBoundingBox(float time0, float time1, AABB& aabb) const
@@ -63,7 +61,7 @@ bool RectangleXZ::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 	hit._uv.y = (z - _z0) / (_z1 - _z0);
 	hit._t = t;
 
-	vec3 outwardNormal = vec3(.0f, .0f, 1.0f);
+	vec3 outwardNormal = vec3(.0f, 1.0f, .0f);
 	hit.setFaceNormal(ray, outwardNormal);
 	hit._material = this->_material;
 	hit._point = ray.at(t);
@@ -74,7 +72,7 @@ bool RectangleXZ::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 // [Rectangle YZ]
 
 RectangleYZ::RectangleYZ(float y0, float y1, float z0, float z1, float x, std::shared_ptr<Material> material) :
-	_y0(y0), _y1(y1), _z0(z0), _z1(z1), _x(x)
+	_y0(y0), _y1(y1), _z0(z0), _z1(z1), _x(x), Hittable(material)
 {
 }
 
@@ -97,7 +95,7 @@ bool RectangleYZ::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 	hit._uv.y = (z - _z0) / (_z1 - _z0);
 	hit._t = t;
 
-	vec3 outwardNormal = vec3(.0f, .0f, 1.0f);
+	vec3 outwardNormal = vec3(1.0f, .0f, .0f);
 	hit.setFaceNormal(ray, outwardNormal);
 	hit._material = this->_material;
 	hit._point = ray.at(t);

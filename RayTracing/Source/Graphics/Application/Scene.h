@@ -7,6 +7,7 @@
 #include "Graphics/Core/Camera.h"
 #include "Graphics/Core/Group3D.h"
 #include "Graphics/Core/Hittable.h"
+#include "Graphics/Core/HittableList.h"
 #include "Graphics/Core/Model3D.h"
 #include "Graphics/Core/ShaderProgram.h"
 #include "Interface/Window.h"
@@ -28,8 +29,7 @@ protected:
 	Group3D*								_sceneGroup;					//!< Model wrapper
 
 	// [Hittable list]
-	std::unique_ptr<BVH>					_bvh;							//!<
-	std::vector<std::shared_ptr<Hittable>>	_hittableObjects;				//!< 
+	std::unique_ptr<HittableList>			_hittableList;					//!<
 
 protected:
 	// --------------- Load ----------------
@@ -85,21 +85,6 @@ public:
 	virtual void render(const mat4& mModel, RenderingParameters* rendParams);
 
 	// [Object Management]
-
-	/**
-	*	@brief  
-	*/
-	void addObject(std::shared_ptr<Hittable> object) { _hittableObjects.push_back(object); }
-
-	/**
-	*	@brief 
-	*/
-	void clearObjects() { _hittableObjects.clear(); }
-
-	/**
-	*	@brief
-	*/
-	virtual bool getBoundingBox(float time0, float time1, AABB& aabb);
 
 	/**
 	*	@brief  

@@ -9,6 +9,7 @@
 Scene::Scene():
 	_cameraManager(std::unique_ptr<CameraManager>(new CameraManager())), _sceneGroup(nullptr)
 {
+	_hittableList.reset(new HittableList);
 }
 
 Scene::~Scene()
@@ -23,7 +24,7 @@ void Scene::load()
 	this->loadModels();
 
 	// Instance BVH from loaded models
-	_bvh = std::make_unique<BVH>(BVH(_hittableObjects, .0f, 1.0f));
+	_hittableList->buildBVH();
 }
 
 void Scene::modifySize(const uint16_t width, const uint16_t height)
@@ -36,27 +37,9 @@ void Scene::render(const mat4& mModel, RenderingParameters* rendParams)
 	Camera* activeCamera = _cameraManager->getActiveCamera();
 }
 
-bool Scene::getBoundingBox(float time0, float time1, AABB& aabb)
-{
-	if (_hittableObjects.empty()) return false;
-
-	AABB tempAABB;
-
-	for (std::shared_ptr<Hittable> object : _hittableObjects)
-	{
-		if (!object->getBoundingBox(time0, time1, tempAABB)) return false;
-		aabb.update(tempAABB);
-	}
-
-	return true;
-}
-
 bool Scene::hit(const Ray3D& ray, float tMin, float tMax, Hittable::HitRecord& record)
 {
-	Hittable::HitRecord tempRecord;
-	bool hitAnything = _bvh->hit(ray, tMin, tMax, record);
-
-	return hitAnything;
+	return _hittableList->hit(ray, tMin, tMax, record);
 }
 
 // [Protected methods]

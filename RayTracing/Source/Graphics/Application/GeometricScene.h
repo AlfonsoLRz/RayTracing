@@ -2,8 +2,9 @@
 
 #include "Graphics/Application/Scene.h"
 
-#define PROCEDURAL_SCENE false
+#define CORNELL_BOX_SCENE true
 #define EMISSION_SCENE true
+#define PROCEDURAL_SCENE false
 
 /**
 *	@file GeometricScene.h
@@ -17,6 +18,11 @@
 class GeometricScene: public Scene
 {
 protected:
+	/**
+	*	@brief  
+	*/
+	void generateCornellBoxScene();
+	
 	/**
 	*	@brief
 	*/

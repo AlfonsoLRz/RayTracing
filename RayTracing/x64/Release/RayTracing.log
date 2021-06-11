@@ -1,10 +1,8 @@
-﻿  Rectangle.cpp
-D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Rectangle.cpp(1,10): warning C4652: la opción del compilador 'compatibilidad con OpenMP (/openmp o bien /openmp:llvm)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
-D:\Github\RayTracing\RayTracing\Source\Graphics\Core\Rectangle.cpp(1,10): warning C4652: la opción del compilador 'Nivel de advertencia (/W<n>)' no es coherente con el encabezado precompilado; la opción de la línea de comandos actual invalidará la definida en el encabezado precompilado
-     Creando biblioteca D:\Github\RayTracing\x64\Release\RayTracing.lib y objeto D:\Github\RayTracing\x64\Release\RayTracing.exp
-  Generando código
-  1 of 4946 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+﻿  GeometricScene.cpp
+     Creating library D:\Github\RayTracing\x64\Release\RayTracing.lib and object D:\Github\RayTracing\x64\Release\RayTracing.exp
+  Generating code
+  1 of 4889 functions (<0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    91 functions had inline decision re-evaluated but remain unchanged
-  Generación de código finalizada
+    40 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Release\RayTracing.exe

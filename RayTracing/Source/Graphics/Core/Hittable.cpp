@@ -3,6 +3,17 @@
 
 #include "Graphics/Core/Material.h"
 
+// [Hittable]
+
+Hittable::Hittable()
+{
+}
+
+Hittable::Hittable(std::shared_ptr<Material> material)
+{
+	this->_material = material;
+}
+
 // [Hit record]
 
 void Hittable::HitRecord::setFaceNormal(const Ray3D& ray, const vec3& outwardNormal)

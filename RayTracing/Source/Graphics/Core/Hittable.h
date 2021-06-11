@@ -37,6 +37,16 @@ protected:
 
 public:
 	/**
+	*	@brief Default constructor. 
+	*/
+	Hittable();
+	
+	/**
+	*	@brief Constructor of any hittable object through a material. 
+	*/
+	Hittable(std::shared_ptr<Material> material);
+	
+	/**
 	*	@brief
 	*/
 	virtual bool getBoundingBox(float time0, float time1, AABB& aabb) const = 0;
