@@ -49,5 +49,10 @@ public:
 	*	@return Noise value for a three-dimensional position. 
 	*/
 	float getNoise(const vec3& position);
+
+	/**
+	*	@brief Add octaves to noise value.
+	*/
+	float getTurbulence(const vec3& position, unsigned depth = 7);
 };
 

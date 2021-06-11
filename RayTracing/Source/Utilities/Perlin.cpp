@@ -52,6 +52,21 @@ float Perlin::getNoise(const vec3& position)
 	return trilinearInterpolation(c, u, v, w);
 }
 
+float Perlin::getTurbulence(const vec3& position, unsigned depth)
+{
+	float accumulate = .0f, weight = 1.0f;
+	vec3 tempPosition = position;
+
+	for (int octave = 0; octave < depth; ++octave)
+	{
+		accumulate += weight * getNoise(tempPosition);
+		weight *= .5f;
+		tempPosition *= 2.0f;
+	}
+
+	return std::abs(accumulate);
+}
+
 // [Protected methods]
 
 void Perlin::generatePermutation(int index)

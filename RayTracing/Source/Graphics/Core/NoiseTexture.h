@@ -15,14 +15,15 @@
 class NoiseTexture: public Texture
 {
 protected:
-	float	_frequency;			//!<
-	Perlin	_perlinNoise;		//!< Noise function
+	float		_frequency;			//!<
+	unsigned	_octaves;			//!<
+	Perlin		_perlinNoise;		//!< Noise function
 
 public:
 	/**
 	*	@brief Default constructor. 
 	*/
-	NoiseTexture(float frequency = 1.0f);
+	NoiseTexture(float frequency = 1.0f, unsigned octaves = 1);
 	
 	/**
 	*	@return Color for texture when using texels (u, v).
