@@ -25,7 +25,6 @@ bool HittableList::getBoundingBox(float time0, float time1, AABB& aabb) const
 
 bool HittableList::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) const
 {
-	Hittable::HitRecord tempRecord;
 	bool hitAnything = _bvh->hit(ray, tMin, tMax, hit);
 
 	return hitAnything;

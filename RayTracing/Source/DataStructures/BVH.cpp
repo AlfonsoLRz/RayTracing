@@ -62,8 +62,10 @@ BVH::BVHNode::BVHNode(std::vector<std::shared_ptr<Hittable>>& objects, unsigned 
 
 	// Calculate surrounding box
 	AABB boxLeft, boxRight;
-	_left->getBoundingBox(time0, time1, boxLeft);
-	_right->getBoundingBox(time0, time1, boxRight);
+	if (!_left->getBoundingBox(time0, time1, boxLeft) || !_right->getBoundingBox(time0, time1, boxRight))
+	{
+		std::cerr << "No bounding box..." << std::endl;
+	}
 	
 	_aabb.update(boxLeft);
 	_aabb.update(boxRight);
@@ -93,8 +95,10 @@ bool BVH::BVHNode::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hi
 bool BVH::BVHNode::boxCompare(const std::shared_ptr<Hittable> h1, const std::shared_ptr<Hittable> h2, int axis)
 {
 	AABB box01, box02;
-	h1->getBoundingBox(0, 0, box01);
-	h2->getBoundingBox(0, 0, box02);
+	if (!h1->getBoundingBox(0, 0, box01) || !h2->getBoundingBox(0, 0, box02))
+	{
+		std::cerr << "No bounding box..." << std::endl;
+	}
 
 	return box01.min()[axis] < box02.min()[axis];
 }

@@ -8,15 +8,20 @@
 #include "Graphics/Core/NoiseTexture.h"
 #include "Graphics/Core/Rectangle.h"
 #include "Graphics/Core/Sphere.h"
+#include "Graphics/Core/TransformedHittable.h"
 
 // [Protected methods]
 
 void GeometricScene::generateCornellBoxScene()
 {
-	Material* red	= (new Material(vec3(.65f, .05f, .05f)))->setMaterialType(MaterialType::LAMBERTIAN);
-	Material* white = (new Material(vec3(.73f)))->setMaterialType(MaterialType::LAMBERTIAN);
-	Material* green = (new Material(vec3(.12f, .45f, .15f)))->setMaterialType(MaterialType::LAMBERTIAN);
-	Material* light = (new Material(vec3(.0f)))->setEmissionTexture(vec3(15.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
+	std::shared_ptr<Material> red = std::make_shared<Material>(Material(vec3(.65f, .05f, .05f)));
+	red->setMaterialType(MaterialType::LAMBERTIAN);
+	std::shared_ptr<Material> white = std::make_shared<Material>(Material(vec3(.73f)));
+	white->setMaterialType(MaterialType::LAMBERTIAN);	
+	std::shared_ptr<Material> green = std::make_shared<Material>(Material(vec3(.12f, .45f, .15f)));
+	green->setMaterialType(MaterialType::LAMBERTIAN);
+	std::shared_ptr<Material> light = std::make_shared<Material>(Material(vec3(.0f)));
+	light->setEmissionTexture(vec3(15.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
 
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(green)));
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(red)));
@@ -25,8 +30,15 @@ void GeometricScene::generateCornellBoxScene()
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(213.0f, 343.0f, 227.0f, 332.0f, 554.0f, std::shared_ptr<Material>(light)));
 
-	_hittableList->addObject(std::make_shared<Sphere>(vec3(130.0f, .0f, 65.0f), 200.0f, std::shared_ptr<Material>(white)));
-	//_hittableList->addObject(std::make_shared<Box>(vec3(265.0f, .0f, 295.0f), vec3(430.0f, 330.0f, 460.0f), std::shared_ptr<Material>(white)));
+	std::shared_ptr<Hittable> leftBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f, 330.0f, 165.0f), white);
+	leftBox = std::make_shared<RotatedYHittable>(leftBox, 15.0f);
+	leftBox = std::make_shared<TranslatedHittable>(leftBox, vec3(265.0f, .0f, 295.0f));
+	_hittableList->addObject(leftBox);
+
+	std::shared_ptr<Hittable> rightBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f), white);
+	rightBox = std::make_shared<RotatedYHittable>(rightBox, -18.0f);
+	rightBox = std::make_shared<TranslatedHittable>(rightBox, vec3(130.0f, .0f, 65.0f));
+	_hittableList->addObject(rightBox);
 }
 
 void GeometricScene::generateEmissionScene()

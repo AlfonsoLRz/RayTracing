@@ -67,7 +67,7 @@ inline bool BasicOperations::equal(const vec3 v1, const vec3 v2)
 
 inline bool BasicOperations::isZero(const vec3& direction)
 {
-	return direction.x < glm::epsilon<float>() && direction.y < glm::epsilon<float>() && direction.z < glm::epsilon<float>();
+	return std::fabs(direction.x) < glm::epsilon<float>() && std::fabs(direction.y) < glm::epsilon<float>() && std::fabs(direction.z) < glm::epsilon<float>();
 }
 
 template<typename T>
