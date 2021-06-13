@@ -3,7 +3,7 @@
 #include "Graphics/Application/Scene.h"
 
 #define CORNELL_BOX_SCENE true
-#define EMISSION_SCENE true
+#define EMISSION_SCENE false
 #define PROCEDURAL_SCENE false
 
 /**

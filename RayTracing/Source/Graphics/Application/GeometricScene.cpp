@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "GeometricScene.h"
 
+#include "Graphics/Core/Box.h"
 #include "Graphics/Core/DiffuseLightMaterial.h"
 #include "Graphics/Core/ImageTexture.h"
 #include "Graphics/Core/MovingSphere.h"
@@ -23,6 +24,9 @@ void GeometricScene::generateCornellBoxScene()
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(213.0f, 343.0f, 227.0f, 332.0f, 554.0f, std::shared_ptr<Material>(light)));
+
+	_hittableList->addObject(std::make_shared<Sphere>(vec3(130.0f, .0f, 65.0f), 200.0f, std::shared_ptr<Material>(white)));
+	//_hittableList->addObject(std::make_shared<Box>(vec3(265.0f, .0f, 295.0f), vec3(430.0f, 330.0f, 460.0f), std::shared_ptr<Material>(white)));
 }
 
 void GeometricScene::generateEmissionScene()

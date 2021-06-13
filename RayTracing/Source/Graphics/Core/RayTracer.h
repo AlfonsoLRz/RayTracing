@@ -15,7 +15,7 @@
 */
 
 #define DEBUG_MODE
-#define MAX_DEPTH 50
+#define MAX_DEPTH 20
 #define NUM_SAMPLES 200
 
 /**

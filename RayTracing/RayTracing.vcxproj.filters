@@ -330,11 +330,11 @@
     <ClCompile Include="Source\Graphics\Core\NoiseTexture.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing\Texture</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Graphics\Core\Box.cpp">
-      <Filter>Archivos de origen\Graphics\Core\Models</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Graphics\Core\HittableList.cpp">
       <Filter>Archivos de origen\Graphics\Core\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\Box.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

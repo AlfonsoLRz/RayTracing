@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Graphics/Core/Hittable.h"
+#include "Graphics/Core/HittableList.h"
 
 /**
 *	@file Box.h
@@ -14,7 +15,8 @@
 class Box: public Hittable
 {
 protected:
-	AABB _aabb;		//!<
+	AABB							_aabb;				//!<
+	std::unique_ptr<HittableList>	_hittableList;		//!<
 
 public:
 	/**
