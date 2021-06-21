@@ -20,7 +20,7 @@ class Material;
 class MaterialType
 {
 public:
-	enum MaterialTypes { LAMBERTIAN, METAL, DIELECTRIC, DIFFUSE_LIGHT, NUM_MATERIAL_TYPES };
+	enum MaterialTypes { LAMBERTIAN, METAL, DIELECTRIC, DIFFUSE_LIGHT, ISOTROPIC, NUM_MATERIAL_TYPES };
 
 public:
 	/**

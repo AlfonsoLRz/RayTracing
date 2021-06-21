@@ -22,6 +22,7 @@ class Material
 	friend class MaterialType;
 	friend class DielectricMaterial;
 	friend class DiffuseLightMaterial;
+	friend class IsotropicMaterial;
 	friend class LambertianMaterial;
 	friend class MetalMaterial;
 

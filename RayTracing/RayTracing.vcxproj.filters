@@ -339,6 +339,12 @@
     <ClCompile Include="Source\Graphics\Core\TransformedHittable.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\ConstantMedium.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\IsotropicMaterial.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
@@ -541,6 +547,12 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\TransformedHittable.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\ConstantMedium.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\IsotropicMaterial.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

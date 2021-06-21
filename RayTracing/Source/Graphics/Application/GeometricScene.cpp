@@ -2,6 +2,7 @@
 #include "GeometricScene.h"
 
 #include "Graphics/Core/Box.h"
+#include "Graphics/Core/ConstantMedium.h"
 #include "Graphics/Core/DiffuseLightMaterial.h"
 #include "Graphics/Core/ImageTexture.h"
 #include "Graphics/Core/MovingSphere.h"
@@ -33,12 +34,12 @@ void GeometricScene::generateCornellBoxScene()
 	std::shared_ptr<Hittable> leftBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f, 330.0f, 165.0f), white);
 	leftBox = std::make_shared<RotatedYHittable>(leftBox, 15.0f);
 	leftBox = std::make_shared<TranslatedHittable>(leftBox, vec3(265.0f, .0f, 295.0f));
-	_hittableList->addObject(leftBox);
+	_hittableList->addObject(std::make_shared<ConstantMedium>(leftBox, vec3(.0f), .01f));
 
 	std::shared_ptr<Hittable> rightBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f), white);
 	rightBox = std::make_shared<RotatedYHittable>(rightBox, -18.0f);
 	rightBox = std::make_shared<TranslatedHittable>(rightBox, vec3(130.0f, .0f, 65.0f));
-	_hittableList->addObject(rightBox);
+	_hittableList->addObject(std::make_shared<ConstantMedium>(rightBox, vec3(1.0f), .01f));
 }
 
 void GeometricScene::generateEmissionScene()

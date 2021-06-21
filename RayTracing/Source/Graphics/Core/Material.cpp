@@ -4,6 +4,7 @@
 #include "Graphics/Core/DielectricMaterial.h"
 #include "Graphics/Core/DiffuseLightMaterial.h"
 #include "Graphics/Core/LambertianMaterial.h"
+#include "Graphics/Core/IsotropicMaterial.h"
 #include "Graphics/Core/MaterialType.h"
 #include "Graphics/Core/MetalMaterial.h"
 
@@ -83,6 +84,7 @@ MaterialTypeVector Material::buildMaterialApplicators()
 	materialApplicators[MaterialType::METAL].reset(new MetalMaterial());
 	materialApplicators[MaterialType::DIELECTRIC].reset(new DielectricMaterial());
 	materialApplicators[MaterialType::DIFFUSE_LIGHT].reset(new DiffuseLightMaterial());
+	materialApplicators[MaterialType::ISOTROPIC].reset(new IsotropicMaterial());
 
 	return materialApplicators;
 }
