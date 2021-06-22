@@ -11,6 +11,13 @@
 #include "Graphics/Core/Sphere.h"
 #include "Graphics/Core/TransformedHittable.h"
 
+// [Public methods]
+
+GeometricScene::GeometricScene() :
+	_sceneType(PROCEDURAL_WEEK)
+{
+}
+
 // [Protected methods]
 
 void GeometricScene::generateCornellBoxScene()
@@ -22,14 +29,14 @@ void GeometricScene::generateCornellBoxScene()
 	std::shared_ptr<Material> green = std::make_shared<Material>(Material(vec3(.12f, .45f, .15f)));
 	green->setMaterialType(MaterialType::LAMBERTIAN);
 	std::shared_ptr<Material> light = std::make_shared<Material>(Material(vec3(.0f)));
-	light->setEmissionTexture(vec3(15.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
+	light->setEmissionTexture(vec3(7.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
 
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(green)));
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(red)));
 	_hittableList->addObject(std::make_shared<RectangleXY>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
-	_hittableList->addObject(std::make_shared<RectangleXZ>(213.0f, 343.0f, 227.0f, 332.0f, 554.0f, std::shared_ptr<Material>(light)));
+	_hittableList->addObject(std::make_shared<RectangleXZ>(113.0f, 443.0f, 127.0f, 432.0f, 554.0f, std::shared_ptr<Material>(light)));
 
 	std::shared_ptr<Hittable> leftBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f, 330.0f, 165.0f), white);
 	leftBox = std::make_shared<RotatedYHittable>(leftBox, 15.0f);
@@ -55,7 +62,7 @@ void GeometricScene::generateEmissionScene()
 	_hittableList->addObject(std::make_shared<Sphere>(vec3(.0f, 7.0f, .0f), 2.0f, std::shared_ptr<Material>(diffuseLight)));
 }
 
-void GeometricScene::generateProceduralScene()
+void GeometricScene::generateProceduralSceneWeekend()
 {
 	float matProbs[] = { .8f, .95f, 1.0f };
 	
@@ -104,65 +111,163 @@ void GeometricScene::generateProceduralScene()
 	}
 }
 
+void GeometricScene::generateProceduralSceneWeek()
+{
+	std::shared_ptr<HittableList> groundBoxes = std::shared_ptr<HittableList>(new HittableList);	
+	Material* groundMaterial = (new Material(vec3(.48, .83f, .53f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	const unsigned tileSize = 20;
+
+	for (int x = 0; x < tileSize; ++x)
+	{
+		for (int z = 0; z < tileSize; ++z)
+		{
+			float w = 100.0f;
+			const float x0 = -1000.0f + x * w;
+			const float z0 = -1000.0f + z * w;
+			const float y0 = .0f;
+			const float x1 = x0 + w;
+			const float z1 = z0 + w;
+			const float y1 = y0 + RandomUtilities::getUniformRandom(1.0f, 101.0f);
+
+			groundBoxes->addObject(std::make_shared<Box>(vec3(x0, y0, z0), vec3(x1, y1, z1), std::shared_ptr<Material>(groundMaterial)));
+		}
+	}
+
+	_hittableList->addObject(groundBoxes);
+	groundBoxes->buildBVH();
+
+	// Spheres
+	std::shared_ptr<Material> light = std::make_shared<Material>(Material(vec3(.0f)));
+	light->setEmissionTexture(vec3(7.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
+	_hittableList->addObject(std::make_shared<RectangleXZ>(123.0f, 423.0f, 147.0f, 412.0f, 554.0f, std::shared_ptr<Material>(light)));
+
+	vec3 center0(400.0f, 400.0f, 200.0f), center1(center0 + vec3(30.0f, .0f, .0f));
+	Material* movingSphereMaterial = (new Material(vec3(0.7f, .3f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	_hittableList->addObject(std::make_shared<MovingSphere>(center0, center1, .0f, 1.0f, 50.0f, std::shared_ptr<Material>(movingSphereMaterial)));
+
+	Material* dielectricSphere = (new Material)->setRefractionIndex(1.5f)->setMaterialType(MaterialType::DIELECTRIC);
+	Material* metallicSphere = (new Material(vec3(.8f, .8f, .9f)))->setReflectionFuzz(1.0f)->setMaterialType(MaterialType::METAL);
+	_hittableList->addObject(std::make_shared<Sphere>(vec3(260.0f, 150.0f, 45.0f), 50.0f, std::shared_ptr<Material>(dielectricSphere)));
+	_hittableList->addObject(std::make_shared<Sphere>(vec3(0.0f, 150.0f, 145.0f), 50.0f, std::shared_ptr<Material>(metallicSphere)));
+
+	std::shared_ptr<Sphere> volumeBoundary = std::make_shared<Sphere>(vec3(360.0f, 150.0f, 145.0f), 70.0f, std::shared_ptr<Material>(dielectricSphere));
+	_hittableList->addObject(volumeBoundary);
+	_hittableList->addObject(std::make_shared<ConstantMedium>(volumeBoundary, vec3(0.2f, 0.4f, 0.9f), 0.2f));
+	volumeBoundary = std::make_shared<Sphere>(vec3(.0f), 5000.0f, std::shared_ptr<Material>(dielectricSphere));
+	_hittableList->addObject(make_shared<ConstantMedium>(volumeBoundary, vec3(1.0f, 1.0f, 1.0f), .0001f));
+
+	Material* imageMaterial = (new Material(std::make_shared<ImageTexture>(ImageTexture("Assets/Images/Checker/GGGJ.png"))))->setMaterialType(MaterialType::LAMBERTIAN);
+	_hittableList->addObject(std::make_shared<Sphere>(vec3(400.0f, 200.0f, 400.0f), 100.0f, std::shared_ptr<Material>(imageMaterial)));
+	
+	Material* perlinNoise = (new Material(std::make_shared<NoiseTexture>(NoiseTexture(.1f))))->setMaterialType(MaterialType::LAMBERTIAN);
+	_hittableList->addObject(std::make_shared<Sphere>(vec3(220.0f, 280.0f, 300.0f), 80.0f, std::shared_ptr<Material>(perlinNoise)));
+
+	std::shared_ptr<HittableList> boxSpheres = std::shared_ptr<HittableList>(new HittableList);
+	Material* whiteMaterial = (new Material(vec3(.73f)))->setMaterialType(MaterialType::LAMBERTIAN);
+	const unsigned numberSpheres = 1000;
+	
+	for (int j = 0; j < numberSpheres; j++) 
+	{
+		boxSpheres->addObject(std::make_shared<Sphere>(RandomUtilities::getUniformRandomColor() * 165.0f, 10.0f, std::shared_ptr<Material>(whiteMaterial)));
+	}
+
+	_hittableList->addObject(std::make_shared<TranslatedHittable>(std::make_shared<RotatedYHittable>(boxSpheres, 15.0f), vec3(-100.0f, 270.0f, 395.0f)));
+	boxSpheres->buildBVH();
+}
+
 void GeometricScene::loadCameras()
 {
-#if CORNELL_BOX_SCENE
-	const vec3 eye = vec3(278.0f, 280.0f, -800.0f), lookAt = vec3(278.0f, 278.0f, 0.0f);
-	ivec2 canvasSize = Window::getInstance()->getSize();
-	Camera* camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(40.0f)->setFocusDistance(10.0f)
-					  ->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
-
-	_cameraManager->insertCamera(camera);
+	Camera* camera;
+	vec3 eye, lookAt;
+	ivec2 canvasSize = Window::getInstance()->getSize();;
 	
-#elif EMISSION_SCENE
-	const vec3 eye = vec3(26.0f, 3.0f, 6.0f), lookAt = vec3(.0f, 2.0f, 0.0f);
-	ivec2 canvasSize = Window::getInstance()->getSize();
-	Camera* camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
+	switch (_sceneType)
+	{
+	case CORNELL_BOX:
+		eye = vec3(278.0f, 280.0f, -800.0f), lookAt = vec3(278.0f, 278.0f, 0.0f);
+		camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(40.0f)->setFocusDistance(10.0f)
+														   ->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
 
-	_cameraManager->insertCamera(camera);
-	
-#elif PROCEDURAL_SCENE
-	const vec3 eye = vec3(13.0f, 2.0f, 3.0f), lookAt = vec3(.0f, .0f, 0.0f);
-	ivec2 canvasSize = Window::getInstance()->getSize();
-	Camera* camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)
-					  ->setAperture(.1f)->setFocusDistance(10.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
+		_cameraManager->insertCamera(camera);
 
-	_cameraManager->insertCamera(camera);
-	
-#else
-	const vec3 eye = vec3(3.0f, 3.0f, 2.0f), lookAt = vec3(.0f, .0f, -1.0f);
-	ivec2 canvasSize = Window::getInstance()->getSize();
-	Camera* camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)
-					  ->setAperture(1.0f)->setFocusDistance(glm::length(eye - lookAt))->buildDescription();
+		break;
 
-	_cameraManager->insertCamera(camera);
-#endif
+	case EMISSION:
+		eye = vec3(26.0f, 3.0f, 6.0f), lookAt = vec3(.0f, 2.0f, 0.0f);
+		camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
+
+		_cameraManager->insertCamera(camera);
+
+		break;
+		
+	case PROCEDURAL_WEEKEND:
+		eye = vec3(13.0f, 2.0f, 3.0f), lookAt = vec3(.0f, .0f, 0.0f);
+		camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)
+														   ->setAperture(.1f)->setFocusDistance(10.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
+
+		_cameraManager->insertCamera(camera);
+
+		break;
+		
+	case PROCEDURAL_WEEK:
+		eye = vec3(478.0f, 278.0f, -600.0f), lookAt = vec3(278.0f, 278.0f, 0.0f);
+		camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(40.0f)->setTimeFrame(vec2(.0f, 1.0f))->buildDescription();
+
+		_cameraManager->insertCamera(camera);
+		
+		break;
+		
+	default:
+		eye = vec3(3.0f, 3.0f, 2.0f), lookAt = vec3(.0f, .0f, -1.0f);
+		camera = (new Camera(canvasSize[0], canvasSize[1]))->setPosition(eye)->setLookAt(lookAt)->setFovY(20.0f)
+														   ->setAperture(1.0f)->setFocusDistance(glm::length(eye - lookAt))->buildDescription();
+
+		_cameraManager->insertCamera(camera);
+	}
 }
 
 void GeometricScene::loadModels()
 {
-#if CORNELL_BOX_SCENE
-	this->generateCornellBoxScene();
-#elif EMISSION_SCENE
-	this->generateEmissionScene();
-#elif PROCEDURAL_SCENE
-	this->generateProceduralScene();
-#else
-	Material* ground = new Material(vec3(.8f, .8f, .0f));
-	ground->setMaterialType(MaterialType::LAMBERTIAN);
+	switch (_sceneType)
+	{
+	case CORNELL_BOX:
+		this->generateCornellBoxScene();
 
-	Material* sphereCenter = new Material(vec3(.1f, .2f, .5f));
-	sphereCenter->setMaterialType(MaterialType::LAMBERTIAN);
+		break;
 
-	Material* sphereLeft = new Material(vec3(.8f));
-	sphereLeft->setMaterialType(MaterialType::DIELECTRIC)->setReflectionFuzz(.3f);
+	case EMISSION:
+		this->generateEmissionScene();
 
-	Material* sphereRight = new Material(vec3(.8f, .6f, .2f));
-	sphereRight->setMaterialType(MaterialType::METAL)->setReflectionFuzz(1.0f);
+		break;
 
-	this->addObject(std::make_shared<Sphere>(vec3(.0f, -100.5f, -1.0f), 100.0f, std::shared_ptr<Material>(ground)));
-	this->addObject(std::make_shared<Sphere>(vec3(.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereCenter)));
-	this->addObject(std::make_shared<Sphere>(vec3(-1.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereLeft)));
-	this->addObject(std::make_shared<Sphere>(vec3(1.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereRight)));
-#endif
+	case PROCEDURAL_WEEKEND:
+		this->generateProceduralSceneWeekend();
+
+		break;
+
+	case PROCEDURAL_WEEK:
+		this->generateProceduralSceneWeek();
+
+		break;
+		
+	default:
+		Material* ground = new Material(vec3(.8f, .8f, .0f));
+		ground->setMaterialType(MaterialType::LAMBERTIAN);
+
+		Material* sphereCenter = new Material(vec3(.1f, .2f, .5f));
+		sphereCenter->setMaterialType(MaterialType::LAMBERTIAN);
+
+		Material* sphereLeft = new Material(vec3(.8f));
+		sphereLeft->setMaterialType(MaterialType::DIELECTRIC)->setReflectionFuzz(.3f);
+
+		Material* sphereRight = new Material(vec3(.8f, .6f, .2f));
+		sphereRight->setMaterialType(MaterialType::METAL)->setReflectionFuzz(1.0f);
+
+		_hittableList->addObject(std::make_shared<Sphere>(vec3(.0f, -100.5f, -1.0f), 100.0f, std::shared_ptr<Material>(ground)));
+		_hittableList->addObject(std::make_shared<Sphere>(vec3(.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereCenter)));
+		_hittableList->addObject(std::make_shared<Sphere>(vec3(-1.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereLeft)));
+		_hittableList->addObject(std::make_shared<Sphere>(vec3(1.0f, .0f, -1.0f), 0.5f, std::shared_ptr<Material>(sphereRight)));
+
+		break;
+	}
 }

@@ -2,10 +2,6 @@
 
 #include "Graphics/Application/Scene.h"
 
-#define CORNELL_BOX_SCENE true
-#define EMISSION_SCENE false
-#define PROCEDURAL_SCENE false
-
 /**
 *	@file GeometricScene.h
 *	@authors Alfonso López Ruiz (alr00048@red.ujaen.es)
@@ -17,6 +13,15 @@
 */
 class GeometricScene: public Scene
 {
+protected:
+	enum SceneType
+	{
+		CORNELL_BOX, EMISSION, PROCEDURAL_WEEKEND, PROCEDURAL_WEEK
+	};
+
+protected:
+	SceneType	_sceneType;
+
 protected:
 	/**
 	*	@brief  
@@ -31,7 +36,12 @@ protected:
 	/**
 	*	@brief 
 	*/
-	void generateProceduralScene();
+	void generateProceduralSceneWeekend();
+
+	/**
+	*	@brief
+	*/
+	void generateProceduralSceneWeek();
 
 	/**
 	*	@brief Defines cameras to visualize the scene.
@@ -42,5 +52,11 @@ protected:
 	*	@brief 
 	*/
 	virtual void loadModels();
+
+public:
+	/**
+	*	@brief Default constructor. 
+	*/
+	GeometricScene();
 };
 
