@@ -33,7 +33,14 @@ public:
 	};
 
 protected:
-	std::shared_ptr<Material>	_material;		//!<
+	bool						_flipNormals;		//!<
+	std::shared_ptr<Material>	_material;			//!<
+
+protected:
+	/**
+	*	@brief Flips normal of record whether the hittable object is set to.
+	*/
+	void flipRecordNormals(HitRecord& record) const;
 
 public:
 	/**
@@ -45,6 +52,11 @@ public:
 	*	@brief Constructor of any hittable object through a material. 
 	*/
 	Hittable(std::shared_ptr<Material> material);
+
+	/**
+	*	@brief Flips normal while calculating hit record.
+	*/
+	Hittable* flipNormals() { _flipNormals = !_flipNormals; return this; }
 	
 	/**
 	*	@brief

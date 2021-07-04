@@ -105,7 +105,7 @@ vec3 RayTracer::getRayColor(const Ray3D& ray, const vec3& background, Scene* sce
 
 	Ray3D scattered(vec3(.0f), vec3(.0f));
 	vec3 attenuation;
-	vec3 emitted = record._material->getApplicator()->emit(record._material.get(), record._uv, record._point);
+	vec3 emitted = record._material->getApplicator()->emit(record._material.get(), record, record._uv, record._point);
 	float pdf = .0f;
 
 	if (!record._material->getApplicator()->scatter(record._material.get(), ray, record, attenuation, scattered, pdf))

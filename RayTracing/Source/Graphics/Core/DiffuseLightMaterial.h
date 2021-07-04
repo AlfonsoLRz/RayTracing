@@ -17,7 +17,7 @@ public:
 	/**
 	*	@brief Emission for emissive materials.
 	*/
-	virtual vec3 emit(Material* material, const vec2& uv, const vec3& point) const;
+	virtual vec3 emit(Material* material, const Hittable::HitRecord& record, const vec2& uv, const vec3& point) const;
 
 	/**
 	*	@brief

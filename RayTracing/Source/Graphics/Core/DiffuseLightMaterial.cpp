@@ -5,9 +5,12 @@
 
 // [Public methods]
 
-vec3 DiffuseLightMaterial::emit(Material* material, const vec2& uv, const vec3& point) const
+vec3 DiffuseLightMaterial::emit(Material* material, const Hittable::HitRecord& record, const vec2& uv, const vec3& point) const
 {
-	return material->_emissionTexture->getColor(uv, point);
+	if (record._frontFace)
+		return material->_emissionTexture->getColor(uv, point);
+
+	return vec3(.0f);
 }
 
 bool DiffuseLightMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const

@@ -5,13 +5,20 @@
 
 // [Hittable]
 
-Hittable::Hittable()
+Hittable::Hittable() : _flipNormals(false)
 {
 }
 
 Hittable::Hittable(std::shared_ptr<Material> material)
 {
 	this->_material = material;
+}
+
+// [Protected methods]
+
+void Hittable::flipRecordNormals(HitRecord& record) const
+{
+	record._frontFace = _flipNormals ^ record._frontFace;			// XOR to modify frontFace only when flipNormals = true
 }
 
 // [Hit record]

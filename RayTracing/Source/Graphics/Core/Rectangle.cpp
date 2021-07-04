@@ -32,6 +32,8 @@ bool RectangleXY::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 	hit._material = this->_material;
 	hit._point = ray.at(t);
 
+	this->flipRecordNormals(hit);
+
 	return true;
 }
 
@@ -66,6 +68,8 @@ bool RectangleXZ::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 	hit._material = this->_material;
 	hit._point = ray.at(t);
 
+	this->flipRecordNormals(hit);
+
 	return true;
 }
 
@@ -99,6 +103,8 @@ bool RectangleYZ::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 	hit.setFaceNormal(ray, outwardNormal);
 	hit._material = this->_material;
 	hit._point = ray.at(t);
+
+	this->flipRecordNormals(hit);
 
 	return true;
 }
