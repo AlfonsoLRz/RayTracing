@@ -38,6 +38,11 @@ namespace RandomUtilities
 	vec3 getUniformRandomColor(float min, float max);
 
 	/**
+	*	@return Random hemisphere vector aligned to Z axis.
+	*/
+	vec3 getUniformRandomCosineDirection();
+
+	/**
 	*	@return Random point in unit sphere.
 	*/
 	vec3 getUniformRandomInHemisphere(const vec3& normal);
@@ -78,6 +83,17 @@ inline vec3 RandomUtilities::getUniformRandomColor()
 inline vec3 RandomUtilities::getUniformRandomColor(float min, float max)
 {
 	return vec3(RandomUtilities::getUniformRandom(min, max), RandomUtilities::getUniformRandom(min, max), RandomUtilities::getUniformRandom(min, max));
+}
+
+inline vec3 RandomUtilities::getUniformRandomCosineDirection()
+{
+	const float r1 = RandomUtilities::getUniformRandom(), r2 = RandomUtilities::getUniformRandom();
+	const float z = sqrt(1 - r2);
+	const float phi = 2.0f * glm::pi<float>() * r1;
+	const float x = std::cos(phi) * sqrt(r2);
+	const float y = std::sin(phi) * sqrt(r2);
+
+	return vec3(x, y, z);
 }
 
 inline vec3 RandomUtilities::getUniformRandomInHemisphere(const vec3& normal)

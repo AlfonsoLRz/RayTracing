@@ -1,2 +1,75 @@
-﻿  GeometricScene.cpp
+﻿  stdafx.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  lodepng.cpp
+  Generating Code...
+  OBJ_Loader.cpp
+  BVH.cpp
+  AABB.cpp
+  Ray3D.cpp
+  CameraManager.cpp
+  GeometricScene.cpp
+  MaterialList.cpp
+  Renderer.cpp
+  Scene.cpp
+  TextureList.cpp
+  Box.cpp
+  CADModel.cpp
+  Camera.cpp
+  ComputeShader.cpp
+  ConstantMedium.cpp
+  DielectricMaterial.cpp
+  DiffuseLightMaterial.cpp
+  FBO.cpp
+  FBOScreenshot.cpp
+  FloatImage.cpp
+  Generating Code...
+  Compiling...
+  Group3D.cpp
+  Hittable.cpp
+  HittableList.cpp
+  ImageTexture.cpp
+  IsotropicMaterial.cpp
+  LambertianMaterial.cpp
+  MaterialType.cpp
+  MetalMaterial.cpp
+  MovingSphere.cpp
+  NoiseTexture.cpp
+  OpenGLTexture.cpp
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,41): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,59): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,77): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
+  Rectangle.cpp
+  Sphere.cpp
+  TransformedHittable.cpp
+  UnsignedImage.cpp
+  Material.cpp
+  Model3D.cpp
+  OpenGLUtilities.cpp
+  RayTracer.cpp
+  RenderingShader.cpp
+  Generating Code...
+  Compiling...
+  ShaderList.cpp
+  ShaderProgram.cpp
+  Texture.cpp
+  VAO.cpp
+  font_awesome.cpp
+  font_awesome_2.cpp
+  lato.cpp
+  GUI.cpp
+  InputManager.cpp
+  Window.cpp
+  main.cpp
+D:\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Users\alr00\Desktop\Libraries\glfw\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
+  Perlin.cpp
+  Generating Code...
+     Creating library D:\Github\RayTracing\x64\Debug\RayTracing.lib and object D:\Github\RayTracing\x64\Debug\RayTracing.exp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Debug\RayTracing.exe

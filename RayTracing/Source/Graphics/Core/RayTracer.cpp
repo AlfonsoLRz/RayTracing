@@ -106,11 +106,33 @@ vec3 RayTracer::getRayColor(const Ray3D& ray, const vec3& background, Scene* sce
 	Ray3D scattered(vec3(.0f), vec3(.0f));
 	vec3 attenuation;
 	vec3 emitted = record._material->getApplicator()->emit(record._material.get(), record._uv, record._point);
+	float pdf = .0f;
 
-	if (!record._material->getApplicator()->scatter(record._material.get(), ray, record, attenuation, scattered))
+	if (!record._material->getApplicator()->scatter(record._material.get(), ray, record, attenuation, scattered, pdf))
 	{
 		return emitted;
 	}
 
-	return emitted + attenuation * this->getRayColor(scattered, background, scene, depth - 1);
+	vec3 lightPosition = vec3(RandomUtilities::getUniformRandom(213.0f, 343.0f), 554.0f, RandomUtilities::getUniformRandom(227.0f, 332.0f));
+	vec3 lightDirection = lightPosition - record._point;
+	float distanceSquared = glm::length2(lightDirection);
+	lightDirection = glm::normalize(lightDirection);
+
+	if (glm::dot(lightDirection, record._normal) < .0f)
+	{
+		return emitted;
+	}
+
+	float lightArea = (343.0f - 213.0f) * (332.0f - 227.0f);
+	float lightCosine = fabs(lightDirection.y);
+	if (lightCosine < glm::epsilon<float>())
+	{
+		return emitted;
+	}
+
+	pdf = distanceSquared / (lightCosine * lightArea);
+	scattered = Ray3D(record._point, lightDirection, ray.getTimestamp());
+
+	return emitted + attenuation * record._material->getApplicator()->scatterPDF(ray, record, scattered) * 
+								   this->getRayColor(scattered, background, scene, depth - 1) / pdf;
 }

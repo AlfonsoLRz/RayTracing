@@ -14,7 +14,7 @@
 // [Public methods]
 
 GeometricScene::GeometricScene() :
-	_sceneType(PROCEDURAL_WEEK)
+	_sceneType(CORNELL_BOX)
 {
 }
 
@@ -29,24 +29,24 @@ void GeometricScene::generateCornellBoxScene()
 	std::shared_ptr<Material> green = std::make_shared<Material>(Material(vec3(.12f, .45f, .15f)));
 	green->setMaterialType(MaterialType::LAMBERTIAN);
 	std::shared_ptr<Material> light = std::make_shared<Material>(Material(vec3(.0f)));
-	light->setEmissionTexture(vec3(7.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
+	light->setEmissionTexture(vec3(15.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
 
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(green)));
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(red)));
 	_hittableList->addObject(std::make_shared<RectangleXY>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
-	_hittableList->addObject(std::make_shared<RectangleXZ>(113.0f, 443.0f, 127.0f, 432.0f, 554.0f, std::shared_ptr<Material>(light)));
+	_hittableList->addObject(std::make_shared<RectangleXZ>(213.0f, 343.0f, 227.0f, 332.0f, 554.0f, std::shared_ptr<Material>(light)));
 
 	std::shared_ptr<Hittable> leftBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f, 330.0f, 165.0f), white);
 	leftBox = std::make_shared<RotatedYHittable>(leftBox, 15.0f);
 	leftBox = std::make_shared<TranslatedHittable>(leftBox, vec3(265.0f, .0f, 295.0f));
-	_hittableList->addObject(std::make_shared<ConstantMedium>(leftBox, vec3(.0f), .01f));
+	_hittableList->addObject(leftBox);
 
 	std::shared_ptr<Hittable> rightBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f), white);
 	rightBox = std::make_shared<RotatedYHittable>(rightBox, -18.0f);
 	rightBox = std::make_shared<TranslatedHittable>(rightBox, vec3(130.0f, .0f, 65.0f));
-	_hittableList->addObject(std::make_shared<ConstantMedium>(rightBox, vec3(1.0f), .01f));
+	_hittableList->addObject(rightBox);
 }
 
 void GeometricScene::generateEmissionScene()

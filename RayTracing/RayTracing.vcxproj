@@ -256,6 +256,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Source\Utilities\ONB.cpp" />
     <ClCompile Include="Source\Utilities\Perlin.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +326,7 @@
     <ClInclude Include="Source\Utilities\Adapter.h" />
     <ClInclude Include="Source\Utilities\BasicOperations.h" />
     <ClInclude Include="Source\Utilities\FileManagement.h" />
+    <ClInclude Include="Source\Utilities\ONB.h" />
     <ClInclude Include="Source\Utilities\Perlin.h" />
     <ClInclude Include="Source\Utilities\RandomUtilities.h" />
     <ClInclude Include="Source\Utilities\Singleton.h" />

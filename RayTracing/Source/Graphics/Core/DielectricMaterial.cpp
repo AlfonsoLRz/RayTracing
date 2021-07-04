@@ -5,7 +5,7 @@
 
 // [Public methods]
 
-bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered) const
+bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const
 {
 	attenuation = vec3(1.0f);
 	float refractionRatio = record._frontFace ? 1.0f / material->_refractionIndex : material->_refractionIndex;
@@ -29,6 +29,11 @@ bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hit
 	scattered = Ray3D(record._point, direction, ray.getTimestamp());
 
 	return true;
+}
+
+float DielectricMaterial::scatterPDF(const Ray3D& ray, const Hittable::HitRecord& record, Ray3D& scattered)
+{
+	return 0.0f;
 }
 
 // [Protected methods]

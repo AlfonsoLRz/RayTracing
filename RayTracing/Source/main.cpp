@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
 	std::cout << "__ Starting Ray Tracer __" << std::endl;
 
-	const std::string title = "LiDAR Simulator";
+	const std::string title = "Ray Tracer";
 	const uint16_t width = /*1050*/650 / 2, height = 650 / 2;
 	const auto window = Window::getInstance();
 

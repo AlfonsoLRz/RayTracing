@@ -31,5 +31,10 @@ public:
 	/**
 	*	@brief
 	*/
-	virtual bool scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered) const = 0;
+	virtual bool scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const = 0;
+
+	/**
+	*	@brief Scatter non-uniformly based on a PDF distribution.
+	*/
+	virtual float scatterPDF(const Ray3D& ray, const Hittable::HitRecord& record, Ray3D& scattered);
 };

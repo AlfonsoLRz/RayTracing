@@ -345,6 +345,9 @@
     <ClCompile Include="Source\Graphics\Core\IsotropicMaterial.cpp">
       <Filter>Archivos de origen\Graphics\Core\RayTracing\Material</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Utilities\ONB.cpp">
+      <Filter>Archivos de origen\Interface</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\PrecompiledHeaders\stdafx.h">
@@ -553,6 +556,9 @@
     </ClInclude>
     <ClInclude Include="Source\Graphics\Core\IsotropicMaterial.h">
       <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Utilities\ONB.h">
+      <Filter>Archivos de encabezado\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
