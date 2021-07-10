@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "Geometry/3D/Ray3D.h"
 #include "Graphics/Core/Hittable.h"
+#include "Graphics/Core/PDF.h"
 #include "Utilities/BasicOperations.h"
 #include "Utilities/RandomUtilities.h"
 
@@ -20,6 +21,15 @@ class Material;
 class MaterialType
 {
 public:
+	struct ScatterRecord
+	{
+		vec3					_attenuation;
+		bool					_isSpecular;
+		std::shared_ptr<PDF>	_pdf;
+		Ray3D					_specularRay;
+	};
+
+public:
 	enum MaterialTypes { LAMBERTIAN, METAL, DIELECTRIC, DIFFUSE_LIGHT, ISOTROPIC, NUM_MATERIAL_TYPES };
 
 public:
@@ -31,7 +41,7 @@ public:
 	/**
 	*	@brief
 	*/
-	virtual bool scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const = 0;
+	virtual bool scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, ScatterRecord& scatterRecord) const = 0;
 
 	/**
 	*	@brief Scatter non-uniformly based on a PDF distribution.

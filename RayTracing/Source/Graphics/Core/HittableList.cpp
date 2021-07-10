@@ -29,3 +29,27 @@ bool HittableList::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hi
 
 	return hitAnything;
 }
+
+float HittableList::pdfValue(const vec3& origin, const vec3& direction) const
+{
+	float sumPDF = .0f;
+
+	for (std::shared_ptr<Hittable> object : _hittableObjects)
+	{
+		sumPDF += object->pdfValue(origin, direction);
+	}
+
+	return sumPDF / _hittableObjects.size();
+}
+
+vec3 HittableList::random(const vec3& origin) const
+{
+	vec3 randomDirections = vec3(.0f);
+
+	for (std::shared_ptr<Hittable> object : _hittableObjects)
+	{
+		randomDirections += object->random(origin);
+	}
+
+	return randomDirections / vec3(_hittableObjects.size());
+}

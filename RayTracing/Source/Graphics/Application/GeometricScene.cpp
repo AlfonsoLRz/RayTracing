@@ -33,6 +33,7 @@ void GeometricScene::generateCornellBoxScene()
 
 	std::shared_ptr<RectangleXZ> lightBox = std::make_shared<RectangleXZ>(RectangleXZ(213.0f, 343.0f, 227.0f, 332.0f, 554.0f, std::shared_ptr<Material>(light)));
 	lightBox->flipNormals();
+	_lights->addObject(lightBox);
 
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(green)));
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(red)));

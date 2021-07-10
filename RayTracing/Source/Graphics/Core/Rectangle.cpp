@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Rectangle.h"
 
+#include "Utilities/RandomUtilities.h"
+
 // [Rectangle XZ]
 
 RectangleXY::RectangleXY(float x0, float x1, float y0, float y1, float z, std::shared_ptr<Material> material) :
@@ -71,6 +73,28 @@ bool RectangleXZ::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit
 	this->flipRecordNormals(hit);
 
 	return true;
+}
+
+float RectangleXZ::pdfValue(const vec3& origin, const vec3& direction) const
+{
+	HitRecord record;
+
+	if (!this->hit(Ray3D(origin, direction), .001f, FLT_MAX, record))
+	{
+		return .0f;
+	}
+
+	const float area = (_x1 - _x0) * (_z1 - _z0);
+	const float distanceSquared = record._t * record._t * glm::length2(direction);
+	const float cosine = glm::abs(glm::dot(direction, record._normal) / glm::length(direction));
+
+	return distanceSquared / (cosine * area);
+}
+
+vec3 RectangleXZ::random(const vec3& origin) const
+{
+	const vec3 randomPoint = vec3(RandomUtilities::getUniformRandom(_x0, _x1), _y, RandomUtilities::getUniformRandom(_z0, _z1));
+	return randomPoint - origin;
 }
 
 // [Rectangle YZ]

@@ -30,6 +30,7 @@ protected:
 
 	// [Hittable list]
 	std::unique_ptr<HittableList>			_hittableList;					//!<
+	std::shared_ptr<HittableList>			_lights;						//!<
 
 protected:
 	// --------------- Load ----------------
@@ -64,6 +65,11 @@ public:
 	*	@return Manager of application cameras.
 	*/
 	CameraManager* getCameraManager()  const { return _cameraManager.get(); }
+
+	/**
+	*	@return List of lights active on the scene.
+	*/
+	std::shared_ptr<HittableList> getLights() { return _lights; }
 
 	/**
 	*	@brief Loads the elements from the scene: lights, cameras, models, etc.

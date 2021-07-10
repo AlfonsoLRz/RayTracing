@@ -10,6 +10,7 @@ Scene::Scene():
 	_cameraManager(std::unique_ptr<CameraManager>(new CameraManager())), _sceneGroup(nullptr)
 {
 	_hittableList.reset(new HittableList);
+	_lights.reset(new HittableList);
 }
 
 Scene::~Scene()

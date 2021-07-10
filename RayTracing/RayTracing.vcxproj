@@ -230,6 +230,7 @@
     <ClCompile Include="Source\Graphics\Core\MovingSphere.cpp" />
     <ClCompile Include="Source\Graphics\Core\NoiseTexture.cpp" />
     <ClCompile Include="Source\Graphics\Core\OpenGLTexture.cpp" />
+    <ClCompile Include="Source\Graphics\Core\PDF.cpp" />
     <ClCompile Include="Source\Graphics\Core\Rectangle.cpp" />
     <ClCompile Include="Source\Graphics\Core\Sphere.cpp" />
     <ClCompile Include="Source\Graphics\Core\TransformedHittable.cpp" />
@@ -303,6 +304,7 @@
     <ClInclude Include="Source\Graphics\Core\MovingSphere.h" />
     <ClInclude Include="Source\Graphics\Core\NoiseTexture.h" />
     <ClInclude Include="Source\Graphics\Core\OpenGLTexture.h" />
+    <ClInclude Include="Source\Graphics\Core\PDF.h" />
     <ClInclude Include="Source\Graphics\Core\Rectangle.h" />
     <ClInclude Include="Source\Graphics\Core\Sphere.h" />
     <ClInclude Include="Source\Graphics\Core\TransformedHittable.h" />

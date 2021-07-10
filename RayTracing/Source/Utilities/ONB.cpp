@@ -12,7 +12,7 @@ void ONB::buildFromW(const vec3& w)
 	_axis[0] = glm::normalize(glm::cross(this->w(), this->v()));
 }
 
-vec3 ONB::localVector(const vec3& v)
+vec3 ONB::localVector(const vec3& v) const
 {
 	return v.x * _axis[0] + v.y * _axis[1] + v.z * _axis[2];
 }

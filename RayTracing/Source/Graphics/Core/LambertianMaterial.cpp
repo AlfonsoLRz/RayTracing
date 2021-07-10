@@ -6,14 +6,15 @@
 
 // [Public methods]
 
-bool LambertianMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const
+bool LambertianMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, ScatterRecord& scatterRecord) const
 {
-	ONB onb;
-	onb.buildFromW(record._normal);
-	
+	scatterRecord._isSpecular = false;
+	scatterRecord._attenuation = material->_albedoTexture->getColor(record._uv, record._point;
+	scatterRecord._pdf = std::make_shared<CosinePDF>(record._normal);
+
 	vec3 scatterDirection = onb.localVector(RandomUtilities::getUniformRandomCosineDirection());
 	scattered = Ray3D(record._point, glm::normalize(scatterDirection), ray.getTimestamp());
-	attenuation = material->_albedoTexture->getColor(record._uv, record._point);
+	attenuation = );
 	PDF = glm::dot(onb.w(), scattered.getDirection()) / glm::pi<float>();
 
 	return true;

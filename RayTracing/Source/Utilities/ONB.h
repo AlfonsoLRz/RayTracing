@@ -23,23 +23,23 @@ public:
 	/**
 	*	@brief Translates any vector to orthonormal basis system.
 	*/
-	vec3 localVector(const vec3& vector);
+	vec3 localVector(const vec3& vector) const;
 
 	// --------- Getters -----------
 
 	/**
 	*	@return X vector of ONB system.  
 	*/
-	vec3 u() { return _axis[0]; }
+	vec3 u() const { return _axis[0]; }
 
 	/**
 	*	@return Y vector of ONB system.
 	*/
-	vec3 v() { return _axis[1]; }
+	vec3 v() const { return _axis[1]; }
 
 	/**
 	*	@return Z vector of ONB system.
 	*/
-	vec3 w() { return _axis[2]; }
+	vec3 w() const { return _axis[2]; }
 };
 

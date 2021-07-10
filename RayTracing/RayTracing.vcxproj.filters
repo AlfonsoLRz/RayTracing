@@ -163,6 +163,12 @@
     <Filter Include="Archivos de origen\Graphics\Core\RayTracing\Models">
       <UniqueIdentifier>{0b2b5eb8-a9a0-4682-b7df-3f289f69d298}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de origen\Graphics\Core\RayTracing\Material\PDF">
+      <UniqueIdentifier>{102586da-eff6-4510-9875-61ec4050cc3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de encabezado\Graphics\Core\RayTracing\Material\PDF">
+      <UniqueIdentifier>{39f06d0f-02ef-4195-91f2-8a13d8a51afa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\main.cpp">
@@ -347,6 +353,9 @@
     </ClCompile>
     <ClCompile Include="Source\Utilities\ONB.cpp">
       <Filter>Archivos de origen\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphics\Core\PDF.cpp">
+      <Filter>Archivos de origen\Graphics\Core\RayTracing\Material\PDF</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -559,6 +568,9 @@
     </ClInclude>
     <ClInclude Include="Source\Utilities\ONB.h">
       <Filter>Archivos de encabezado\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Graphics\Core\PDF.h">
+      <Filter>Archivos de encabezado\Graphics\Core\RayTracing\Material\PDF</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
