@@ -6,7 +6,7 @@
   imgui_tables.cpp
   imgui_widgets.cpp
   lodepng.cpp
-  Generating Code...
+  Generando código...
   OBJ_Loader.cpp
   BVH.cpp
   AABB.cpp
@@ -27,8 +27,8 @@
   FBO.cpp
   FBOScreenshot.cpp
   FloatImage.cpp
-  Generating Code...
-  Compiling...
+  Generando código...
+  Compilando...
   Group3D.cpp
   Hittable.cpp
   HittableList.cpp
@@ -40,10 +40,11 @@
   MovingSphere.cpp
   NoiseTexture.cpp
   OpenGLTexture.cpp
-D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,41): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
-D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,59): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
-D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,77): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
-D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): warning C4838: conversion from 'float' to 'const unsigned char' requires a narrowing conversion
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,41): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,59): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,77): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): warning C4838: la conversión de 'float' en 'const unsigned char' requiere una conversión de restricción
+  PDF.cpp
   Rectangle.cpp
   Sphere.cpp
   TransformedHittable.cpp
@@ -52,9 +53,9 @@ D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): 
   Model3D.cpp
   OpenGLUtilities.cpp
   RayTracer.cpp
+  Generando código...
+  Compilando...
   RenderingShader.cpp
-  Generating Code...
-  Compiling...
   ShaderList.cpp
   ShaderProgram.cpp
   Texture.cpp
@@ -66,10 +67,11 @@ D:\Github\RayTracing\RayTracing\Source\Graphics\Core\OpenGLTexture.cpp(133,95): 
   InputManager.cpp
   Window.cpp
   main.cpp
-D:\Windows Kits\10\Include\10.0.18362.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
-C:\Users\alr00\Desktop\Libraries\glfw\include\GLFW\glfw3.h(104): message : see previous definition of 'APIENTRY'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': redefinición de macro
+C:\Users\AlfonsoLópezRuiz\Desktop\Libraries\glfw\include\GLFW\glfw3.h(104): message : vea la definición anterior de 'APIENTRY'
+  ONB.cpp
   Perlin.cpp
-  Generating Code...
-     Creating library D:\Github\RayTracing\x64\Debug\RayTracing.lib and object D:\Github\RayTracing\x64\Debug\RayTracing.exp
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generando código...
+     Creando biblioteca D:\Github\RayTracing\x64\Debug\RayTracing.lib y objeto D:\Github\RayTracing\x64\Debug\RayTracing.exp
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
   RayTracing.vcxproj -> D:\Github\RayTracing\x64\Debug\RayTracing.exe

@@ -9,9 +9,9 @@
 #include "Utilities/Singleton.h"
 
 /**
-*	@file FBO.h
+*	@file RayTracer.h
 *	@authors Alfonso López Ruiz (alr00048@red.ujaen.es)
-*	@date 07/26/2019
+*	@date 10/05/2021
 */
 
 #define DEBUG_MODE
@@ -76,8 +76,6 @@ public:
 	/**
 	*	@brief  
 	*/
-	void updateSize(const uint16_t width, const uint16_t height);
-
-	// 
+	void updateSize(const uint16_t width, const uint16_t height); 
 };
 

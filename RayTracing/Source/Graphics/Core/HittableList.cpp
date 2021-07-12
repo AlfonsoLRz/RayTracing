@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "HittableList.h"
 
+#include "Utilities/RandomUtilities.h"
+
 // [Public methods]
 
 void HittableList::buildBVH()
@@ -44,12 +46,5 @@ float HittableList::pdfValue(const vec3& origin, const vec3& direction) const
 
 vec3 HittableList::random(const vec3& origin) const
 {
-	vec3 randomDirections = vec3(.0f);
-
-	for (std::shared_ptr<Hittable> object : _hittableObjects)
-	{
-		randomDirections += object->random(origin);
-	}
-
-	return randomDirections / vec3(_hittableObjects.size());
+	return _hittableObjects[RandomUtilities::getUniformRandomInt(0, _hittableObjects.size() - 1)]->random(origin);
 }

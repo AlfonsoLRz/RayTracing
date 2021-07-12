@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Sphere.h"
 
+#include "Utilities/ONB.h"
+#include "Utilities/RandomUtilities.h"
+
 // [Public methods]
 
 Sphere::Sphere(const vec3& center, float radius, std::shared_ptr<Material> material) : _center(center), _radius(radius)
@@ -48,6 +51,31 @@ bool Sphere::hit(const Ray3D& ray, double tMin, double tMax, HitRecord& hit) con
 	hit._uv = getUV(outwardNormal);
 
 	return true;
+}
+
+float Sphere::pdfValue(const vec3& origin, const vec3& direction) const
+{
+	HitRecord record;
+
+	if (!this->hit(Ray3D(origin, direction), .001f, FLT_MAX, record))
+	{
+		return .0f;
+	}
+
+	const float cosThetaMax = sqrt(1.0f - _radius * _radius / glm::length2(_center - origin));
+	const float solidAngle = 2.0f * glm::pi<float>() * (1.0f - cosThetaMax);
+
+	return 1.0f / solidAngle;
+}
+
+vec3 Sphere::random(const vec3& origin) const
+{
+	vec3 direction = _center - origin;
+	float distanceSquared = glm::length2(direction);
+	ONB onb;
+	onb.buildFromW(direction);
+
+	return onb.localVector(RandomUtilities::getRandomToSphere(_radius, distanceSquared));
 }
 
 // [Protected methods]

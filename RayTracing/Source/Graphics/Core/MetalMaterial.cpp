@@ -5,13 +5,16 @@
 
 // [Public methods]
 
-bool MetalMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const
+bool MetalMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, ScatterRecord& scatterRecord) const
 {
-	vec3 reflectDirection = glm::reflect(glm::normalize(ray.getDirection()), record._normal);
-	scattered = Ray3D(record._point, reflectDirection + material->_reflectionFuzz * RandomUtilities::getUniformRandomInUnitSphere(), ray.getTimestamp());
-	attenuation = material->_albedoTexture->getColor(record._uv, record._point);
+	vec3 reflectDirection		= glm::reflect(glm::normalize(ray.getDirection()), record._normal);
+	
+	scatterRecord._specularRay	= Ray3D(record._point, reflectDirection + material->_reflectionFuzz * RandomUtilities::getUniformRandomInUnitSphere(), ray.getTimestamp());
+	scatterRecord._isSpecular	= true;
+	scatterRecord._attenuation	= material->_albedoTexture->getColor(record._uv, record._point);
+	scatterRecord._pdf.reset();
 
-	return dot(reflectDirection, record._normal) > .0f;
+	return true;
 }
 
 float MetalMaterial::scatterPDF(const Ray3D& ray, const Hittable::HitRecord& record, Ray3D& scattered)

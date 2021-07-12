@@ -13,7 +13,7 @@ vec3 DiffuseLightMaterial::emit(Material* material, const Hittable::HitRecord& r
 	return vec3(.0f);
 }
 
-bool DiffuseLightMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const
+bool DiffuseLightMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, ScatterRecord& scatterRecord) const
 {
 	return false;
 }

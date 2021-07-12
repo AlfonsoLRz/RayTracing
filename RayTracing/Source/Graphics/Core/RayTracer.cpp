@@ -77,6 +77,11 @@ void RayTracer::drawDebugTexture()
 
 			color /= NUM_SAMPLES;
 
+			// Check for NaNs
+			if (color.x != color.x) color.x = .0f;
+			if (color.y != color.y) color.y = .0f;
+			if (color.z != color.z) color.z = .0f;
+
 			image[(y * width + x) * 4 + 0] = sqrt(color.x);
 			image[(y * width + x) * 4 + 1] = sqrt(color.y);
 			image[(y * width + x) * 4 + 2] = sqrt(color.z);
@@ -96,6 +101,7 @@ vec3 RayTracer::getBackgroundColor(const Ray3D& ray)
 vec3 RayTracer::getRayColor(const Ray3D& ray, const vec3& background, Scene* scene, int depth)
 {
 	Hittable::HitRecord record;
+	MaterialType::ScatterRecord scatterRecord;
 
 	if (depth <= 0) return vec3(.0f);
 
@@ -105,21 +111,24 @@ vec3 RayTracer::getRayColor(const Ray3D& ray, const vec3& background, Scene* sce
 	}
 
 	Ray3D scattered(vec3(.0f), vec3(.0f));
-	vec3 albedo;
 	vec3 emitted = record._material->getApplicator()->emit(record._material.get(), record, record._uv, record._point);
 	float pdf = .0f;
 
-	if (!record._material->getApplicator()->scatter(record._material.get(), ray, record, albedo, scattered, pdf))
+	if (!record._material->getApplicator()->scatter(record._material.get(), ray, record, scatterRecord))
 	{
 		return emitted;
 	}
 
-	std::shared_ptr<CosinePDF> cosinePDF = std::make_shared<CosinePDF>(record._normal);
+	if (scatterRecord._isSpecular)
+	{
+		return scatterRecord._attenuation * this->getRayColor(scatterRecord._specularRay, background, scene, depth - 1);
+	}
+	
 	std::shared_ptr<HittablePDF> lightPDF = std::make_shared<HittablePDF>(_scene->getLights(), record._point);
-	std::shared_ptr<MixturePDF> mixturePDF = std::make_shared<MixturePDF>(cosinePDF, lightPDF);
+	std::shared_ptr<MixturePDF> mixturePDF = std::make_shared<MixturePDF>(scatterRecord._pdf, lightPDF);
 	
 	scattered = Ray3D(record._point, mixturePDF->generate(), ray.getTimestamp());
 	pdf = mixturePDF->value(scattered.getDirection());
 
-	return emitted + albedo * record._material->getApplicator()->scatterPDF(ray, record, scattered) * this->getRayColor(scattered, background, scene, depth - 1) / pdf;
+	return emitted + scatterRecord._attenuation * record._material->getApplicator()->scatterPDF(ray, record, scattered) * this->getRayColor(scattered, background, scene, depth - 1) / pdf;
 }

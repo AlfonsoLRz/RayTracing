@@ -14,7 +14,7 @@
 // [Public methods]
 
 GeometricScene::GeometricScene() :
-	_sceneType(CORNELL_BOX)
+	_sceneType(PROCEDURAL_WEEK)
 {
 }
 
@@ -30,14 +30,18 @@ void GeometricScene::generateCornellBoxScene()
 	green->setMaterialType(MaterialType::LAMBERTIAN);
 	std::shared_ptr<Material> light = std::make_shared<Material>(Material(vec3(.0f)));
 	light->setEmissionTexture(vec3(15.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
+	std::shared_ptr<Material> glass = std::make_shared<Material>(Material(vec3(.0f)));
+	glass->setMaterialType(MaterialType::DIELECTRIC)->setRefractionIndex(1.5f);
+	std::shared_ptr<Material> imageBackground = std::make_shared<Material>(Material(std::make_shared<ImageTexture>("Assets/Images/GGGJ/Background.png")));
+	imageBackground->setMaterialType(MaterialType::LAMBERTIAN);
 
 	std::shared_ptr<RectangleXZ> lightBox = std::make_shared<RectangleXZ>(RectangleXZ(213.0f, 343.0f, 227.0f, 332.0f, 554.0f, std::shared_ptr<Material>(light)));
-	lightBox->flipNormals();
+	//lightBox->flipNormals();
 	_lights->addObject(lightBox);
 
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(green)));
 	_hittableList->addObject(std::make_shared<RectangleYZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(red)));
-	_hittableList->addObject(std::make_shared<RectangleXY>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
+	_hittableList->addObject(std::make_shared<RectangleXY>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(imageBackground)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, .0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(std::make_shared<RectangleXZ>(.0f, 555.0f, .0f, 555.0f, 555.0f, std::shared_ptr<Material>(white)));
 	_hittableList->addObject(lightBox);
@@ -47,10 +51,14 @@ void GeometricScene::generateCornellBoxScene()
 	leftBox = std::make_shared<TranslatedHittable>(leftBox, vec3(265.0f, .0f, 295.0f));
 	_hittableList->addObject(leftBox);
 
-	std::shared_ptr<Hittable> rightBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f), white);
-	rightBox = std::make_shared<RotatedYHittable>(rightBox, -18.0f);
-	rightBox = std::make_shared<TranslatedHittable>(rightBox, vec3(130.0f, .0f, 65.0f));
-	_hittableList->addObject(rightBox);
+	std::shared_ptr<Sphere> sphere = std::make_shared<Sphere>(vec3(190.0f, 90.0f, 190.0f), 90.0f, std::shared_ptr<Material>(glass));
+	_hittableList->addObject(sphere);
+	_lights->addObject(sphere);
+
+	//std::shared_ptr<Hittable> rightBox = std::make_shared<Box>(vec3(.0f), vec3(165.0f), white);
+	//rightBox = std::make_shared<RotatedYHittable>(rightBox, -18.0f);
+	//rightBox = std::make_shared<TranslatedHittable>(rightBox, vec3(130.0f, .0f, 65.0f));
+	//_hittableList->addObject(rightBox);
 }
 
 void GeometricScene::generateEmissionScene()
@@ -143,7 +151,10 @@ void GeometricScene::generateProceduralSceneWeek()
 	// Spheres
 	std::shared_ptr<Material> light = std::make_shared<Material>(Material(vec3(.0f)));
 	light->setEmissionTexture(vec3(7.0f))->setMaterialType(MaterialType::DIFFUSE_LIGHT);
-	_hittableList->addObject(std::make_shared<RectangleXZ>(123.0f, 423.0f, 147.0f, 412.0f, 554.0f, std::shared_ptr<Material>(light)));
+	std::shared_ptr<RectangleXZ> lightRectangle = std::make_shared<RectangleXZ>(123.0f, 423.0f, 147.0f, 412.0f, 625.0f, std::shared_ptr<Material>(light));
+	lightRectangle->flipNormals();
+	_hittableList->addObject(lightRectangle);
+	_lights->addObject(lightRectangle);
 
 	vec3 center0(400.0f, 400.0f, 200.0f), center1(center0 + vec3(30.0f, .0f, .0f));
 	Material* movingSphereMaterial = (new Material(vec3(0.7f, .3f, .1f)))->setMaterialType(MaterialType::LAMBERTIAN);
@@ -156,9 +167,9 @@ void GeometricScene::generateProceduralSceneWeek()
 
 	std::shared_ptr<Sphere> volumeBoundary = std::make_shared<Sphere>(vec3(360.0f, 150.0f, 145.0f), 70.0f, std::shared_ptr<Material>(dielectricSphere));
 	_hittableList->addObject(volumeBoundary);
-	_hittableList->addObject(std::make_shared<ConstantMedium>(volumeBoundary, vec3(0.2f, 0.4f, 0.9f), 0.2f));
-	volumeBoundary = std::make_shared<Sphere>(vec3(.0f), 5000.0f, std::shared_ptr<Material>(dielectricSphere));
-	_hittableList->addObject(make_shared<ConstantMedium>(volumeBoundary, vec3(1.0f, 1.0f, 1.0f), .0001f));
+	//_hittableList->addObject(std::make_shared<ConstantMedium>(volumeBoundary, vec3(0.2f, 0.4f, 0.9f), 0.2f));
+	//volumeBoundary = std::make_shared<Sphere>(vec3(.0f), 5000.0f, std::shared_ptr<Material>(dielectricSphere));
+	//_hittableList->addObject(make_shared<ConstantMedium>(volumeBoundary, vec3(1.0f, 1.0f, 1.0f), .0001f));
 
 	Material* imageMaterial = (new Material(std::make_shared<ImageTexture>(ImageTexture("Assets/Images/Checker/GGGJ.png"))))->setMaterialType(MaterialType::LAMBERTIAN);
 	_hittableList->addObject(std::make_shared<Sphere>(vec3(400.0f, 200.0f, 400.0f), 100.0f, std::shared_ptr<Material>(imageMaterial)));

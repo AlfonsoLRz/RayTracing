@@ -19,7 +19,7 @@ public:
 	/**
 	*	@brief Default constructor for a ray. 
 	*/
-	Ray3D(const vec3& origin, const vec3& direction, float timestamp = .0f);
+	Ray3D(const vec3& origin = vec3(.0f), const vec3& direction = vec3(.0f), float timestamp = .0f);
 
 	/**
 	*	@brief Point at parametric value t for ray equation.

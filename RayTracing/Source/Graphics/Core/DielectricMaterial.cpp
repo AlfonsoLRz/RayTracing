@@ -5,9 +5,8 @@
 
 // [Public methods]
 
-bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, vec3& attenuation, Ray3D& scattered, float& PDF) const
+bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hittable::HitRecord& record, ScatterRecord& scatterRecord) const
 {
-	attenuation = vec3(1.0f);
 	float refractionRatio = record._frontFace ? 1.0f / material->_refractionIndex : material->_refractionIndex;
 
 	vec3 unitDirection = glm::normalize(ray.getDirection());
@@ -26,7 +25,10 @@ bool DielectricMaterial::scatter(Material* material, const Ray3D& ray, const Hit
 		direction = glm::refract(unitDirection, record._normal, refractionRatio);
 	}
 
-	scattered = Ray3D(record._point, direction, ray.getTimestamp());
+	scatterRecord._isSpecular	= true;
+	scatterRecord._attenuation	= vec3(1.0f);
+	scatterRecord._specularRay	= Ray3D(record._point, direction, ray.getTimestamp());
+	scatterRecord._pdf.reset();
 
 	return true;
 }

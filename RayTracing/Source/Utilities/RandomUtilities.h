@@ -18,6 +18,11 @@ typedef std::uniform_real_distribution<float>	DoubleUniformDistribution;
 namespace RandomUtilities
 {
 	/**
+	*	@return Random of length up to distanceSquared. 
+	*/
+	vec3 getRandomToSphere(float radius, float distanceSquared);
+	
+	/**
 	*	@return New random value retrieved from a random uniform distribution.
 	*/
 	float getUniformRandom();
@@ -61,6 +66,18 @@ namespace RandomUtilities
 	*	@return Random point in unit sphere. 
 	*/
 	vec3 getUniformRandomInUnitSphere();
+}
+
+inline vec3 RandomUtilities::getRandomToSphere(float radius, float distanceSquared)
+{
+	const float r1 = getUniformRandom();
+	const float r2 = getUniformRandom();
+	const float z = 1 + r2 * (sqrt(1.0f - radius * radius / distanceSquared) - 1.0f);
+	const float phi = 2.0f * glm::pi<float>() * r1;
+	const float x = std::cos(phi) * sqrt(1 - z * z);
+	const float y = std::sin(phi) * sqrt(1 - z * z);
+
+	return vec3(x, y, z);
 }
 
 inline float RandomUtilities::getUniformRandom()
