@@ -57,36 +57,37 @@ void RayTracer::drawDebugTexture()
 
 	const unsigned width = _rayTracingImage->getWidth(), height = _rayTracingImage->getHeight();
 	float* image = _rayTracingImage->bits();
-	Ray3D ray (vec3(.0f), vec3(.0f));
 
 	// [Camera]
 	Camera* camera =_scene->getCameraManager()->getActiveCamera();
+	unsigned numPixels = width * height, x, y;
 
-	for (unsigned x = 0; x < width; ++x)
+	for (int pixelIdx = 0; pixelIdx < numPixels; ++pixelIdx)
 	{
-		for (unsigned y = 0; y < height; ++y)
+		vec3 color(.0f);
+		x = pixelIdx % width;
+		y = std::floor(pixelIdx / width);
+
+		#pragma omp parallel for
+		for (int sampleIdx = 0; sampleIdx < NUM_SAMPLES; ++sampleIdx)
 		{
-			vec3 color(.0f);
-
-			for (int sampleIdx = 0; sampleIdx < NUM_SAMPLES; ++sampleIdx)
-			{
-				float u = (x + RandomUtilities::getUniformRandom()) / float(width - 1), v = (y + RandomUtilities::getUniformRandom()) / float(height - 1);
-				ray = camera->getRay(u, v);
-				color += getRayColor(ray, BACKGROUND_COLOR, _scene, MAX_DEPTH);
-			}
-
-			color /= NUM_SAMPLES;
-
-			// Check for NaNs
-			if (color.x != color.x) color.x = .0f;
-			if (color.y != color.y) color.y = .0f;
-			if (color.z != color.z) color.z = .0f;
-
-			image[(y * width + x) * 4 + 0] = sqrt(color.x);
-			image[(y * width + x) * 4 + 1] = sqrt(color.y);
-			image[(y * width + x) * 4 + 2] = sqrt(color.z);
-			image[(y * width + x) * 4 + 3] = 1.0f;
+			float u = (x + RandomUtilities::getUniformRandom()) / float(width - 1), v = (y + RandomUtilities::getUniformRandom()) / float(height - 1);
+			Ray3D ray = camera->getRay(u, v);
+			#pragma omp critical
+			color += getRayColor(ray, BACKGROUND_COLOR, _scene, MAX_DEPTH);
 		}
+
+		color /= NUM_SAMPLES;
+
+		// Check for NaNs
+		if (color.x != color.x) color.x = .0f;
+		if (color.y != color.y) color.y = .0f;
+		if (color.z != color.z) color.z = .0f;
+
+		image[(y * width + x) * 4 + 0] = sqrt(color.x);
+		image[(y * width + x) * 4 + 1] = sqrt(color.y);
+		image[(y * width + x) * 4 + 2] = sqrt(color.z);
+		image[(y * width + x) * 4 + 3] = 1.0f;
 	}
 }
 
