@@ -35,6 +35,12 @@
 *.ipch
 *.db
 .vs/*
+Debug/*
+x64/*
+RayTracing/Debug/*
+RayTracing/x64/*
+Release/*
+RayTracing/Release/*
 
 # Assets
 RayTracing/Assets/Scene/*
