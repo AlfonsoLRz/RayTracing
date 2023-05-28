@@ -2,18 +2,18 @@
 
 Implementation of ray-tracing book series (One weekend, One week, Life) in C++. These books are public for free and can be found in https://raytracing.github.io/.
 
-## Results of first book
+## Results of the first book
 
 | Procedural scene    | Spheres |
 | -------- | ------- |
-| ![RayTracing](RayTracing-Captures/Weekend/FinalRendering.png)  | ![RayTracing](RayTracing-Captures/Weekend/FuzzyMetal.png)    |
+| ![RayTracing](Screenshots/Weekend/FinalRendering.png)  | ![RayTracing](Screenshots/Weekend/FuzzyMetal.png)    |
 
-## Results of second book
+## Results of the second book
 
 | Procedural scene    | Cornell box |
 | -------- | ------- |
-| ![RayTracing](RayTracing-Captures/Week/CheckerPattern.png)  | ![RayTracing](RayTracing-Captures/Week/CornellBoxSmoke.png)    |
+| ![RayTracing](Screenshots/Week/CheckerPattern.png)  | ![RayTracing](Screenshots/Week/CornellBoxSmoke.png)    |
 
-## Results of third book
+## Results of the third book
 
-![RayTracing](RayTracing-Captures/Life/Summary.png)
+![RayTracing](Screenshots/Life/Summary.png)
